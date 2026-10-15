@@ -16,21 +16,21 @@
 
 export const profile = {
   /** Your name as you want it to appear everywhere. */
-  displayName: "Your Name",
+  displayName: "Ebony B. Davis",
 
   /** Your UD email — must match the one you signed into the course with. */
-  email: "you@udel.edu",
+  email: "ebdavis2026@gmail.com",
 
   /** Where you're from. Shows on your roster card and /about. */
-  hometown: "Newark, Delaware",
+  hometown: "Daytona Beach, Florida",
 
   /**
    * 2 to 4 fun facts (the grader checks the count!). Real ones: they're
    * how classmates find something to say hello about.
    */
   funFacts: [
-    "I once assembled IKEA furniture without leftover screws.",
-    "I can name every U.S. state capital in under two minutes.",
+    "I have been to both sides of Niagara Falls: The American side and the Canadian side.",
+    "I visited a Sweden in the summer of 2018 I was fascinated bythe country and the people."
   ],
 
   /** One decision you're proud of, in a sentence. */
@@ -42,7 +42,7 @@ export const profile = {
    * (e.g. put photo.jpg in the public/ folder and change this to "/photo.jpg").
    * It must be a real image file: the grader fetches it and checks.
    */
-  photoPath: "/photo.svg",
+  photoPath: "/public/ebdavis.svg",
 
   /**
    * Who can see your roster card:
@@ -58,12 +58,12 @@ export const profile = {
    * A short bio for your home page: two or three sentences, written like
    * a person, not a resume. What are you studying? What do you care about?
    */
-  bio: "I'm a business student at the University of Delaware learning to make good decisions at any scale. This site is my working portfolio: every course challenge deploys here as a live service.",
+  bio: "I'm so excited to share my journey as a Cybersecurity student at the University of Delaware, I'm passionate about learning how to make thoughtful, impactful decisions at every level. This site is a hands-on portfolio demonstrating my journey. It is meant to bring  to life my acts of service and my inspirations in life. Thank you so much for taking the time out of your day to check it out!",
 
   /**
    * Your GitHub repo URL. The course platform reads this from /api/health to
    * verify you have ≥ 5 commits spread over days (not one bulk dump).
    * Example: "https://github.com/your-username/your-repo"
    */
-  repoUrl: "https://github.com/your-username/your-repo",
+  repoUrl: "https://github.com/ebdavis2026-del/my-site",
 };
