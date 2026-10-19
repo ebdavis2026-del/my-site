@@ -40,14 +40,14 @@ export default function HomePage() {
     <main className="mx-auto max-w-3xl px-6 py-14">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <div className="flex flex-col gap-10 py-24 sm:flex-row sm:items-start sm:py-36">
-        <div className="w-fit shrink-0 rounded-3xl border-2 border-black bg-white p-2 shadow-md">
+        <div className="w-fit shrink-0 shadow-md">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={profile.photoPath}
             alt={profile.displayName}
-            width={192}
-            height={192}
-            className="block h-48 w-48 rounded-xl object-cover object-center"
+            width={208}
+            height={208}
+            className="block h-52 w-52 object-contain"
           />
         </div>
         <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
