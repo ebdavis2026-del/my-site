@@ -29,9 +29,9 @@ export const profile = {
    * how classmates find something to say hello about.
    */
   funFacts: [
-    "I have visited both the top of the Empire State Building and the Observation Deck at Edge in New York City, both of which are over 1,100 feet high and shows off the best of New York City and the Hudson River.",
-    "One of my favorite quotes is 'Do the best you can until you know better. Then when you know better, do better.' — Maya Angelou",
-    "I have been to Skylon Tower Niagra Falls Restaurant and Observatory on New Year's Eve. It offers an iconic and breathtaking views and rotates 360 degrees every hour.",
+    "I have visited both the top of the Empire State Building and the Observation Deck at Edge in New York City. Both are over 1,100 feet high and offer incredible views of the city skyline and the Hudson River.",
+    "One of my favorite quotes is 'Do the best you can until you know better. Then when you know better, do better.' - Maya Angelou",
+    "I had dinner at Skylon Tower Niagra Falls Restaurant and Observatory on New Year's Eve. It offers an iconic and breathtaking views of Niagra Falls and rotates 360 degrees every hour so the views rotate as you eat.",
     "I have walked accross a tree top and climbed up a telephone pole then fell backwards with just a harness and a rope on as a part of a overcoming fear challenge.",
   ],
 
