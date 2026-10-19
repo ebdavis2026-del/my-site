@@ -29,15 +29,15 @@ export const profile = {
    * how classmates find something to say hello about.
    */
   funFacts: [
-    "I participated in two Mergers and Acquisition Competitions at the University of Delaware's Alfred Lerner College of Business and Economics.",
-    "One of my favorite quotes is 'People will forget what you said, but people will never forget how you made them feel. — Maya Angelou'",
-    "I have been to both sides of Niagara Falls: The American side, also known as the American Falls, and the Canadian side, also known as the Horseshoe Falls.",
-    "I visited a Sweden in the summer of 2018. I was fascinated by the country and the people. Sweden's National Freedom Day is called the National Day of Sweden.",
+    "I have visited both the top of the Empire State Building and the Observation Deck at Edge in New York City.",
+    "One of my favorite quotes is 'Do the best you can until you know better. Then when you know better, do better.' — Maya Angelou",
+    "I have been to Skylon Tower Niagra Falls Restaurant and Observatory on New Year's Eve. It offers an iconic and breathtaking views and rotates 360 degrees every hour.",
+    "I have walked accross a tree top and climbed up a telephone pole then fell backwards with just a harness and a rope on as a part of a overcoming fear challenge.",
   ],
 
   /** One decision you're proud of, in a sentence. */
   decisionImProudOf:
-    "To commit to moral progress where it matters most.",
+    "To commit to moral progress to make a difference in the world.",
 
   /**
    * Your photo. Replace public/photo.svg with a real photo of you
