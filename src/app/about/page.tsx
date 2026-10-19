@@ -17,14 +17,15 @@ export default function AboutPage() {
             "linear-gradient(160deg, color-mix(in srgb, var(--accent) 38%, white), color-mix(in srgb, var(--accent) 14%, transparent) 62%, transparent)",
         }}
       >
-        <div className="w-fit shrink-0 shadow-md">
+        <div className="w-fit shrink-0 overflow-hidden rounded-3xl shadow-md">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={profile.photoPath}
             alt={profile.displayName}
             width={208}
             height={208}
-            className="block h-52 w-52 object-contain"
+            className="block h-52 w-52 object-cover"
+            style={{ objectPosition: "50% 38%" }}
           />
         </div>
         <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
