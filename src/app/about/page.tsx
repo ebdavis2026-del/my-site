@@ -29,6 +29,9 @@ export default function AboutPage() {
         </div>
         <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
           <h1 className="text-3xl font-bold" style={{ fontFamily: '"Times New Roman", Times, serif' }}>{profile.displayName}</h1>
+          <p className="mt-3 text-2xl font-bold uppercase leading-[1.05] tracking-[0.22em] text-[#542614]">
+            {profile.tagline}
+          </p>
           <p className="mt-2 text-lg text-ink">
             From <span className="font-semibold text-ink">{profile.hometown}</span>
           </p>
