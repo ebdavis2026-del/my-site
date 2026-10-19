@@ -32,8 +32,8 @@ export default function AboutPage() {
           <p className="mt-3 text-2xl font-bold uppercase leading-[1.05] tracking-[0.22em] text-[#542614]">
             {profile.tagline}
           </p>
-          <p className="mt-2 text-lg text-ink">
-            From <span className="font-semibold text-ink">{profile.hometown}</span>
+          <p className="mt-2 text-lg font-semibold text-ink">
+            {profile.hometown}
           </p>
           <p
             className="mt-5 max-w-prose font-medium leading-[1.5] text-ink"
