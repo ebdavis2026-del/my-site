@@ -29,15 +29,15 @@ export const profile = {
    * how classmates find something to say hello about.
    */
   funFacts: [
+    "My favorite flowers are tulips and one of my favorite thing to do is to watch the sunrise over the ocean.",
+    "If I had to choose two favorite movies, I would say my favorite movies are 'As Good As It Gets' and 'Somethings Gotta Give'.",
     "I have been to both sides of Niagara Falls: The American side, also known as the American Falls, and the Canadian side, also known as the Horseshoe Falls.",
     "I visited a Sweden in the summer of 2018. I was fascinated by the country and the people. Sweden's National Freedom Day is called the National Day of Sweden.",
-    "People will forget what you said, but people will never forget how you made them feel. — Maya Angelou",
-    "The only way to do great work is to love what you do. — Steve Jobs",
   ],
 
   /** One decision you're proud of, in a sentence. */
   decisionImProudOf:
-    "To make a decision to commit to moral progress..",
+    "To commit to moral progress where it matters most.",
 
   /**
    * Your photo. Replace public/photo.svg with a real photo of you
