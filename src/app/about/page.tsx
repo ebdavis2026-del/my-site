@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
       <div
-        className="flex flex-col gap-10 rounded-3xl px-6 py-10 sm:flex-row sm:px-8"
+        className="flex flex-col gap-10 rounded-3xl border-2 border-black px-6 py-10 sm:flex-row sm:px-8"
         style={{
           background:
             "linear-gradient(160deg, color-mix(in srgb, var(--accent) 38%, white), color-mix(in srgb, var(--accent) 14%, transparent) 62%, transparent)",
