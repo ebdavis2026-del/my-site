@@ -32,10 +32,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="flex min-h-screen flex-col">
         <header className="border-b border-line bg-surface">
           <div className="mx-auto flex max-w-3xl items-baseline justify-between px-6 py-5">
-            <Link href="/" className="font-heading text-lg font-bold tracking-tight">
+            <Link href="/" className="text-base font-bold tracking-tight" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
               {profile.displayName}
             </Link>
-            <nav className="flex gap-5 text-sm font-medium text-muted">
+            <nav className="flex gap-5 text-base font-medium text-muted">
               <Link href="/" className="transition hover:text-accent">
                 Home
               </Link>

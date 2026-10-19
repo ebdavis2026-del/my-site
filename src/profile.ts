@@ -22,15 +22,15 @@ export const profile = {
   email: "ebdavis@udel.edu",
 
   /** Where you're from. Shows on your roster card and /about. */
-  hometown: "Pennsylvania, United States.",
+  hometown: "Pennsylvania, USA.",
 
   /**
    * 2 to 4 fun facts (the grader checks the count!). Real ones: they're
    * how classmates find something to say hello about.
    */
   funFacts: [
-    "My favorite flowers are tulips and one of my favorite thing to do is to watch the sunrise over the ocean.",
-    "If I had to choose two favorite movies, I would say my favorite movies are 'As Good As It Gets' and 'Somethings Gotta Give'.",
+    "I participated in two Mergers and Acquisition Competitions at the University of Delaware's Alfred Lerner College of Business and Economics.",
+    "One of my favorite quotes is 'People will forget what you said, but people will never forget how you made them feel. — Maya Angelou'",
     "I have been to both sides of Niagara Falls: The American side, also known as the American Falls, and the Canadian side, also known as the Horseshoe Falls.",
     "I visited a Sweden in the summer of 2018. I was fascinated by the country and the people. Sweden's National Freedom Day is called the National Day of Sweden.",
   ],

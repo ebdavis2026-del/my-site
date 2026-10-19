@@ -10,10 +10,10 @@
  */
 
 /** ── 1. Pick your palette ──────────────────────────────────────────────
- * One word from: "regatta" | "dune" | "orchard" | "noir"
+ * One word from: "regatta" | "dune" | "orchard" | "noir" | "blue"
  * (Or invent your own: copy a palette below, change the colors, name it.)
  */
-export const paletteChoice = "dune";
+export const paletteChoice = "blue";
 
 /** ── 2. Pick your font pairing ─────────────────────────────────────────
  * One word from: "editorial" | "geometric" | "classic"
@@ -51,6 +51,13 @@ export interface Palette {
   accentInk: string;
 }
 
+// Design notes (not palette colors):
+// - Give the portfolio cards a subtle shadow and lift them slightly on hover.
+// - Make the hero section taller, with the tagline larger and more dramatic.
+// - Make the portfolio cards, footer, contact, blog, about, and guestbook sections
+//   a bit more dramatic and engaging.
+// - Add a soft gradient background to the about page header, using the accent color.
+
 export const PALETTES: Record<string, Palette> = {
   /** Deep navy accent on warm paper — nautical, collegiate. */
   regatta: {
@@ -64,10 +71,10 @@ export const PALETTES: Record<string, Palette> = {
   },
   /** Warm sand and terracotta — desert light. */
   dune: {
-    paper: "#faf6ef",
+    paper: "#cad9ea",
     surface: "#fffdf8",
-    ink: "#37302a",
-    muted: "#7c6f5f",
+    ink: "#1c1714",
+    muted: "#5c5146",
     line: "#eadfcd",
     accent: "#b4552d",
     accentInk: "#ffffff",
@@ -80,6 +87,16 @@ export const PALETTES: Record<string, Palette> = {
     muted: "#5d705b",
     line: "#dde5d8",
     accent: "#3a6b35",
+    accentInk: "#ffffff",
+  },
+  /** Light blue page with warm ink — the selected blue look. */
+  blue: {
+    paper: "#cad9ea",
+    surface: "#fffdf8",
+    ink: "#1c1714",
+    muted: "#5c5146",
+    line: "#eadfcd",
+    accent: "#b4552d",
     accentInk: "#ffffff",
   },
   /** Near-black with a hot accent — gallery at night. */

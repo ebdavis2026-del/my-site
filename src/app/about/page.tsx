@@ -10,19 +10,35 @@ export const metadata = { title: `About — ${profile.displayName}` };
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
-      <div className="flex flex-col gap-10 sm:flex-row">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={profile.photoPath}
-          alt={profile.displayName}
-          className="h-56 w-56 shrink-0 rounded-2xl border border-line object-cover"
-        />
-        <div>
-          <h1 className="text-4xl font-bold">{profile.displayName}</h1>
-          <p className="mt-2 text-lg text-muted">
+      <div
+        className="flex flex-col gap-10 rounded-3xl px-6 py-10 sm:flex-row sm:px-8"
+        style={{
+          background:
+            "linear-gradient(160deg, color-mix(in srgb, var(--accent) 38%, white), color-mix(in srgb, var(--accent) 14%, transparent) 62%, transparent)",
+        }}
+      >
+        <div className="shrink-0 overflow-hidden rounded-3xl bg-black p-3 shadow-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={profile.photoPath}
+            alt={profile.displayName}
+            width={192}
+            height={192}
+            className="block h-48 w-48 origin-center rounded-xl object-cover object-center"
+            style={{ transform: "scale(1.15)" }}
+          />
+        </div>
+        <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
+          <h1 className="text-3xl font-bold" style={{ fontFamily: '"Times New Roman", Times, serif' }}>{profile.displayName}</h1>
+          <p className="mt-2 text-lg text-ink">
             From <span className="font-semibold text-ink">{profile.hometown}</span>
           </p>
-          <p className="mt-5 max-w-prose">{profile.bio}</p>
+          <p
+            className="mt-5 max-w-prose font-medium leading-[1.5] text-ink"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
+            {profile.bio}
+          </p>
         </div>
       </div>
 
@@ -34,7 +50,7 @@ export default function AboutPage() {
               <span aria-hidden className="mt-1 text-accent">
                 ✦
               </span>
-              <span>{fact}</span>
+              <span className="italic">{fact}</span>
             </li>
           ))}
         </ul>

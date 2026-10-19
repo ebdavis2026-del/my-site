@@ -39,19 +39,24 @@ export default function HomePage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={profile.photoPath}
-          alt={profile.displayName}
-          className="h-40 w-40 shrink-0 rounded-2xl border border-line object-cover sm:h-48 sm:w-48"
-        />
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+      <div className="flex flex-col gap-10 py-24 sm:flex-row sm:items-start sm:py-36">
+        <div className="w-fit shrink-0 overflow-hidden rounded-3xl bg-black p-3 shadow-md">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={profile.photoPath}
+            alt={profile.displayName}
+            width={192}
+            height={192}
+            className="block h-48 w-48 origin-center rounded-xl object-cover object-center"
+            style={{ transform: "scale(1.15)" }}
+          />
+        </div>
+        <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
+          <h1 className="text-4xl font-bold" style={{ fontFamily: '"Times New Roman", Times, serif' }}>{profile.displayName}</h1>
+          <p className="mt-6 text-4xl font-bold uppercase leading-[1.05] tracking-[0.22em] text-[#542614]">
             {profile.tagline}
           </p>
-          <h1 className="mt-3 text-5xl font-bold">{profile.displayName}</h1>
-          <p className="mt-3 text-lg text-muted">
+          <p className="mt-3 text-lg text-ink">
             <a href={`mailto:${profile.email}`} className="font-semibold text-ink transition hover:text-accent">
               {profile.email}
             </a>
@@ -60,7 +65,12 @@ export default function HomePage() {
             </span>
             {profile.hometown}
           </p>
-          <p className="mt-5 max-w-prose text-lg text-muted">{profile.bio}</p>
+          <p
+            className="mt-5 max-w-prose text-lg font-medium leading-[1.5] text-ink"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
+            {profile.bio}
+          </p>
           <p className="mt-4 text-sm text-muted">
             Roster visibility:{" "}
             <span className="font-semibold text-ink">{profile.rosterVisibility}</span>
@@ -85,7 +95,7 @@ export default function HomePage() {
               <span aria-hidden className="mt-1 text-accent">
                 ✦
               </span>
-              <span>{fact}</span>
+              <span className="italic">{fact}</span>
             </li>
           ))}
         </ul>
@@ -107,7 +117,7 @@ export default function HomePage() {
         </p>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {SERVICES.map((s) => (
-            <li key={s.lane} className="rounded-xl border border-line bg-surface p-5">
+            <li key={s.lane} className="rounded-xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md">
               <p className="text-xs font-semibold uppercase tracking-widest text-muted">
                 Lane {s.lane}
               </p>
