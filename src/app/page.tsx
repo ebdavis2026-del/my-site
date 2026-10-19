@@ -51,9 +51,52 @@ export default function HomePage() {
             {profile.tagline}
           </p>
           <h1 className="mt-3 text-5xl font-bold">{profile.displayName}</h1>
+          <p className="mt-3 text-lg text-muted">
+            <a href={`mailto:${profile.email}`} className="font-semibold text-ink transition hover:text-accent">
+              {profile.email}
+            </a>
+            <span className="mx-2" aria-hidden>
+              ·
+            </span>
+            {profile.hometown}
+          </p>
           <p className="mt-5 max-w-prose text-lg text-muted">{profile.bio}</p>
+          <p className="mt-4 text-sm text-muted">
+            Roster visibility:{" "}
+            <span className="font-semibold text-ink">{profile.rosterVisibility}</span>
+          </p>
+          <p className="mt-1 text-sm text-muted">
+            Repo:{" "}
+            <a
+              href={profile.repoUrl}
+              className="font-semibold text-ink transition hover:text-accent"
+            >
+              {profile.repoUrl}
+            </a>
+          </p>
         </div>
       </div>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold">A few fun facts</h2>
+        <ul className="mt-4 space-y-2">
+          {profile.funFacts.map((fact) => (
+            <li key={fact} className="flex gap-3">
+              <span aria-hidden className="mt-1 text-accent">
+                ✦
+              </span>
+              <span>{fact}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-14 rounded-xl border border-line bg-surface p-6">
+        <h2 className="text-xl font-bold">A decision I&apos;m proud of</h2>
+        <p className="mt-3 max-w-prose italic text-muted">
+          &ldquo;{profile.decisionImProudOf}&rdquo;
+        </p>
+      </section>
 
       {/* ── Portfolio of decision services ───────────────────────────── */}
       <section className="mt-14">
