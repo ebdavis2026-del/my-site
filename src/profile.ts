@@ -29,16 +29,15 @@ export const profile = {
    * how classmates find something to say hello about.
    */
   funFacts: [
-    "I have been to both sides of Niagara Falls: The American side, also known as the American Falls, and the Canadian side, also known as the Horseshoe Falls. It is beautiful to see the falls on New Year's Eve.",
-    "I visited a Sweden in the summer of 2018. I was fascinated by the country and the people. Sweden's National Freedom Day is called the National Day of Sweden.",     
-    "If I had to choose two favorite movies, I would say my favorite movies are 'As Good As It Gets' and 'Somethings Gotta Give'.",
+    "I have been to both sides of Niagara Falls: The American side, also known as the American Falls, and the Canadian side, also known as the Horseshoe Falls.",
+    "I visited a Sweden in the summer of 2018. I was fascinated by the country and the people. Sweden's National Freedom Day is called the National Day of Sweden.",
     "People will forget what you said, but people will never forget how you made them feel. — Maya Angelou",
     "The only way to do great work is to love what you do. — Steve Jobs",
   ],
 
   /** One decision you're proud of, in a sentence. */
   decisionImProudOf:
-    "I try to do the best I can with what I have and to do my best to make a difference in the world.",
+    "To make a decision to commit to moral progress..",
 
   /**
    * Your photo. Replace public/photo.svg with a real photo of you
@@ -55,7 +54,7 @@ export const profile = {
   rosterVisibility: "class" as "class" | "professor-only",
 
   /** A one-line tagline for your home page. Make it yours. */
-  tagline: "Building a portfolio of decision services, one lane at a time.",
+  tagline: "Making a difference, one decision at a time.",
 
   /**
    * A short bio for your home page: two or three sentences, written like
