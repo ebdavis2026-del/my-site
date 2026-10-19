@@ -89,13 +89,13 @@ export const PALETTES: Record<string, Palette> = {
     accent: "#3a6b35",
     accentInk: "#ffffff",
   },
-  /** Light blue page with warm ink — the selected blue look. */
+  /** Soft photogenic blue page matched to the roster photo frame blues. */
   blue: {
-    paper: "#cad9ea",
-    surface: "#fffdf8",
+    paper: "#bed2e6",
+    surface: "#f4f8fb",
     ink: "#1c1714",
     muted: "#5c5146",
-    line: "#eadfcd",
+    line: "#9eb8d0",
     accent: "#b4552d",
     accentInk: "#ffffff",
   },
