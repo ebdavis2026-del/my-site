@@ -30,7 +30,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={fontVariables} style={themeVars}>
       <body className="flex min-h-screen flex-col">
-        <header className="border-b border-line bg-surface">
+        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
+          <div className="flex h-full w-full">
+            <div
+              className="h-full w-1/3 bg-cover bg-center"
+              style={{ backgroundImage: "url(/niagara-american.jpg)" }}
+            />
+            <div
+              className="h-full w-1/3 bg-cover bg-center"
+              style={{ backgroundImage: "url(/niagara-canadian.jpg)" }}
+            />
+            <div
+              className="h-full w-1/3 bg-cover bg-center"
+              style={{ backgroundImage: "url(/skylon-tower.jpg)" }}
+            />
+          </div>
+          <div className="absolute inset-0 bg-white/78" />
+        </div>
+        <header className="border-b border-line bg-surface/90">
           <div className="mx-auto flex max-w-3xl items-baseline justify-between px-6 py-5">
             <Link href="/" className="text-base font-bold tracking-tight" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
               {profile.displayName}

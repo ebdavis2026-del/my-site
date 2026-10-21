@@ -43,6 +43,19 @@ export default function AboutPage() {
             >
               {profile.bio}
             </p>
+            <figure className="mt-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ud-campus.jpg"
+                alt="DuPont Hall on the University of Delaware Green"
+                width={640}
+                height={420}
+                className="w-full rounded-2xl object-cover shadow-md"
+              />
+              <figcaption className="mt-2 text-sm text-muted">
+                University of Delaware
+              </figcaption>
+            </figure>
           </div>
         </div>
 
