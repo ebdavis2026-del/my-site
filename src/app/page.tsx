@@ -77,7 +77,7 @@ export default function HomePage() {
             Repo:{" "}
             <a
               href={profile.repoUrl}
-              className="text-base font-bold text-blue-700 transition hover:text-blue-900"
+              className="text-base font-bold text-blue-700 underline decoration-2 underline-offset-2 transition hover:text-blue-900"
             >
               {profile.repoUrl}
             </a>
@@ -124,8 +124,8 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mt-14 rounded-xl border-2 border-black bg-[#fffaf3] p-6 shadow-md">
-        <h2 className="text-xl font-bold">A decision I&apos;m proud of</h2>
+      <section className="mt-14 rounded-xl border-8 border-double border-black bg-[#fffaf3] p-6 shadow-md">
+        <h2 className="text-xl font-bold">A decision I&apos;m proud of:</h2>
         <blockquote className="name-resume mt-3 max-w-prose text-lg leading-snug text-ink">
           <span aria-hidden className="mr-1 text-2xl text-[#b4552d]">&ldquo;</span>
           {profile.decisionImProudOf}

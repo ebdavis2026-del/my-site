@@ -108,8 +108,8 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <section className="mt-12 rounded-xl border-2 border-black bg-[#fffaf3] p-6 shadow-md">
-          <h2 className="text-xl font-bold">A decision I&apos;m proud of</h2>
+        <section className="mt-12 rounded-xl border-8 border-double border-black bg-[#fffaf3] p-6 shadow-md">
+          <h2 className="text-xl font-bold">A decision I&apos;m proud of:</h2>
           <blockquote className="name-resume mt-3 max-w-prose text-lg leading-snug text-ink">
             <span aria-hidden className="mr-1 text-2xl text-[#b4552d]">&ldquo;</span>
             {profile.decisionImProudOf}
