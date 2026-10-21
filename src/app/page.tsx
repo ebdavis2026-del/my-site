@@ -89,6 +89,30 @@ export default function HomePage() {
 
       <section className="mt-14">
         <h2 className="text-2xl font-bold">A few fun facts</h2>
+        <div className="mt-4 grid grid-cols-2 gap-4">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/empire-state.jpg"
+              alt="Empire State Building"
+              width={400}
+              height={260}
+              className="h-52 w-full rounded-2xl object-cover object-center shadow-md"
+            />
+            <figcaption className="mt-2 text-sm text-muted">Empire State Building</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/edge-observatory.jpg"
+              alt="The Edge observatory glass deck at Hudson Yards"
+              width={400}
+              height={260}
+              className="h-52 w-full rounded-2xl object-cover object-center shadow-md"
+            />
+            <figcaption className="mt-2 text-sm text-muted">The Edge observatory</figcaption>
+          </figure>
+        </div>
         <ul className="mt-4 space-y-2">
           {profile.funFacts.map((fact) => (
             <li key={fact} className="flex gap-3">
