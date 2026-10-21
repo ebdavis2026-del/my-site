@@ -52,8 +52,8 @@ export default function HomePage() {
           />
         </div>
         <div style={{ color: "var(--ink)" }}>
-          <h1 className="name-about text-4xl">{profile.displayName}</h1>
-          <p className="mt-6 text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
+          <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
+          <p className="mt-3 text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
             {profile.tagline.split(",")[0]},
             <br />
             {profile.tagline.split(",")[1]?.trim()}
@@ -97,7 +97,7 @@ export default function HomePage() {
               height={260}
               className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
             />
-            <figcaption className="mt-2 text-sm text-muted">Empire State Building</figcaption>
+            <figcaption className="mt-2 text-sm font-bold text-ink">Empire State Building</figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -108,7 +108,7 @@ export default function HomePage() {
               height={260}
               className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
             />
-            <figcaption className="mt-2 text-sm text-muted">The Edge observatory</figcaption>
+            <figcaption className="mt-2 text-sm font-bold text-ink">The Edge observatory</figcaption>
           </figure>
       </div>
 

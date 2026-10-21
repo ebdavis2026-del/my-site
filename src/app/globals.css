@@ -41,6 +41,11 @@ body {
   letter-spacing: 0.01em;
 }
 
+.name-navy {
+  color: #0b2545;
+  line-height: 1.05;
+}
+
 .decision-glow {
   background-color: rgba(214, 176, 96, 0.2);
   box-shadow:
