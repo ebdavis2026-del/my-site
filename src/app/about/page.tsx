@@ -31,8 +31,10 @@ export default function AboutPage() {
           </div>
           <div style={{ color: "var(--ink)" }}>
             <h1 className="name-about text-4xl">{profile.displayName}</h1>
-            <p className="mt-4 text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
-              {profile.tagline}
+            <p className="mt-4 text-3xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
+              {profile.tagline.split(",")[0]},
+              <br />
+              {profile.tagline.split(",")[1]?.trim()}
             </p>
             <p className="mt-3 text-xl font-semibold text-ink">
               {profile.hometown}
@@ -107,7 +109,7 @@ export default function AboutPage() {
 
         <section className="decision-glow mt-12 rounded-xl border-8 border-double border-black p-6">
           <h2 className="text-xl font-bold text-red-700">A decision I&apos;m proud of:</h2>
-          <blockquote className="decision-text mt-3 max-w-prose text-lg font-semibold leading-relaxed text-red-700">
+          <blockquote className="decision-text mt-3 max-w-prose text-lg font-normal leading-relaxed text-red-700">
             <span aria-hidden className="mr-1 text-2xl text-red-700">&ldquo;</span>
             {profile.decisionImProudOf}
           </blockquote>
