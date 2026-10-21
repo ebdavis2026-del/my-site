@@ -30,7 +30,7 @@ export default function AboutPage() {
             />
           </div>
           <div style={{ color: "var(--ink)" }}>
-            <h1 className="name-resume text-3xl">{profile.displayName}</h1>
+            <h1 className="name-about text-3xl">{profile.displayName}</h1>
             <p className="mt-3 text-xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
               {profile.tagline}
             </p>
@@ -44,29 +44,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="mt-8 grid grid-cols-4 gap-3">
-          <figure>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/empire-state.jpg?v=3"
-              alt="Empire State Building in the Manhattan skyline at sunset"
-              width={240}
-              height={180}
-              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
-            />
-            <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">Empire State Building</figcaption>
-          </figure>
-          <figure>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/edge-observatory.jpg?v=3"
-              alt="The Edge at Hudson Yards with the skyline at sunset"
-              width={240}
-              height={180}
-              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
-            />
-            <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">The Edge observatory</figcaption>
-          </figure>
+        <div className="mt-8 grid grid-cols-2 gap-3">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -91,7 +69,32 @@ export default function AboutPage() {
           </figure>
         </div>
 
-        <section className="mt-12">
+        <div className="mt-12 grid grid-cols-2 gap-4">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/empire-state.jpg?v=3"
+              alt="Empire State Building in the Manhattan skyline at sunset"
+              width={400}
+              height={260}
+              className="h-44 w-full rounded-2xl object-cover object-center shadow-md"
+            />
+            <figcaption className="mt-2 text-sm font-semibold text-ink">Empire State Building</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/edge-observatory.jpg?v=3"
+              alt="The Edge at Hudson Yards with the skyline at sunset"
+              width={400}
+              height={260}
+              className="h-44 w-full rounded-2xl object-cover object-center shadow-md"
+            />
+            <figcaption className="mt-2 text-sm font-semibold text-ink">The Edge observatory</figcaption>
+          </figure>
+        </div>
+
+        <section className="mt-8">
           <h2 className="text-2xl font-bold">A few fun facts</h2>
           <ul className="mt-4 space-y-2">
             {profile.funFacts.map((fact) => (
@@ -105,11 +108,12 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <section className="mt-12 rounded-xl border border-line bg-surface p-6">
+        <section className="mt-12 rounded-xl border-2 border-black bg-[#fffaf3] p-6 shadow-md">
           <h2 className="text-xl font-bold">A decision I&apos;m proud of</h2>
-          <p className="mt-3 max-w-prose italic text-muted">
-            &ldquo;{profile.decisionImProudOf}&rdquo;
-          </p>
+          <blockquote className="name-resume mt-3 max-w-prose text-lg leading-snug text-ink">
+            <span aria-hidden className="mr-1 text-2xl text-[#b4552d]">&ldquo;</span>
+            {profile.decisionImProudOf}
+          </blockquote>
         </section>
       </div>
     </main>

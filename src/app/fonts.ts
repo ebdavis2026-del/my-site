@@ -7,7 +7,11 @@ import { Fraunces, Inter, Lora, Space_Grotesk } from "next/font/google";
 export const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 export const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
-export const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
+export const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-lora",
+});
 
 export const fontVariables = [
   inter.variable,

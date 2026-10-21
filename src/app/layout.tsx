@@ -40,12 +40,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               className="h-full w-1/3 bg-cover bg-center"
               style={{ backgroundImage: "url(/niagara-canadian.jpg)" }}
             />
-            <div
-              className="h-full w-1/3 bg-cover bg-center"
-              style={{ backgroundImage: "url(/skylon-tower.jpg)" }}
-            />
+            <div className="relative h-full w-1/3">
+              <div
+                className="absolute inset-x-0 bottom-0 bg-cover bg-top"
+                style={{
+                  top: "5.25rem",
+                  backgroundImage: "url(/skylon-tower.jpg)",
+                }}
+              />
+            </div>
           </div>
-          <div className="absolute inset-0 bg-white/78" />
+          <div className="absolute inset-0 bg-white/45" />
         </div>
         <header className="border-b border-line bg-surface/90">
           <div className="flex items-center justify-between gap-4 px-4 py-3">
@@ -58,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 height={64}
                 className="h-14 w-20 rounded-md object-cover shadow-sm"
               />
-              <Link href="/" className="name-resume text-base">
+              <Link href="/" className="name-about text-lg">
                 {profile.displayName}
               </Link>
             </div>

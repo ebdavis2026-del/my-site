@@ -35,6 +35,12 @@ body {
   letter-spacing: 0.02em;
 }
 
+.name-about {
+  font-family: var(--font-lora), Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 h1,
 h2,
 h3 {

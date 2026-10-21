@@ -52,7 +52,7 @@ export default function HomePage() {
           />
         </div>
         <div style={{ color: "var(--ink)" }}>
-          <h1 className="name-resume text-4xl">{profile.displayName}</h1>
+          <h1 className="name-about text-4xl">{profile.displayName}</h1>
           <p className="mt-6 text-xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
             {profile.tagline}
           </p>
@@ -86,9 +86,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <section className="mt-14">
-        <h2 className="text-2xl font-bold">A few fun facts</h2>
-        <div className="mt-4 grid grid-cols-2 gap-4">
+      <div className="mt-14 grid grid-cols-2 gap-4">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -111,7 +109,10 @@ export default function HomePage() {
             />
             <figcaption className="mt-2 text-sm text-muted">The Edge observatory</figcaption>
           </figure>
-        </div>
+      </div>
+
+      <section className="mt-8">
+        <h2 className="text-2xl font-bold">A few fun facts</h2>
         <ul className="mt-4 space-y-2">
           {profile.funFacts.map((fact) => (
             <li key={fact} className="flex gap-3">
@@ -124,11 +125,12 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mt-14 rounded-xl border border-line bg-surface p-6">
+      <section className="mt-14 rounded-xl border-2 border-black bg-[#fffaf3] p-6 shadow-md">
         <h2 className="text-xl font-bold">A decision I&apos;m proud of</h2>
-        <p className="mt-3 max-w-prose italic text-muted">
-          &ldquo;{profile.decisionImProudOf}&rdquo;
-        </p>
+        <blockquote className="name-resume mt-3 max-w-prose text-lg leading-snug text-ink">
+          <span aria-hidden className="mr-1 text-2xl text-[#b4552d]">&ldquo;</span>
+          {profile.decisionImProudOf}
+        </blockquote>
       </section>
 
       {/* ── Portfolio of decision services ───────────────────────────── */}
