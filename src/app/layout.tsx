@@ -78,11 +78,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </header>
         <div className="flex-1">{children}</div>
-        <footer className="border-t border-line">
-          <div className="mx-auto max-w-3xl px-6 py-6 text-sm text-muted">
+        <footer className="border-t border-black/50 bg-white/75">
+          <div className="mx-auto max-w-3xl px-6 py-6 text-base font-bold text-black">
             <p>
               {profile.displayName} · a portfolio of decision services ·{" "}
-              <span className="text-accent">Good Decisions at Any Scale</span>
+              <span>Good Decisions at Any Scale</span>
             </p>
           </div>
         </footer>

@@ -48,6 +48,17 @@ body {
     0 0 22px 6px rgba(150, 104, 36, 0.1);
 }
 
+.decision-text {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  text-shadow:
+    -1px -1px 0 #b91c1c,
+    1px -1px 0 #b91c1c,
+    -1px 1px 0 #b91c1c,
+    1px 1px 0 #b91c1c;
+}
+
 h1,
 h2,
 h3 {
