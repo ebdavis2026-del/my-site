@@ -42,11 +42,10 @@ body {
 }
 
 .decision-glow {
+  background-color: rgba(214, 176, 96, 0.2);
   box-shadow:
-    0 0 10px 2px rgba(196, 30, 30, 0.7),
-    0 0 22px 6px rgba(40, 170, 80, 0.55),
-    0 0 40px 10px rgba(40, 90, 210, 0.4),
-    0 0 56px 14px rgba(230, 170, 40, 0.35);
+    0 0 10px 1px rgba(176, 132, 48, 0.18),
+    0 0 22px 6px rgba(150, 104, 36, 0.1);
 }
 
 h1,

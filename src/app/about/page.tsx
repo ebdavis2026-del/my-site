@@ -105,7 +105,7 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <section className="decision-glow mt-12 rounded-xl border-8 border-double border-black bg-white/25 p-6">
+        <section className="decision-glow mt-12 rounded-xl border-8 border-double border-black p-6">
           <h2 className="text-xl font-bold text-red-700">A decision I&apos;m proud of:</h2>
           <blockquote className="name-resume mt-3 max-w-prose text-lg font-bold leading-snug text-red-700">
             <span aria-hidden className="mr-1 text-2xl text-red-700">&ldquo;</span>
