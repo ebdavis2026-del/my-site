@@ -124,10 +124,10 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mt-14 rounded-xl border-8 border-double border-black bg-[#fffaf3] p-6 shadow-md">
-        <h2 className="text-xl font-bold">A decision I&apos;m proud of:</h2>
-        <blockquote className="name-resume mt-3 max-w-prose text-lg leading-snug text-ink">
-          <span aria-hidden className="mr-1 text-2xl text-[#b4552d]">&ldquo;</span>
+      <section className="decision-glow mt-14 rounded-xl border-8 border-double border-black bg-white/25 p-6">
+        <h2 className="text-xl font-bold text-red-700">A decision I&apos;m proud of:</h2>
+        <blockquote className="name-resume mt-3 max-w-prose text-lg font-bold leading-snug text-red-700">
+          <span aria-hidden className="mr-1 text-2xl text-red-700">&ldquo;</span>
           {profile.decisionImProudOf}
         </blockquote>
       </section>
