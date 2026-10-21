@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 height={64}
                 className="h-14 w-20 rounded-md object-cover shadow-sm"
               />
-              <Link href="/" className="text-base font-bold tracking-tight" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+              <Link href="/" className="name-resume text-base">
                 {profile.displayName}
               </Link>
             </div>

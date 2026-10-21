@@ -21,7 +21,7 @@ export const paletteChoice = "blue";
  *   geometric — modern grotesk headings (tech/startup feel)
  *   classic   — high-contrast serif headings (timeless feel)
  */
-export const fontChoice = "editorial";
+export const fontChoice = "geometric";
 
 /** ── 3. (Optional) Override the accent ─────────────────────────────────
  * Set to any CSS color (e.g. "#c2410c" or "rebeccapurple") to replace the
@@ -94,7 +94,7 @@ export const PALETTES: Record<string, Palette> = {
     paper: "#bed2e6",
     surface: "#f4f8fb",
     ink: "#1c1714",
-    muted: "#5c5146",
+    muted: "#2e2924",
     line: "#9eb8d0",
     accent: "#b4552d",
     accentInk: "#ffffff",

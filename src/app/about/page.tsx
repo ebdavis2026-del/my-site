@@ -29,69 +29,77 @@ export default function AboutPage() {
               style={{ objectPosition: "50% 38%" }}
             />
           </div>
-          <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
-            <h1 className="text-3xl font-bold" style={{ fontFamily: '"Times New Roman", Times, serif' }}>{profile.displayName}</h1>
-            <p className="mt-3 text-xl font-bold uppercase leading-[1.05] tracking-[0.22em] text-[#542614]">
+          <div style={{ color: "var(--ink)" }}>
+            <h1 className="name-resume text-3xl">{profile.displayName}</h1>
+            <p className="mt-3 text-xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
               {profile.tagline}
             </p>
             <p className="mt-2 text-lg font-semibold text-ink">
               {profile.hometown}
             </p>
             <p
-              className="mt-5 max-w-prose font-medium leading-[1.5] text-ink"
-              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              className="mt-5 max-w-prose font-semibold leading-[1.55] text-ink"
             >
               {profile.bio}
             </p>
-            <figure className="mt-6">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/ud-campus.jpg"
-                alt="DuPont Hall on the University of Delaware Green"
-                width={640}
-                height={420}
-                className="w-full rounded-2xl object-cover shadow-md"
-              />
-              <figcaption className="mt-2 text-sm text-muted">
-                University of Delaware
-              </figcaption>
-            </figure>
           </div>
+        </div>
+        <div className="mt-8 grid grid-cols-4 gap-3">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/empire-state.jpg?v=3"
+              alt="Empire State Building in the Manhattan skyline at sunset"
+              width={240}
+              height={180}
+              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+            />
+            <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">Empire State Building</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/edge-observatory.jpg?v=3"
+              alt="The Edge at Hudson Yards with the skyline at sunset"
+              width={240}
+              height={180}
+              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+            />
+            <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">The Edge observatory</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/telephone-pole.jpg"
+              alt="A person high on a telephone pole"
+              width={240}
+              height={180}
+              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+            />
+            <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">Telephone pole</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/treetop-challenge.jpg"
+              alt="A treetop walkway used for an overcoming-fear challenge"
+              width={240}
+              height={180}
+              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+            />
+            <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">Treetop challenge</figcaption>
+          </figure>
         </div>
 
         <section className="mt-12">
           <h2 className="text-2xl font-bold">A few fun facts</h2>
-          <div className="mt-4 grid grid-cols-2 gap-4">
-            <figure>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/empire-state.jpg"
-                alt="Empire State Building"
-                width={400}
-                height={260}
-                className="h-52 w-full rounded-2xl object-cover object-center shadow-md"
-              />
-              <figcaption className="mt-2 text-sm text-muted">Empire State Building</figcaption>
-            </figure>
-            <figure>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/edge-observatory.jpg"
-                alt="The Edge observatory glass deck at Hudson Yards"
-                width={400}
-                height={260}
-                className="h-52 w-full rounded-2xl object-cover object-center shadow-md"
-              />
-              <figcaption className="mt-2 text-sm text-muted">The Edge observatory</figcaption>
-            </figure>
-          </div>
           <ul className="mt-4 space-y-2">
             {profile.funFacts.map((fact) => (
               <li key={fact} className="flex gap-3">
                 <span aria-hidden className="mt-1 text-accent">
                   ✦
                 </span>
-                <span className="italic">{fact}</span>
+                <span className="font-semibold text-ink">{fact}</span>
               </li>
             ))}
           </ul>

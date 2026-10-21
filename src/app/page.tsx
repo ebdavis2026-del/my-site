@@ -51,9 +51,9 @@ export default function HomePage() {
             style={{ objectPosition: "50% 38%" }}
           />
         </div>
-        <div style={{ fontFamily: '"Times New Roman", Times, serif', color: "var(--ink)" }}>
-          <h1 className="text-4xl font-bold" style={{ fontFamily: '"Times New Roman", Times, serif' }}>{profile.displayName}</h1>
-          <p className="mt-6 text-xl font-bold uppercase leading-[1.05] tracking-[0.22em] text-[#542614]">
+        <div style={{ color: "var(--ink)" }}>
+          <h1 className="name-resume text-4xl">{profile.displayName}</h1>
+          <p className="mt-6 text-xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
             {profile.tagline}
           </p>
           <p className="mt-3 text-lg text-ink">
@@ -66,8 +66,7 @@ export default function HomePage() {
             {profile.hometown}
           </p>
           <p
-            className="mt-5 max-w-prose text-lg font-medium leading-[1.5] text-ink"
-            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            className="mt-5 max-w-prose text-lg font-semibold leading-[1.55] text-ink"
           >
             {profile.bio}
           </p>
@@ -93,7 +92,7 @@ export default function HomePage() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/empire-state.jpg"
+              src="/empire-state.jpg?v=3"
               alt="Empire State Building"
               width={400}
               height={260}
@@ -104,7 +103,7 @@ export default function HomePage() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/edge-observatory.jpg"
+              src="/edge-observatory.jpg?v=3"
               alt="The Edge observatory glass deck at Hudson Yards"
               width={400}
               height={260}
@@ -119,7 +118,7 @@ export default function HomePage() {
               <span aria-hidden className="mt-1 text-accent">
                 ✦
               </span>
-              <span className="italic">{fact}</span>
+              <span className="font-semibold text-ink">{fact}</span>
             </li>
           ))}
         </ul>
