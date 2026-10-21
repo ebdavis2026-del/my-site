@@ -23,26 +23,48 @@ export default function AboutPage() {
             <img
               src={profile.photoPath}
               alt={profile.displayName}
-              width={208}
-              height={208}
-              className="block h-52 w-52 object-cover"
+              width={256}
+              height={256}
+              className="block h-64 w-64 object-cover"
               style={{ objectPosition: "50% 38%" }}
             />
           </div>
           <div style={{ color: "var(--ink)" }}>
-            <h1 className="name-about text-3xl">{profile.displayName}</h1>
-            <p className="mt-3 text-xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
+            <h1 className="name-about text-4xl">{profile.displayName}</h1>
+            <p className="mt-4 text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
               {profile.tagline}
             </p>
-            <p className="mt-2 text-lg font-semibold text-ink">
+            <p className="mt-3 text-xl font-semibold text-ink">
               {profile.hometown}
             </p>
-            <p
-              className="mt-5 max-w-prose font-semibold leading-[1.55] text-ink"
-            >
+            <p className="mt-5 text-xl font-semibold leading-relaxed text-ink">
               {profile.bio}
             </p>
           </div>
+        </div>
+        <div className="mt-6 grid grid-cols-2 gap-4">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/empire-state.jpg?v=3"
+              alt="Empire State Building in the Manhattan skyline at sunset"
+              width={400}
+              height={260}
+              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
+            />
+            <figcaption className="mt-2 text-sm font-semibold text-ink">Empire State Building</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/edge-observatory.jpg?v=3"
+              alt="The Edge at Hudson Yards with the skyline at sunset"
+              width={400}
+              height={260}
+              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
+            />
+            <figcaption className="mt-2 text-sm font-semibold text-ink">The Edge observatory</figcaption>
+          </figure>
         </div>
         <div className="mt-8 grid grid-cols-2 gap-3">
           <figure>
@@ -66,31 +88,6 @@ export default function AboutPage() {
               className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
             />
             <figcaption className="mt-2 text-xs font-semibold text-ink sm:text-sm">Treetop challenge</figcaption>
-          </figure>
-        </div>
-
-        <div className="mt-12 grid grid-cols-2 gap-4">
-          <figure>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/empire-state.jpg?v=3"
-              alt="Empire State Building in the Manhattan skyline at sunset"
-              width={400}
-              height={260}
-              className="h-44 w-full rounded-2xl object-cover object-center shadow-md"
-            />
-            <figcaption className="mt-2 text-sm font-semibold text-ink">Empire State Building</figcaption>
-          </figure>
-          <figure>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/edge-observatory.jpg?v=3"
-              alt="The Edge at Hudson Yards with the skyline at sunset"
-              width={400}
-              height={260}
-              className="h-44 w-full rounded-2xl object-cover object-center shadow-md"
-            />
-            <figcaption className="mt-2 text-sm font-semibold text-ink">The Edge observatory</figcaption>
           </figure>
         </div>
 

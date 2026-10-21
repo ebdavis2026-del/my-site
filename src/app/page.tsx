@@ -85,7 +85,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="mt-14 grid grid-cols-2 gap-4">
+      <div className="mt-6 grid grid-cols-2 gap-4">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -93,7 +93,7 @@ export default function HomePage() {
               alt="Empire State Building"
               width={400}
               height={260}
-              className="h-52 w-full rounded-2xl object-cover object-center shadow-md"
+              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
             />
             <figcaption className="mt-2 text-sm text-muted">Empire State Building</figcaption>
           </figure>
@@ -104,7 +104,7 @@ export default function HomePage() {
               alt="The Edge observatory glass deck at Hudson Yards"
               width={400}
               height={260}
-              className="h-52 w-full rounded-2xl object-cover object-center shadow-md"
+              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
             />
             <figcaption className="mt-2 text-sm text-muted">The Edge observatory</figcaption>
           </figure>
