@@ -70,15 +70,14 @@ export default function HomePage() {
           >
             {profile.bio}
           </p>
-          <p className="mt-4 text-sm text-muted">
-            Roster visibility:{" "}
-            <span className="font-semibold text-ink">{profile.rosterVisibility}</span>
+          <p className="mt-4 text-base text-ink">
+            Roster visibility: {profile.rosterVisibility}
           </p>
-          <p className="mt-1 text-sm text-muted">
+          <p className="mt-1 text-base text-ink">
             Repo:{" "}
             <a
               href={profile.repoUrl}
-              className="font-semibold text-ink transition hover:text-accent"
+              className="text-base font-bold text-blue-700 transition hover:text-blue-900"
             >
               {profile.repoUrl}
             </a>
