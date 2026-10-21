@@ -48,10 +48,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="absolute inset-0 bg-white/78" />
         </div>
         <header className="border-b border-line bg-surface/90">
-          <div className="mx-auto flex max-w-3xl items-baseline justify-between px-6 py-5">
-            <Link href="/" className="text-base font-bold tracking-tight" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
-              {profile.displayName}
-            </Link>
+          <div className="flex items-center justify-between gap-4 px-4 py-3">
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ud-campus.jpg"
+                alt="University of Delaware"
+                width={88}
+                height={64}
+                className="h-14 w-20 rounded-md object-cover shadow-sm"
+              />
+              <Link href="/" className="text-base font-bold tracking-tight" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+                {profile.displayName}
+              </Link>
+            </div>
             <nav className="flex gap-5 text-base font-medium text-muted">
               <Link href="/" className="transition hover:text-accent">
                 Home
