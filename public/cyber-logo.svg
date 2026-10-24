@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Original colorful emblem">
+  <rect width="160" height="160" rx="32" fill="#071426"/>
+  <circle cx="80" cy="80" r="54" fill="none" stroke="#38bdf8" stroke-width="8"/>
+  <path d="M46 92c8-34 38-52 68-36" fill="none" stroke="#f472b6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M48 64c22 6 40 28 38 58" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 46c28 10 44 36 40 66" fill="none" stroke="#a78bfa" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="80" cy="80" r="12" fill="#22d3ee"/>
+  <circle cx="80" cy="80" r="5" fill="#fde68a"/>
+</svg>

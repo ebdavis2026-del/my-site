@@ -33,8 +33,8 @@ export default function AboutPage() {
             <div className="overflow-hidden rounded-3xl shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/cyber-color.jpg"
-                alt="A colorful glowing lock made of neon circuits"
+                src="/cyber-logo.svg"
+                alt="An original colorful emblem"
                 width={160}
                 height={160}
                 className="block h-40 w-40 object-cover"
