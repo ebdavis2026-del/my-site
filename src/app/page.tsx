@@ -127,9 +127,9 @@ export default function HomePage() {
       </section>
 
       <section className="decision-glow mt-14 rounded-xl border-8 border-double border-black p-6">
-        <h2 className="text-xl font-bold text-red-700">A decision I&apos;m proud of:</h2>
-        <blockquote className="decision-text mt-3 max-w-prose text-lg font-normal leading-relaxed text-red-700">
-          <span aria-hidden className="mr-1 text-2xl text-red-700">&ldquo;</span>
+        <h2 className="text-xl font-bold text-[#0b2545]">A decision I&apos;m proud of:</h2>
+        <blockquote className="decision-text mt-3 max-w-prose text-lg font-normal leading-relaxed text-[#0b2545]">
+          <span aria-hidden className="mr-1 text-2xl text-[#0b2545]">&ldquo;</span>
           {profile.decisionImProudOf}
         </blockquote>
       </section>

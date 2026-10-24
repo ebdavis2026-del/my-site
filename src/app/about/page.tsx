@@ -10,7 +10,7 @@ export const metadata = { title: `About — ${profile.displayName}` };
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
-      <div className="rounded-3xl border border-black px-6 py-10 sm:px-8">
+      <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">
         <div
           className="flex flex-col gap-10 rounded-3xl px-6 py-10 sm:flex-row sm:px-8"
           style={{
@@ -18,16 +18,28 @@ export default function AboutPage() {
               "linear-gradient(160deg, color-mix(in srgb, var(--accent) 38%, white), color-mix(in srgb, var(--accent) 14%, transparent) 62%, transparent)",
           }}
         >
-          <div className="w-fit shrink-0 overflow-hidden rounded-3xl shadow-md">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={profile.photoPath}
-              alt={profile.displayName}
-              width={256}
-              height={256}
-              className="block h-64 w-64 object-cover"
-              style={{ objectPosition: "50% 38%" }}
-            />
+          <div className="flex w-fit shrink-0 flex-col items-center gap-4">
+            <div className="overflow-hidden rounded-3xl shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={profile.photoPath}
+                alt={profile.displayName}
+                width={256}
+                height={256}
+                className="block h-64 w-64 object-cover"
+                style={{ objectPosition: "50% 38%" }}
+              />
+            </div>
+            <div className="overflow-hidden rounded-3xl shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/cyber-color.jpg"
+                alt="A colorful glowing lock made of neon circuits"
+                width={160}
+                height={160}
+                className="block h-40 w-40 object-cover"
+              />
+            </div>
           </div>
           <div style={{ color: "var(--ink)" }}>
             <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
@@ -108,9 +120,9 @@ export default function AboutPage() {
         </section>
 
         <section className="decision-glow mt-12 rounded-xl border-8 border-double border-black p-6">
-          <h2 className="text-xl font-bold text-red-700">A decision I&apos;m proud of:</h2>
-          <blockquote className="decision-text mt-3 max-w-prose text-lg font-normal leading-relaxed text-red-700">
-            <span aria-hidden className="mr-1 text-2xl text-red-700">&ldquo;</span>
+          <h2 className="text-xl font-bold text-[#0b2545]">A decision I&apos;m proud of:</h2>
+          <blockquote className="decision-text mt-3 max-w-prose text-lg font-normal leading-relaxed text-[#0b2545]">
+            <span aria-hidden className="mr-1 text-2xl text-[#0b2545]">&ldquo;</span>
             {profile.decisionImProudOf}
           </blockquote>
         </section>
