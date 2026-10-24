@@ -69,10 +69,10 @@ body {
 }
 
 .decision-glow {
-  background-color: rgba(214, 176, 96, 0.2);
+  background-color: rgba(190, 210, 230, 0.92);
   box-shadow:
-    0 0 10px 1px rgba(176, 132, 48, 0.18),
-    0 0 22px 6px rgba(150, 104, 36, 0.1);
+    0 0 10px 1px rgba(120, 164, 204, 0.18),
+    0 0 22px 6px rgba(120, 164, 204, 0.1);
 }
 
 .decision-text {
@@ -80,10 +80,10 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.5;
   text-shadow:
-    -1px -1px 0 #0b2545,
-    1px -1px 0 #0b2545,
-    -1px 1px 0 #0b2545,
-    1px 1px 0 #0b2545;
+    -1px -1px 0 #15803d,
+    1px -1px 0 #15803d,
+    -1px 1px 0 #15803d,
+    1px 1px 0 #15803d;
 }
 
 h1,

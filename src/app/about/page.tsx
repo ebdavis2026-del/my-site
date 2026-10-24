@@ -119,11 +119,13 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <section className="decision-glow mt-12 rounded-xl border-8 border-double border-black p-6">
-          <h2 className="text-xl font-bold text-[#0b2545]">A decision I&apos;m proud of:</h2>
-          <blockquote className="decision-text mt-3 max-w-prose text-lg font-normal leading-relaxed text-[#0b2545]">
-            <span aria-hidden className="mr-1 text-2xl text-[#0b2545]">&ldquo;</span>
-            {profile.decisionImProudOf}
+        <section className="decision-glow mt-12 rounded-xl border-8 border-double border-[#15803d] p-6">
+          <h2 className="text-center text-xl font-bold text-black">A decision I&apos;m proud of:</h2>
+          <blockquote className="mt-3 text-center text-xl font-bold leading-relaxed text-black">
+            <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
+            To commit to moral progress
+            <br />
+            to make a difference in the world.
           </blockquote>
         </section>
       </div>
