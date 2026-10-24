@@ -71,8 +71,9 @@ body {
 .decision-glow {
   background-color: rgba(190, 210, 230, 0.92);
   box-shadow:
-    0 0 10px 1px rgba(120, 164, 204, 0.18),
-    0 0 22px 6px rgba(120, 164, 204, 0.1);
+    0 0 0 4px rgba(186, 220, 250, 0.95),
+    0 0 18px 6px rgba(147, 197, 253, 0.95),
+    0 0 40px 16px rgba(125, 185, 235, 0.65);
 }
 
 .decision-text {

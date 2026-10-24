@@ -55,14 +55,32 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <header className="border-b border-line bg-surface/90">
           <div className="flex items-center justify-between gap-4 px-4 py-3">
             <div className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/ud-campus.jpg"
-                alt="University of Delaware"
-                width={88}
-                height={64}
-                className="h-14 w-20 rounded-md object-cover shadow-sm"
-              />
+              <div className="flex shrink-0 flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/cyber-logo.svg"
+                  alt="An original colorful emblem"
+                  width={56}
+                  height={56}
+                  className="h-14 w-14 rounded-md object-cover shadow-sm"
+                />
+                <span className="mt-1 text-center text-[10px] font-bold leading-none tracking-tight text-[#0b2545]">
+                  Cybersecurity
+                </span>
+              </div>
+              <div className="flex shrink-0 flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/ud-campus.jpg"
+                  alt="University of Delaware"
+                  width={88}
+                  height={64}
+                  className="h-14 w-20 rounded-md object-cover shadow-sm"
+                />
+                <span className="mt-1 text-center text-[10px] font-bold leading-none tracking-tight text-[#0b2545]">
+                  UD
+                </span>
+              </div>
               <Link href="/" className="name-about text-lg">
                 {profile.displayName}
               </Link>

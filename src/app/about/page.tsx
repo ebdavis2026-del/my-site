@@ -30,16 +30,6 @@ export default function AboutPage() {
                 style={{ objectPosition: "50% 38%" }}
               />
             </div>
-            <div className="overflow-hidden rounded-3xl shadow-md">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/cyber-logo.svg"
-                alt="An original colorful emblem"
-                width={160}
-                height={160}
-                className="block h-40 w-40 object-cover"
-              />
-            </div>
           </div>
           <div style={{ color: "var(--ink)" }}>
             <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
