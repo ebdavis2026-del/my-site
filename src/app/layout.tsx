@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="absolute inset-0 bg-white/45" />
         </div>
-        <header className="border-b border-line bg-surface/90">
+        <header className="border-b border-line/70 bg-paper/40">
           <div className="flex items-center justify-between gap-4 px-4 py-3">
             <div className="flex items-center gap-3">
               <div className="flex shrink-0 flex-col items-center">
@@ -96,7 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </header>
         <div className="flex-1">{children}</div>
-        <footer className="border-t border-black/50 bg-white/75">
+        <footer className="border-t border-line/70 bg-paper/40">
           <div className="mx-auto max-w-3xl px-6 py-6 text-base font-bold text-black">
             <p>
               {profile.displayName} · a portfolio of decision services ·{" "}
