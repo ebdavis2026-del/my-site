@@ -75,6 +75,38 @@ body {
   text-shadow: none;
 }
 
+.about-shade p.tagline-outline {
+  color: #000;
+  font-weight: 800;
+  -webkit-text-stroke: 1px #fff;
+  paint-order: stroke fill;
+}
+
+.about-shade h1.name-about,
+header a.name-about {
+  font-weight: 800;
+}
+
+.about-shade a.repo-link {
+  color: #f3e6c8;
+  text-decoration: underline #f3e6c8;
+  text-underline-offset: 2px;
+  -webkit-text-stroke: 0;
+  text-shadow:
+    -1px -1px 0 #15803d,
+    0 -1px 0 #15803d,
+    1px -1px 0 #15803d,
+    -1px 0 0 #15803d,
+    1px 0 0 #15803d,
+    -1px 1px 0 #15803d,
+    0 1px 0 #15803d,
+    1px 1px 0 #15803d,
+    -2px 0 0 #15803d,
+    2px 0 0 #15803d,
+    0 -2px 0 #15803d,
+    0 2px 0 #15803d;
+}
+
 .bar-shade {
   background-color: rgba(255, 255, 255, 0.88);
 }
