@@ -31,28 +31,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={fontVariables} style={themeVars}>
       <body className="flex min-h-screen flex-col">
         <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-          <div className="flex h-full w-full">
-            <div
-              className="h-full w-1/3 bg-cover bg-center"
-              style={{ backgroundImage: "url(/niagara-american.jpg)" }}
-            />
-            <div
-              className="h-full w-1/3 bg-cover bg-center"
-              style={{ backgroundImage: "url(/niagara-canadian.jpg)" }}
-            />
-            <div className="relative h-full w-1/3">
-              <div
-                className="absolute inset-x-0 bottom-0 bg-cover bg-top"
-                style={{
-                  top: "5.25rem",
-                  backgroundImage: "url(/skylon-tower.jpg)",
-                }}
-              />
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-white/45" />
+          <div
+            className="h-full w-full bg-cover bg-center"
+            style={{ backgroundImage: "url(/sweden-grand-hotel.jpg)" }}
+          />
+          <div className="absolute inset-0 bg-white/10" />
         </div>
-        <header className="border-b border-line/70 bg-paper/40">
+        <header className="bar-shade border-b border-line/70">
           <div className="flex items-center justify-between gap-4 px-4 py-3">
             <div className="flex items-center gap-3">
               <div className="flex shrink-0 flex-col items-center">
@@ -64,28 +49,28 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   height={56}
                   className="h-14 w-14 rounded-md object-cover shadow-sm"
                 />
-                <span className="mt-1 text-center text-[10px] font-bold leading-none tracking-tight text-[#0b2545]">
+                <span className="on-photo mt-1 text-center text-[10px] leading-none tracking-tight">
                   Cybersecurity
                 </span>
               </div>
               <div className="flex shrink-0 flex-col items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/ud-campus.jpg"
+                  src="/ud-campus-bright.jpg"
                   alt="University of Delaware"
                   width={88}
                   height={64}
                   className="h-14 w-20 rounded-md object-cover shadow-sm"
                 />
-                <span className="mt-1 text-center text-[10px] font-bold leading-none tracking-tight text-[#0b2545]">
+                <span className="on-photo mt-1 text-center text-[10px] leading-none tracking-tight">
                   UD
                 </span>
               </div>
-              <Link href="/" className="name-about text-lg">
+              <Link href="/" className="name-about on-photo text-lg">
                 {profile.displayName}
               </Link>
             </div>
-            <nav className="flex gap-5 text-base font-medium text-muted">
+            <nav className="on-photo flex gap-5 text-base">
               <Link href="/" className="transition hover:text-accent">
                 Home
               </Link>
@@ -96,8 +81,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </header>
         <div className="flex-1">{children}</div>
-        <footer className="border-t border-line/70 bg-paper/40">
-          <div className="mx-auto max-w-3xl px-6 py-6 text-base font-bold text-black">
+        <footer className="bar-shade border-t border-line/70">
+          <div className="on-photo mx-auto max-w-3xl px-6 py-6 text-base">
             <p>
               {profile.displayName} · a portfolio of decision services ·{" "}
               <span>Good Decisions at Any Scale</span>

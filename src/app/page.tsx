@@ -51,15 +51,15 @@ export default function HomePage() {
             style={{ objectPosition: "50% 38%" }}
           />
         </div>
-        <div style={{ color: "var(--ink)" }}>
+        <div className="about-shade">
           <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
-          <p className="mt-3 text-2xl font-extrabold uppercase leading-[1.15] tracking-[0.06em] text-ink">
+          <p className="mt-3 text-2xl uppercase leading-[1.15] tracking-[0.06em]">
             {profile.tagline.split(",")[0]},
             <br />
             {profile.tagline.split(",")[1]?.trim()}
           </p>
-          <p className="mt-3 text-lg text-ink">
-            <a href={`mailto:${profile.email}`} className="font-semibold text-ink transition hover:text-accent">
+          <p className="mt-3 text-lg">
+            <a href={`mailto:${profile.email}`}>
               {profile.email}
             </a>
             <span className="mx-2" aria-hidden>
@@ -67,19 +67,17 @@ export default function HomePage() {
             </span>
             {profile.hometown}
           </p>
-          <p
-            className="mt-5 max-w-prose text-lg font-semibold leading-[1.55] text-ink"
-          >
+          <p className="mt-5 max-w-prose text-lg leading-[1.55]">
             {profile.bio}
           </p>
-          <p className="mt-4 text-base text-ink">
+          <p className="mt-4 text-base">
             Roster visibility: {profile.rosterVisibility}
           </p>
-          <p className="mt-1 text-base text-ink">
+          <p className="mt-1 text-base">
             Repo:{" "}
             <a
               href={profile.repoUrl}
-              className="text-base font-bold text-blue-700 underline decoration-2 underline-offset-2 transition hover:text-blue-900"
+              className="text-base underline decoration-2 underline-offset-2"
             >
               {profile.repoUrl}
             </a>
@@ -97,7 +95,7 @@ export default function HomePage() {
               height={260}
               className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
             />
-            <figcaption className="mt-2 text-sm font-bold text-ink">Empire State Building</figcaption>
+            <figcaption className="on-photo mt-2 text-sm">Empire State Building</figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -108,19 +106,19 @@ export default function HomePage() {
               height={260}
               className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
             />
-            <figcaption className="mt-2 text-sm font-bold text-ink">The Edge observatory</figcaption>
+            <figcaption className="on-photo mt-2 text-sm">The Edge observatory</figcaption>
           </figure>
       </div>
 
-      <section className="mt-8">
-        <h2 className="text-2xl font-bold">A few fun facts</h2>
+      <section className="about-shade mt-8">
+        <h2 className="text-2xl">A few fun facts</h2>
         <ul className="mt-4 space-y-2">
           {profile.funFacts.map((fact) => (
             <li key={fact} className="flex gap-3">
-              <span aria-hidden className="mt-1 text-accent">
+              <span aria-hidden className="mt-1">
                 ✦
               </span>
-              <span className="font-semibold text-ink">{fact}</span>
+              <span>{fact}</span>
             </li>
           ))}
         </ul>
@@ -137,15 +135,15 @@ export default function HomePage() {
       </section>
 
       {/* ── Portfolio of decision services ───────────────────────────── */}
-      <section className="mt-14">
-        <h2 className="text-2xl font-bold">A portfolio of decision services</h2>
-        <p className="mt-2 max-w-prose text-muted">
+      <section className="about-shade mt-14">
+        <h2 className="text-2xl">A portfolio of decision services</h2>
+        <p className="mt-2 max-w-prose">
           Over the semester this site grows one live decision service per lane. Here&apos;s
           what&apos;s coming:
         </p>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {SERVICES.map((s) => (
-            <li key={s.lane} className="rounded-xl border border-line bg-surface p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md">
+            <li key={s.lane} className="rounded-xl border border-line bg-transparent p-5 transition duration-200 hover:-translate-y-1">
               <p className="text-xs font-semibold uppercase tracking-widest text-muted">
                 Lane {s.lane}
               </p>
@@ -161,9 +159,9 @@ export default function HomePage() {
       </section>
 
       {/* ── Guestbook: the live database round-trip ──────────────────── */}
-      <section className="mt-14">
-        <h2 className="text-2xl font-bold">Guestbook</h2>
-        <p className="mt-2 max-w-prose text-muted">
+      <section className="about-shade mt-14">
+        <h2 className="text-2xl">Guestbook</h2>
+        <p className="mt-2 max-w-prose">
           Signed entries live in my own database: proof this site does a real round-trip.
         </p>
         <Guestbook />

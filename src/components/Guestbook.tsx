@@ -60,7 +60,7 @@ export function Guestbook() {
 
   return (
     <div className="mt-6">
-      <form onSubmit={sign} className="rounded-xl border border-line bg-surface p-5">
+      <form onSubmit={sign} className="rounded-xl border border-line bg-transparent p-5">
         <div className="flex flex-col gap-3 sm:flex-row">
           <input
             required
@@ -86,10 +86,10 @@ export function Guestbook() {
         </div>
       </form>
 
-      {error && <p className="mt-4 text-sm text-muted">{error}</p>}
+      {error && <p className="mt-4 text-sm">{error}</p>}
 
       {entries && entries.length === 0 && (
-        <p className="mt-4 text-sm text-muted">No entries yet. Be the first.</p>
+        <p className="mt-4 text-sm">No entries yet. Be the first.</p>
       )}
 
       {entries && entries.length > 0 && (
@@ -97,7 +97,7 @@ export function Guestbook() {
           {entries.map((entry, i) => (
             <li key={`${entry.created_at}-${i}`} className="rounded-xl border border-line p-4">
               <p className="text-sm">{entry.message}</p>
-              <p className="mt-1 text-xs text-muted">
+              <p className="mt-1 text-xs">
                 — {entry.name}
                 {entry.created_at && `, ${new Date(entry.created_at).toLocaleDateString()}`}
               </p>
