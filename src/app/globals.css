@@ -101,8 +101,8 @@ figcaption.place-label {
 }
 
 .about-copy {
-  flex: 1 0 34rem;
-  min-width: 34rem;
+  flex: 1 0 40rem;
+  min-width: 40rem;
 }
 
 .about-shade,
