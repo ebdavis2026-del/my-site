@@ -39,19 +39,19 @@ export default function HomePage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-10 py-24 sm:flex-row sm:items-start sm:py-36">
+      <div className="about-hero flex flex-col gap-10 py-24 sm:flex-row sm:items-start sm:py-36">
         <div className="w-fit shrink-0 overflow-hidden rounded-3xl shadow-md">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={profile.photoPath}
             alt={profile.displayName}
-            width={208}
-            height={208}
-            className="block h-52 w-52 object-cover"
+            width={224}
+            height={224}
+            className="block h-56 w-56 object-cover"
             style={{ objectPosition: "50% 38%" }}
           />
         </div>
-        <div className="about-shade">
+        <div className="about-shade hue-line about-copy">
           <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
           <p className="tagline-outline mt-3 text-2xl uppercase leading-[1.15] tracking-[0.06em]">
             {profile.tagline.split(",")[0]},
@@ -73,11 +73,11 @@ export default function HomePage() {
           <p className="mt-4 text-base">
             Roster visibility: {profile.rosterVisibility}
           </p>
-          <p className="mt-1 text-base">
+          <p className="mt-1 whitespace-nowrap text-base">
             Repo:{" "}
             <a
               href={profile.repoUrl}
-              className="repo-link text-base underline decoration-2 underline-offset-2"
+              className="repo-link text-lg underline decoration-2 underline-offset-2"
             >
               {profile.repoUrl}
             </a>
@@ -85,7 +85,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-4">
+      <div className="mt-6 grid grid-cols-2 gap-4 text-center">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -93,9 +93,14 @@ export default function HomePage() {
               alt="Empire State Building"
               width={400}
               height={260}
-              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
+              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
-            <figcaption className="on-photo mt-2 text-sm">Empire State Building</figcaption>
+            <figcaption
+              className="place-label mt-2 inline-block text-sm"
+              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+            >
+              Empire State Building
+            </figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -104,13 +109,18 @@ export default function HomePage() {
               alt="The Edge observatory glass deck at Hudson Yards"
               width={400}
               height={260}
-              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
+              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
-            <figcaption className="on-photo mt-2 text-sm">The Edge observatory</figcaption>
+            <figcaption
+              className="place-label mt-2 inline-block text-sm"
+              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+            >
+              The Edge observatory
+            </figcaption>
           </figure>
       </div>
 
-      <section className="about-shade mt-8">
+      <section className="about-shade hue-line mt-8">
         <h2 className="text-2xl">A few fun facts</h2>
         <ul className="mt-4 space-y-2">
           {profile.funFacts.map((fact) => (
@@ -133,7 +143,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Portfolio of decision services ───────────────────────────── */}
-      <section className="about-shade mt-14">
+      <section className="about-shade hue-line mt-14">
         <h2 className="text-2xl">A portfolio of decision services</h2>
         <p className="mt-2 max-w-prose">
           Over the semester this site grows one live decision service per lane. Here&apos;s
@@ -157,7 +167,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Guestbook: the live database round-trip ──────────────────── */}
-      <section className="about-shade mt-14">
+      <section className="about-shade hue-line mt-14">
         <h2 className="text-2xl">Guestbook</h2>
         <p className="mt-2 max-w-prose">
           Signed entries live in my own database: proof this site does a real round-trip.

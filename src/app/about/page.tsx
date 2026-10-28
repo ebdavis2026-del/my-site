@@ -18,14 +18,14 @@ export default function AboutPage() {
               <img
                 src={profile.photoPath}
                 alt={profile.displayName}
-                width={256}
-                height={256}
-                className="block h-64 w-64 object-cover"
+                width={272}
+                height={272}
+                className="block h-[17rem] w-[17rem] object-cover"
                 style={{ objectPosition: "50% 38%" }}
               />
             </div>
           </div>
-          <div className="about-shade">
+          <div className="about-shade hue-line">
             <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
             <p className="tagline-outline mt-3 text-3xl uppercase leading-[1.15] tracking-[0.06em]">
               {profile.tagline.split(",")[0]},
@@ -40,7 +40,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-4">
+        <div className="mt-6 grid grid-cols-2 gap-4 text-center">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -48,9 +48,14 @@ export default function AboutPage() {
               alt="Empire State Building in the Manhattan skyline at sunset"
               width={400}
               height={260}
-              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
+              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
-            <figcaption className="readable-panel mt-2 inline-block text-sm">Empire State Building</figcaption>
+            <figcaption
+              className="place-label mt-2 inline-block text-sm"
+              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+            >
+              Empire State Building
+            </figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -59,9 +64,14 @@ export default function AboutPage() {
               alt="The Edge at Hudson Yards with the skyline at sunset"
               width={400}
               height={260}
-              className="h-72 w-full rounded-2xl object-cover object-top shadow-md"
+              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
-            <figcaption className="readable-panel mt-2 inline-block text-sm">The Edge observatory</figcaption>
+            <figcaption
+              className="place-label mt-2 inline-block text-sm"
+              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+            >
+              The Edge observatory
+            </figcaption>
           </figure>
         </div>
         <div className="mt-8 grid grid-cols-2 gap-3">
@@ -89,7 +99,7 @@ export default function AboutPage() {
           </figure>
         </div>
 
-        <section className="about-shade mt-8">
+        <section className="about-shade hue-line mt-8">
           <h2 className="text-2xl">A few fun facts</h2>
           <ul className="mt-4 space-y-2">
             {profile.funFacts.map((fact) => (

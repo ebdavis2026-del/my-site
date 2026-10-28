@@ -69,6 +69,42 @@ body {
   padding: 1.25rem 1.5rem;
 }
 
+.hue-line {
+  border: 2px solid #0b2545;
+}
+
+figcaption.place-label {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.35rem;
+  background-color: rgba(11, 37, 69, 0.88);
+  color: #f3e6c8;
+  font-weight: 800;
+  text-shadow:
+    -1px -1px 0 #15803d,
+    0 -1px 0 #15803d,
+    1px -1px 0 #15803d,
+    -1px 0 0 #15803d,
+    1px 0 0 #15803d,
+    -1px 1px 0 #15803d,
+    0 1px 0 #15803d,
+    1px 1px 0 #15803d;
+}
+
+.about-hero {
+  position: relative;
+  left: 50%;
+  width: min(58rem, calc(100vw - 1.5rem));
+  transform: translateX(-50%);
+  padding-left: 3rem;
+}
+
+.about-copy {
+  flex: 1 0 34rem;
+  min-width: 34rem;
+}
+
 .about-shade,
 .about-shade :is(h1, h2, h3, p, a, span, li, figcaption) {
   color: #000;

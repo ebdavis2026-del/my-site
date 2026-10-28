@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   alt="An original colorful emblem"
                   width={56}
                   height={56}
-                  className="h-14 w-14 rounded-md object-cover shadow-sm"
+                  className="h-14 w-14 rounded-md border-[3px] border-[#0b2545] object-cover shadow-sm"
                 />
                 <span className="on-photo mt-1 text-center text-[10px] leading-none tracking-tight">
                   Cybersecurity
@@ -60,24 +60,26 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   alt="University of Delaware"
                   width={88}
                   height={64}
-                  className="h-14 w-20 rounded-md object-cover shadow-sm"
+                  className="h-14 w-20 rounded-md border-[3px] border-[#0b2545] object-cover shadow-sm"
                 />
                 <span className="on-photo mt-1 text-center text-[10px] leading-none tracking-tight">
                   UD
                 </span>
               </div>
+            </div>
+            <div className="flex flex-col items-start gap-1">
               <Link href="/" className="name-about on-photo text-lg">
                 {profile.displayName}
               </Link>
+              <nav className="on-photo flex gap-4 text-base">
+                <Link href="/" className="transition hover:text-accent">
+                  Home
+                </Link>
+                <Link href="/about" className="transition hover:text-accent">
+                  About
+                </Link>
+              </nav>
             </div>
-            <nav className="on-photo flex gap-5 text-base">
-              <Link href="/" className="transition hover:text-accent">
-                Home
-              </Link>
-              <Link href="/about" className="transition hover:text-accent">
-                About
-              </Link>
-            </nav>
           </div>
         </header>
         <div className="flex-1">{children}</div>
