@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
           <div
             className="h-full w-full bg-cover bg-center"
-            style={{ backgroundImage: "url(/sweden-grand-hotel.jpg)" }}
+            style={{ backgroundImage: "url(/stockholm-night.jpg)" }}
           />
           <div className="absolute inset-0 bg-white/10" />
         </div>
