@@ -8,7 +8,7 @@
     "start": "next start",
     "selfcheck": "node scripts/selfcheck.mjs",
     "try-reasoning": "node scripts/try-reasoning.mjs",
-    "try-simulator": "node scripts/try-simulator.mjs"
+    "try-simulator": "node scripts/try-simulator.mjs",
     "deploy": "npm run build && vercel --prod"
   },
   "dependencies": {
