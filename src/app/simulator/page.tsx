@@ -97,7 +97,7 @@ export default async function SimulatorPage() {
           alt="DAG of the investment game: initial wealth and the stake fraction (a decision) feed wealth after each year, which also depends on that year's coin flip."
           className="mt-3 w-full max-w-xl rounded-lg border border-line bg-white p-3"
         />
-        {/* In regards to the picture provided, the rectangle is based on a decision, so nothing is random. For the oval, however, is based on a simuation, so it depends on the coin, the stake and the starting amount inputs or other inputs, so it is random. */}
+        {/* In regards to the simulation data, the rectangle is based on a decision, so nothing is random. The oval, however, is based on a simulation, so it depends on the coin, the stake and the starting amount inputs or other inputs used., so it is random. */}
       </section>
     </main>
   );
