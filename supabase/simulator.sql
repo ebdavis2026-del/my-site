@@ -27,4 +27,4 @@ create policy "anyone can insert" on public.simulator_latest
 create policy "anyone can update" on public.simulator_latest
   for update using (true);
 
-grant select, insert, update on public.simulator_latest to anon
+grant select, insert, update on public.simulator_latest to anon]
