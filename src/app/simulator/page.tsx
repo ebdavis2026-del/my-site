@@ -100,7 +100,7 @@ export default async function SimulatorPage() {
           className="mt-3 w-full max-w-xl rounded-lg border border-line bg-white p-3"
         />
         <p className="mt-3 max-w-prose text-sm text-muted">
-          The rectangle is based on a decision so nothing is random. The coin flip oval is random. The other ovals that are not a coin flip oval, however, are based on a simulation, so they depend on the stake and the starting amount
+        The random coin flip oval is included alongside the non-random ovals to run a simulation. Then the simulation itself is based on the stake and the starting amount.
           inputs or other inputs used.
         </p>
       </section>
