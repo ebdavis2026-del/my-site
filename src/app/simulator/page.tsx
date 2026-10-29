@@ -35,7 +35,7 @@ export default async function SimulatorPage() {
       <h1 className="mt-3 text-4xl font-bold">
         Stake {stakePct}% each year: it leaves the typical investor best off
       </h1>
-      {/* This simulation describes for a specific amount invested, what is the probability that there will be a loss returned. It also helps to dicifere between the risk and the return for the level of risk */}
+      {/* This simulation describes for a specific amount invested, the probability that there will be a loss returned and the possible amount of risk that the investor may experience if they choose to invest. */}
       <p className="mt-4 max-w-prose text-muted">
         My simulator plays the latest game thousands of times for every stake on the list, then
         recommends the stake whose typical (median) investor ends with the most. Every number on
@@ -85,8 +85,7 @@ export default async function SimulatorPage() {
           buyIn={Number(problem.buyIn)}
           recommended={Number(answer.recommendedFraction)}
         />
-        {/* The biggest state is not be best because the probability for each amount invested there is a  higher probability that there will be a loss of at least 6,200. For the prabobability increases the most with the largest stake in this simulation
-            biggest stake is not the best one for the typical investor.
+        {/* Based on the simulation, taking the largest stake is not ideal for the typical investor because a larger stake increases the probability of experiencing a loss and only a return of 6,200.
             (Chapter 13). */}
       </section>
 
@@ -98,7 +97,7 @@ export default async function SimulatorPage() {
           alt="DAG of the investment game: initial wealth and the stake fraction (a decision) feed wealth after each year, which also depends on that year's coin flip."
           className="mt-3 w-full max-w-xl rounded-lg border border-line bg-white p-3"
         />
-        {/* In regards to the picture provided, the rectangle is based on a decision and the oval is based on a simluatrion so it is random. */}
+        {/* In regards to the picture provided, the rectangle is based on a decision, so nothing is random. For the oval however, each item is based on a simluation, so everything inside it is random. */}
       </section>
     </main>
   );
