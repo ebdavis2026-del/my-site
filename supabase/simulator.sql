@@ -18,11 +18,6 @@ create table public.simulator_latest (
   updated_at timestamptz not null default now()
 );
 
--- Row-level security, same idea as the guestbook and the reasoning table:
--- with it on and no policies, nobody can touch the table. Your site
--- connects with the publishable key, so the policies below grant exactly
--- what the service needs: anyone may read (your /simulator page is public),
--- and anyone may write (your API route saves each answer as it happens).
 alter table public.simulator_latest enable row level security;
 
 create policy "anyone can read" on public.simulator_latest
@@ -31,3 +26,5 @@ create policy "anyone can insert" on public.simulator_latest
   for insert with check (true);
 create policy "anyone can update" on public.simulator_latest
   for update using (true);
+
+grant select, insert, update on public.simulator_latest to anon
