@@ -85,7 +85,7 @@ export default async function SimulatorPage() {
           buyIn={Number(problem.buyIn)}
           recommended={Number(answer.recommendedFraction)}
         />
-        {/* Based on the simulation, taking the largest stake is not ideal for the typical investor because a larger stake increases the probability of experiencing a loss and only a return of 6,200.
+        {/* Based on the simulation, taking the largest stake is not ideal for the typical investor because a larger stake increases the probability of experiencing a loss and only a return of 6,200 or less.
             (Chapter 13). */}
       </section>
 
@@ -97,7 +97,7 @@ export default async function SimulatorPage() {
           alt="DAG of the investment game: initial wealth and the stake fraction (a decision) feed wealth after each year, which also depends on that year's coin flip."
           className="mt-3 w-full max-w-xl rounded-lg border border-line bg-white p-3"
         />
-        {/* In regards to the picture provided, the rectangle is based on a decision, so nothing is random. For the oval however, each item is based on a simluation, so everything inside it is random. */}
+        {/* In regards to the picture provided, the rectangle is based on a decision, so nothing is random. For the oval however, each item is based on a simluation, so it depends on the coin, the stake and the starting amount inputs or other inputs that are part of the simulation. */}
       </section>
     </main>
   );
