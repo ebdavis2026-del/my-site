@@ -86,7 +86,7 @@ export default async function SimulatorPage() {
           recommended={Number(answer.recommendedFraction)}
         />
         <p className="mt-3 max-w-prose text-sm text-muted">
-          The biggest stake is not ideal because it has a higher probability that the investor will have a loss or a lower return. Based on the data in the chart, the biggest stake is worse for the average investor. Staking 35% leaves a balance of about $68,286, and about 31% of investors have less than a $50,000 buy-in. Staking 100% leaves a typical balance of about $15,297, and about 68% finish below the buy-in amount.
+          The biggest stake is not ideal because it has a higher probability that the investor will have a loss or a lower return. Based on the data in the chart, the biggest stake is worse for the typical investor. Staking 35% leaves a balance of about $68,286, and about 31% of investors finished with less than a $50,000 buy-in. Staking 100% leaves a typical balance of about $15,297, and about 68% finish below the buy-in amount, which could change with new inputs.
         </p>
       </section>
 
