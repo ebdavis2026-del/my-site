@@ -208,13 +208,6 @@ figcaption.readable-panel {
   border-radius: 1.15rem;
 }
 
-.decision-outline {
-  display: inline-block;
-  padding: 0.12em 0.4em 0.16em;
-  border: 1px solid #15803d;
-  border-radius: 0.4rem;
-}
-
 .decision-glow {
   background-color: rgba(190, 210, 230, 0.92);
   box-shadow:

@@ -53,7 +53,7 @@ export default function HomePage() {
         </div>
         <div className="about-shade hue-line about-copy">
           <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
-          <p className="tagline-outline mt-3 text-xl uppercase leading-[1.2] tracking-[0.04em]">
+          <p className="tagline-outline mt-3 text-base uppercase leading-[1.2] tracking-[0.04em]">
             {profile.tagline.split(",")[0]},
             <br />
             {profile.tagline.split(",")[1]?.trim()}
@@ -178,10 +178,10 @@ export default function HomePage() {
       </section>
 
       <section className="decision-glow mt-14 rounded-xl border-8 border-double border-[#15803d] p-6">
-        <h2 className="text-center text-xl font-bold text-black">
-          <span className="decision-outline">A decision I&apos;m proud of:</span>
+        <h2 className="text-center text-3xl font-extrabold tracking-wide text-black">
+          A decision I&apos;m proud of:
         </h2>
-        <blockquote className="mt-3 text-center text-xl font-bold leading-relaxed whitespace-nowrap text-black">
+        <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
           <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
           To commit to moral progress to make a difference in the world.
         </blockquote>
