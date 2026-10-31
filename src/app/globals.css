@@ -132,6 +132,7 @@ figcaption.place-label {
   letter-spacing: 0.02em;
   background-color: #f3e6c8;
   padding: 0.12em 0.4em 0.16em;
+  border: 1px solid #15803d;
   border-radius: 0.4rem;
   -webkit-text-stroke: 0;
   paint-order: fill;
@@ -205,6 +206,13 @@ figcaption.readable-panel {
 .about-squiggle::after {
   inset: 11px;
   border-radius: 1.15rem;
+}
+
+.decision-outline {
+  display: inline-block;
+  padding: 0.12em 0.4em 0.16em;
+  border: 1px solid #15803d;
+  border-radius: 0.4rem;
 }
 
 .decision-glow {
