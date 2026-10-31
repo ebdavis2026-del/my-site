@@ -82,6 +82,15 @@ export default function HomePage() {
               {profile.repoUrl}
             </a>
           </p>
+          <p className="mt-1 text-base">
+            Site:{" "}
+            <a
+              href={profile.siteUrl}
+              className="repo-link break-all text-lg underline decoration-2 underline-offset-2"
+            >
+              {profile.siteUrl}
+            </a>
+          </p>
         </div>
       </div>
 
@@ -117,6 +126,30 @@ export default function HomePage() {
             >
               The Edge observatory
             </figcaption>
+          </figure>
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-3 text-center">
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/telephone-pole.jpg"
+              alt="A person high on a telephone pole"
+              width={240}
+              height={180}
+              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+            />
+            <figcaption className="readable-panel mt-2 inline-block text-xs sm:text-sm">Telephone pole</figcaption>
+          </figure>
+          <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/treetop-challenge.jpg"
+              alt="A treetop walkway used for an overcoming-fear challenge"
+              width={240}
+              height={180}
+              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+            />
+            <figcaption className="readable-panel mt-2 inline-block text-xs sm:text-sm">Treetop challenge</figcaption>
           </figure>
       </div>
 

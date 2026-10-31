@@ -68,4 +68,7 @@ export const profile = {
    * Example: "https://github.com/your-username/your-repo"
    */
   repoUrl: "https://github.com/ebdavis2026-del/my-site",
+
+  /** The live address of this site on Vercel. Shown on the home page. */
+  siteUrl: "https://my-site-phi-sage-92.vercel.app",
 };
