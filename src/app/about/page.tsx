@@ -88,8 +88,8 @@ export default function AboutPage() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/telephone-pole-jump.jpg"
-              alt="A person in a harness jumping for a bar above a camp telephone pole"
+              src="/telephone-pole-girl-standing.jpg"
+              alt="A girl standing on top of a camp telephone pole"
               width={240}
               height={180}
               className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md sm:h-36"
@@ -104,11 +104,11 @@ export default function AboutPage() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/treetop-log-forward.jpg"
-              alt="A person in a harness facing forward while walking a log between trees"
+              src="/treetop-fall-girl.jpg"
+              alt="A girl in a harness walking a log between trees in fall colors"
               width={240}
               height={180}
-              className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md sm:h-36"
+              className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md sm:h-36"
             />
             <figcaption
               className="place-label mt-2 inline-block text-sm"
