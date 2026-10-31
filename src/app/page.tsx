@@ -53,7 +53,7 @@ export default function HomePage() {
         </div>
         <div className="about-shade hue-line about-copy">
           <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
-          <p className="tagline-outline mt-3 text-base uppercase leading-[1.2] tracking-[0.04em]">
+          <p className="tagline-outline mt-3 text-xl uppercase leading-[1.2] tracking-[0.04em]">
             {profile.tagline.split(",")[0]},
             <br />
             {profile.tagline.split(",")[1]?.trim()}

@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="about-shade hue-line">
             <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
             <div className="tagline-stack">
-              <p className="tagline-outline mt-3 text-lg uppercase leading-[1.2] tracking-[0.04em]">
+              <p className="tagline-outline mt-3 text-2xl uppercase leading-[1.2] tracking-[0.04em]">
                 {profile.tagline.split(",")[0]},
                 <br />
                 {profile.tagline.split(",")[1]?.trim()}
