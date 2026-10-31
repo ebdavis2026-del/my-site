@@ -12,14 +12,17 @@ export default function AboutPage() {
     <main className="mx-auto max-w-3xl px-6 py-14">
       <style>{`
         .about-squiggle {
-          background-color: rgba(243, 230, 200, 0.45);
+          background-color: rgba(228, 228, 228, 0.45);
         }
         .about-squiggle .about-shade,
         .about-squiggle .decision-glow {
-          background-color: rgba(243, 230, 200, 0.45);
+          background-color: rgba(228, 228, 228, 0.45);
         }
         .about-squiggle .decision-glow {
           box-shadow: none;
+        }
+        .about-shade p.tagline-outline {
+          border-color: #0b2545;
         }
       `}</style>
       <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">

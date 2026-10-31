@@ -38,38 +38,65 @@ const SERVICES = [
 export default function HomePage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <div className="about-hero flex flex-col gap-10 py-24 sm:flex-row sm:items-start sm:py-36">
-        <div className="w-fit shrink-0 overflow-hidden rounded-3xl shadow-md">
+      <style>{`
+        .about-squiggle {
+          background-color: rgba(243, 230, 200, 0.45);
+        }
+        .about-squiggle .about-shade,
+        .about-squiggle .decision-glow {
+          background-color: rgba(243, 230, 200, 0.45);
+        }
+        .about-squiggle .decision-glow {
+          box-shadow: none;
+        }
+        .about-shade p.tagline-outline {
+          border-color: #0b2545;
+        }
+      `}</style>
+      <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">
+        <div className="flex justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={profile.photoPath}
-            alt={profile.displayName}
-            width={224}
-            height={224}
-            className="block h-56 w-56 object-cover"
-            style={{ objectPosition: "50% 38%" }}
+            src="/tulips.jpg"
+            alt="A bed of colorful tulips"
+            width={112}
+            height={112}
+            className="h-28 w-28 rounded-2xl border-2 border-[#0b2545] object-cover shadow-md"
           />
         </div>
-        <div className="about-shade hue-line about-copy">
-          <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
-          <p className="tagline-outline mt-3 text-xl uppercase leading-[1.2] tracking-[0.04em]">
-            {profile.tagline.split(",")[0]},
-            <br />
-            {profile.tagline.split(",")[1]?.trim()}
-          </p>
-          <p className="mt-3 text-lg">
-            <a href={`mailto:${profile.email}`}>
-              {profile.email}
-            </a>
-            <span className="mx-2" aria-hidden>
-              ·
-            </span>
-            {profile.hometown}
-          </p>
-          <p className="mt-5 max-w-prose text-lg leading-[1.55]">
-            {profile.bio}
-          </p>
+        <div className="flex flex-col gap-10 rounded-3xl px-6 py-10 sm:flex-row sm:px-8">
+          <div className="flex w-fit shrink-0 flex-col items-center gap-4">
+            <div className="overflow-hidden rounded-3xl shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={profile.photoPath}
+                alt={profile.displayName}
+                width={272}
+                height={272}
+                className="block h-[17rem] w-[17rem] object-cover"
+                style={{ objectPosition: "50% 38%" }}
+              />
+            </div>
+          </div>
+          <div className="about-shade hue-line">
+            <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
+            <div className="tagline-stack">
+              <p className="tagline-outline mt-3 text-2xl uppercase leading-[1.2] tracking-[0.04em]">
+                {profile.tagline.split(",")[0]},
+                <br />
+                {profile.tagline.split(",")[1]?.trim()}
+              </p>
+              <div className="tagline-follow">
+                <p className="mt-3 text-xl">{profile.hometown}</p>
+                <p className="mt-5 text-xl leading-relaxed">{profile.bio}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-lg">
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            </p>
+          </div>
+        </div>
+        <div className="about-shade hue-line">
           <p className="mt-4 text-base">
             Roster visibility: {profile.rosterVisibility}
           </p>
@@ -92,7 +119,6 @@ export default function HomePage() {
             </a>
           </p>
         </div>
-      </div>
 
       <div className="mt-6 grid grid-cols-2 gap-4 text-center">
           <figure>
@@ -177,7 +203,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="decision-glow mt-14 rounded-xl border-8 border-double border-[#15803d] p-6">
+      <section className="decision-glow mt-12 rounded-xl border-8 border-double border-[#15803d] p-6">
         <h2 className="text-center text-3xl font-extrabold tracking-wide text-black">
           A decision I&apos;m proud of:
         </h2>
@@ -219,6 +245,7 @@ export default function HomePage() {
         </p>
         <Guestbook />
       </section>
+      </div>
     </main>
   );
 }
