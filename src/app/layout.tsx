@@ -43,6 +43,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className="flex shrink-0 flex-col items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
+                  src="/newark-de.jpg"
+                  alt="Main Street in Newark, Delaware"
+                  width={88}
+                  height={64}
+                  className="h-14 w-20 rounded-md border-[3px] border-[#0b2545] object-cover shadow-sm"
+                />
+                <span className="on-photo mt-1 text-center text-[10px] leading-none tracking-tight">
+                  Newark, DE
+                </span>
+              </div>
+              <div className="flex shrink-0 flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/cyber-logo.svg"
                   alt="An original colorful emblem"
                   width={56}

@@ -132,24 +132,34 @@ export default function HomePage() {
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/telephone-pole.jpg"
-              alt="A person high on a telephone pole"
+              src="/telephone-pole-jump.jpg"
+              alt="A person in a harness jumping for a bar above a camp telephone pole"
               width={240}
               height={180}
-              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+              className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md sm:h-36"
             />
-            <figcaption className="readable-panel mt-2 inline-block text-xs sm:text-sm">Telephone pole</figcaption>
+            <figcaption
+              className="place-label mt-2 inline-block text-sm"
+              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+            >
+              Telephone pole challenge
+            </figcaption>
           </figure>
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/treetop-challenge.jpg"
-              alt="A treetop walkway used for an overcoming-fear challenge"
+              src="/treetop-log-forward.jpg"
+              alt="A person in a harness facing forward while walking a log between trees"
               width={240}
               height={180}
-              className="h-28 w-full rounded-2xl object-cover object-center shadow-md sm:h-36"
+              className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md sm:h-36"
             />
-            <figcaption className="readable-panel mt-2 inline-block text-xs sm:text-sm">Treetop challenge</figcaption>
+            <figcaption
+              className="place-label mt-2 inline-block text-sm"
+              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+            >
+              Treetop challenge
+            </figcaption>
           </figure>
       </div>
 
