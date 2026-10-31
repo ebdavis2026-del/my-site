@@ -74,7 +74,11 @@ body {
 }
 
 figcaption.place-label {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
   margin-top: 0.35rem;
   padding: 0.1rem 0.45rem;
   border-radius: 0.35rem;
@@ -111,11 +115,30 @@ figcaption.place-label {
   text-shadow: none;
 }
 
+.tagline-stack {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.tagline-stack .tagline-follow {
+  width: 0;
+  min-width: 100%;
+}
+
 .about-shade p.tagline-outline {
-  color: #000;
+  display: inline-block;
+  color: #0b2545;
   font-weight: 800;
-  -webkit-text-stroke: 1px #fff;
-  paint-order: stroke fill;
+  letter-spacing: 0.02em;
+  background-color: #f3e6c8;
+  padding: 0.12em 0.4em 0.16em;
+  border-radius: 0.4rem;
+  -webkit-text-stroke: 0;
+  paint-order: fill;
+}
+
+header span.on-photo {
+  font-weight: 800;
 }
 
 .about-shade h1.name-about,
@@ -154,6 +177,16 @@ figcaption.readable-panel {
 
 .about-squiggle {
   position: relative;
+  background-color: rgba(243, 230, 200, 0.45);
+}
+
+.about-squiggle .about-shade,
+.about-squiggle .decision-glow {
+  background-color: rgba(243, 230, 200, 0.45);
+}
+
+.about-squiggle .decision-glow {
+  box-shadow: none;
 }
 
 .about-squiggle::before,

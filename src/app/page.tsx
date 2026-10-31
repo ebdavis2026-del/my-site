@@ -53,7 +53,7 @@ export default function HomePage() {
         </div>
         <div className="about-shade hue-line about-copy">
           <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
-          <p className="tagline-outline mt-3 text-2xl uppercase leading-[1.15] tracking-[0.06em]">
+          <p className="tagline-outline mt-3 text-xl uppercase leading-[1.2] tracking-[0.04em]">
             {profile.tagline.split(",")[0]},
             <br />
             {profile.tagline.split(",")[1]?.trim()}
@@ -139,7 +139,7 @@ export default function HomePage() {
               className="aspect-video w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
             />
             <figcaption
-              className="place-label mt-2 inline-block text-sm"
+              className="place-label mx-auto mt-2 block w-fit text-center text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
               Telephone pole challenge
@@ -155,7 +155,7 @@ export default function HomePage() {
               className="aspect-video w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
             />
             <figcaption
-              className="place-label mt-2 inline-block text-sm"
+              className="place-label mx-auto mt-2 block w-fit text-center text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
               Treetop challenge

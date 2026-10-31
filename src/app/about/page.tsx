@@ -10,6 +10,18 @@ export const metadata = { title: `About — ${profile.displayName}` };
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-14">
+      <style>{`
+        .about-squiggle {
+          background-color: rgba(243, 230, 200, 0.45);
+        }
+        .about-squiggle .about-shade,
+        .about-squiggle .decision-glow {
+          background-color: rgba(243, 230, 200, 0.45);
+        }
+        .about-squiggle .decision-glow {
+          box-shadow: none;
+        }
+      `}</style>
       <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">
         <div className="flex justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -37,17 +49,21 @@ export default function AboutPage() {
           </div>
           <div className="about-shade hue-line">
             <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
-            <p className="tagline-outline mt-3 text-3xl uppercase leading-[1.15] tracking-[0.06em]">
-              {profile.tagline.split(",")[0]},
-              <br />
-              {profile.tagline.split(",")[1]?.trim()}
-            </p>
-            <p className="mt-3 text-xl">
-              {profile.hometown}
-            </p>
-            <p className="mt-5 text-xl leading-relaxed">
-              {profile.bio}
-            </p>
+            <div className="tagline-stack">
+              <p className="tagline-outline mt-3 text-2xl uppercase leading-[1.2] tracking-[0.04em]">
+                {profile.tagline.split(",")[0]},
+                <br />
+                {profile.tagline.split(",")[1]?.trim()}
+              </p>
+              <div className="tagline-follow">
+                <p className="mt-3 text-xl">
+                  {profile.hometown}
+                </p>
+                <p className="mt-5 text-xl leading-relaxed">
+                  {profile.bio}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-4 text-center">
@@ -84,7 +100,7 @@ export default function AboutPage() {
             </figcaption>
           </figure>
         </div>
-        <div className="mt-8 grid grid-cols-2 gap-3">
+        <div className="mt-8 grid grid-cols-2 gap-3 text-center">
           <figure>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -95,7 +111,7 @@ export default function AboutPage() {
               className="aspect-video w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
             />
             <figcaption
-              className="place-label mt-2 inline-block text-sm"
+              className="place-label mx-auto mt-2 block w-fit text-center text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
               Telephone pole challenge
@@ -111,7 +127,7 @@ export default function AboutPage() {
               className="aspect-video w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
             />
             <figcaption
-              className="place-label mt-2 inline-block text-sm"
+              className="place-label mx-auto mt-2 block w-fit text-center text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
               Treetop challenge

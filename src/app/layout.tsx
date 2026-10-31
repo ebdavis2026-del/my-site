@@ -43,8 +43,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className="flex shrink-0 flex-col items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/ud-library.jpg"
-                  alt="The University of Delaware library in Newark"
+                  src="/newark-de.jpg"
+                  alt="Main Street in Newark, Delaware"
                   width={88}
                   height={64}
                   className="h-14 w-20 rounded-md border-[3px] border-[#0b2545] object-cover shadow-sm"
@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="bar-shade border-t border-line/70">
           <div className="on-photo mx-auto max-w-3xl px-6 py-6 text-base">
             <p>
-              {profile.displayName} · a portfolio of decision services ·{" "}
+              {profile.displayName} · A portfolio of decision services ·{" "}
               <span>Good Decisions at Any Scale</span>
             </p>
           </div>
