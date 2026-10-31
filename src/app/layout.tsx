@@ -43,8 +43,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className="flex shrink-0 flex-col items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/newark-de.jpg"
-                  alt="Main Street in Newark, Delaware"
+                  src="/ud-library.jpg"
+                  alt="The University of Delaware library in Newark"
                   width={88}
                   height={64}
                   className="h-14 w-20 rounded-md border-[3px] border-[#0b2545] object-cover shadow-sm"

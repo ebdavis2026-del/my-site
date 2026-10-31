@@ -134,9 +134,9 @@ export default function HomePage() {
             <img
               src="/telephone-pole-girl-standing.jpg"
               alt="A girl standing on top of a camp telephone pole"
-              width={240}
-              height={180}
-              className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md sm:h-36"
+              width={640}
+              height={360}
+              className="aspect-video w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
             />
             <figcaption
               className="place-label mt-2 inline-block text-sm"
@@ -150,9 +150,9 @@ export default function HomePage() {
             <img
               src="/treetop-fall-girl.jpg"
               alt="A girl in a harness walking a log between trees in fall colors"
-              width={240}
-              height={180}
-              className="h-28 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md sm:h-36"
+              width={640}
+              height={360}
+              className="aspect-video w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
             />
             <figcaption
               className="place-label mt-2 inline-block text-sm"
