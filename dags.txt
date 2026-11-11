@@ -1,0 +1,38 @@
+# Paste each "dag { ... }" block into https://dagitty.net/dags.html
+# Do not paste these into Terminal/zsh.
+
+# --------------------------------------------------
+# 1) Confounder (doctors): Severity confounds Surgeon -> Outcome
+# Adjustment set for total effect of Surgeon on Outcome: Severity
+# --------------------------------------------------
+dag {
+Severity -> Surgeon
+Severity -> Outcome
+Surgeon -> Outcome
+Surgeon [exposure]
+Outcome [outcome]
+}
+
+# --------------------------------------------------
+# 2) Mediator / pipe (plants): Pesticide affects Growth through Fungus
+# For TOTAL effect of Pesticide on Growth: do NOT adjust for Fungus
+# For DIRECT effect of Pesticide on Growth: adjust for Fungus
+# --------------------------------------------------
+dag {
+Pesticide -> Fungus
+Fungus -> Growth
+Pesticide [exposure]
+Growth [outcome]
+}
+
+# --------------------------------------------------
+# 3) Collider (surgeons): competence and charisma both cause Prestigious
+# Conditioning on Prestigious opens a non-causal path
+# Do NOT condition on Prestigious if you want the true (near-zero) relationship
+# --------------------------------------------------
+dag {
+Competence -> Prestigious
+Charisma -> Prestigious
+Competence [exposure]
+Charisma [outcome]
+}
