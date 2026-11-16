@@ -1,5 +1,3 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 
 /**
@@ -16,10 +14,6 @@ import { createClient } from "@supabase/supabase-js";
  *
  * Setup: run supabase/causality.sql once in your Supabase SQL Editor.
  * No new env vars.
- *
- * Local fallback: until that table exists, answers are also written to
- * `.data/causality-latest.json` so selfcheck can bind the page. On
- * Vercel you still need the real table across separate invocations.
  */
 
 /** Average outcome for the two groups of X, in one slice of the data. */
@@ -49,8 +43,6 @@ export interface CausalityLatest {
   summary: CausalitySummary;
 }
 
-const LOCAL_FILE = join(process.cwd(), ".data", "causality-latest.json");
-
 function supabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key =
@@ -61,35 +53,16 @@ function supabase() {
   return createClient(url, key);
 }
 
-function saveLocal(latest: CausalityLatest) {
-  try {
-    mkdirSync(join(process.cwd(), ".data"), { recursive: true });
-    writeFileSync(LOCAL_FILE, JSON.stringify(latest));
-  } catch (err) {
-    console.error("Could not write local causality latest:", err);
-  }
-}
-
-function loadLocal(): CausalityLatest | null {
-  try {
-    return JSON.parse(readFileSync(LOCAL_FILE, "utf8")) as CausalityLatest;
-  } catch {
-    return null;
-  }
-}
-
 /** Overwrite the one stored "latest" row. */
 export async function saveLatest(
   probe: CausalityLatest["probe"],
   answer: CausalityLatest["answer"],
   summary: CausalitySummary
 ): Promise<void> {
-  const latest = { probe, answer, summary };
-  saveLocal(latest);
-
   const client = supabase();
-  if (!client) return;
-
+  if (!client) {
+    throw new Error("Supabase env vars not set. See .env.example and the README.");
+  }
   const { error } = await client.from("causality_latest").upsert({
     key: "latest",
     probe,
@@ -98,7 +71,7 @@ export async function saveLatest(
     updated_at: new Date().toISOString(),
   });
   if (error) {
-    console.error(`Could not save the latest audit to Supabase: ${error.message}`);
+    throw new Error(`Could not save the latest audit: ${error.message}`);
   }
 }
 
@@ -108,13 +81,12 @@ export async function saveLatest(
  */
 export async function loadLatest(): Promise<CausalityLatest | null> {
   const client = supabase();
-  if (client) {
-    const { data, error } = await client
-      .from("causality_latest")
-      .select("probe, answer, summary")
-      .eq("key", "latest")
-      .maybeSingle();
-    if (!error && data) return data as CausalityLatest;
-  }
-  return loadLocal();
+  if (!client) return null;
+  const { data, error } = await client
+    .from("causality_latest")
+    .select("probe, answer, summary")
+    .eq("key", "latest")
+    .maybeSingle();
+  if (error || !data) return null;
+  return data as CausalityLatest;
 }
