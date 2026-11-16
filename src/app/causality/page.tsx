@@ -43,7 +43,7 @@ export default async function CausalityPage() {
           ? `Changing ${ctx.xLabel} would change ${ctx.yLabel}`
           : `Changing ${ctx.xLabel} would not change ${ctx.yLabel}`}
       </h1>
-      {/* TODO(yours): one sentence, your words, on what this service does. */}
+      {/* TODO(yours): Causality Audit is a service that explains how the total effect can be achieved by different causal strategies and formations and are a visual representation of how to make decisions. */}
       <p className="mt-4 max-w-prose text-muted">
         My auditor reads a dataset and the story behind it, decides which causal structure
         produced the data, and says whether the pattern is a cause or a coincidence. Every number
