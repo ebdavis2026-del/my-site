@@ -93,9 +93,7 @@ export default async function CausalityPage() {
           x1={String(ctx.x1)}
           yLabel={String(ctx.yLabel)}
         />
-        {/* TODO(yours): one or two sentences a manager could read: what the
-            comparison shows, and why the story about the third variable
-            decides which row to trust (Stations 4.4 and 4.5). */}
+        {/* TODO(yours): For a cofounder the comparison shows the total effect with the third variable and for the mediator the total effect is without the third variable. */}
         <p className="mt-3 max-w-prose text-muted">
           The top row compares the two groups over all the data. The rows below compare them
           within each level of {String(ctx.zLabel)}. Which row to trust depends on the story about{" "}
