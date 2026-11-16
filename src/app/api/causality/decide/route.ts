@@ -42,14 +42,14 @@ function stratifiedEffect(rows: Row[]): number {
 }
 
 /**
- * Step 4c rule table: combine effect pattern with domain facts.
+ * Step 4c: combine naive/stratified effects with domain facts about Z.
  *
- * | naive | strat | timing / influences X | structure |
- * | large | ~0    | Z before X, Z→X       | fork      |
- * | large | ~0    | Z after X, not Z→X    | pipe      |
- * | ~0    | large | Z after X             | collider  |
- * | large | large | similar, not Z→X      | direct    |
- * | large | large | diverge, Z→X          | fork      |
+ * | naive | strat | facts                         | structure |
+ * | large | ~0    | Z before X and influences X   | fork      |
+ * | large | ~0    | Z after X, does not influence | pipe      |
+ * | ~0    | large | Z after X                     | collider  |
+ * | large | large | similar; Z does not influence | direct    |
+ * | large | large | diverge; Z influences X       | fork      |
  */
 function classifyStructure(
   facts: { zTiming: "before-x" | "after-x"; zInfluencesX: boolean },
