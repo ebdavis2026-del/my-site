@@ -2,37 +2,862 @@
 # Do not paste these into Terminal/zsh.
 
 # --------------------------------------------------
-# 1) Confounder (doctors): Severity confounds Surgeon -> Outcome
-# Adjustment set for total effect of Surgeon on Outcome: Severity
+# 1) Treatment / infection / fever
+# FeverReading -> Treatment -> Infection -> SlowRecovery
+# (Infection = reduced/controlled infection pathway in your notes)
 # --------------------------------------------------
 dag {
-Severity -> Surgeon
-Severity -> Outcome
-Surgeon -> Outcome
-Surgeon [exposure]
+Treatment -> Reduced Infection
+Infection -> Slow Recoverty
+Fever Reading -> Treatment
+
 Outcome [outcome]
 }
 
 # --------------------------------------------------
-# 2) Mediator / pipe (plants): Pesticide affects Growth through Fungus
+# 2) Plants: Pesticide -> Fungus -> Growth; Soil affects Fungus and Growth
 # For TOTAL effect of Pesticide on Growth: do NOT adjust for Fungus
-# For DIRECT effect of Pesticide on Growth: adjust for Fungus
+# Soil confounds Fungus and Growth (not Pesticide)
 # --------------------------------------------------
 dag {
 Pesticide -> Fungus
 Fungus -> Growth
+Soil -> Fungus
+Soil -> Growth
 Pesticide [exposure]
 Growth [outcome]
 }
 
 # --------------------------------------------------
-# 3) Collider (surgeons): competence and charisma both cause Prestigious
-# Conditioning on Prestigious opens a non-causal path
-# Do NOT condition on Prestigious if you want the true (near-zero) relationship
+# 3) Collider: Competence (X) -> PrestigiousJob (Z) <- Charisma (Y)
+# Conditioning on PrestigiousJob opens a non-causal path
 # --------------------------------------------------
 dag {
-Competence -> Prestigious
-Charisma -> Prestigious
+Competence -> PrestigiousJob
+Charisma -> PrestigiousJob
 Competence [exposure]
 Charisma [outcome]
+}
+
+# --------------------------------------------------
+# 4) UCB admissions: Gender -> Dept -> Admit (mediator / pipe)
+# For TOTAL effect of Gender on Admit: do NOT adjust for Dept
+# --------------------------------------------------
+dag {
+Gender -> Dept
+Dept -> Admit
+Gender [exposure]
+Admit [outcome]
+}
+
+# --------------------------------------------------
+# 5) Employees / gym / absenteeism
+# Employees -> Gym -> Fewer Sick Days -> Absenteeism Cut
+# Employees -> No Gym -> More Sick Days -> Absenteeism Increased
+# Employees -> Gym Membership Paid By HR (Proposed)
+# --------------------------------------------------
+dag {
+Employees -> Gym
+Gym -> "Fewer Sick Days"
+"Fewer Sick Days" -> "Absenteeism Cut"
+Employees -> "No Gym"
+"No Gym" -> "More Sick Days"
+"More Sick Days" -> "Absenteeism Increased"
+Employees -> "Gym Membership Paid By HR (Proposed)"
+"Gym Membership Paid By HR (Proposed)" -> "Absenteeism Cut"
+}
+
+# --------------------------------------------------
+# 6) Growth -> Cloud; Funding confounds Cloud and Growth
+# --------------------------------------------------
+dag {
+Growth [exposure]
+Cloud [outcome]
+Growth -> Cloud
+Funding -> Cloud
+Funding -> Growth
+}
+
+# --------------------------------------------------
+# 7) Press prior to IPO -> Company Going Public -> IPO / quality
+# Press Prior to IPO -> Company Going Public
+# No Press prior to IPO -> Company Going Public
+# Company Going Public -> IPO
+# Company Going Public -> Good Product Quality
+# Company Going Public -> Bad Product Quality
+# --------------------------------------------------
+dag {
+"Press Prior to IPO" [pos="-1.400,-1.200"]
+"No Press prior to IPO" [pos="1.400,-1.200"]
+"Company Going Public" [pos="0.000,-0.200"]
+IPO [pos="0.000,1.200"]
+"Good Product Quality" [pos="-1.400,1.200"]
+"Bad Product Quality" [pos="1.400,1.200"]
+"Press Prior to IPO" -> "Company Going Public"
+"No Press prior to IPO" -> "Company Going Public"
+"Company Going Public" -> IPO
+"Company Going Public" -> "Good Product Quality"
+"Company Going Public" -> "Bad Product Quality"
+}
+
+# --------------------------------------------------
+# 8) Customers / loyalty app / visits
+# Customers -> Frequent Visitors -> Visits Increased
+# Customers -> Visits Did Not Increase
+# No Loyalty App -> Customers
+# Loyalty App -> Customers
+# --------------------------------------------------
+dag {
+Customers [pos="-2.000,0.000"]
+"Frequent Visitors" [pos="-2.000,-1.200"]
+"Visits Increased" [pos="-2.000,-2.200"]
+"Visits Did Not Increase" [pos="0.200,-1.100"]
+"No Loyalty App" [pos="0.200,0.200"]
+"Loyalty App" [pos="0.200,1.100"]
+Customers -> "Frequent Visitors"
+"Frequent Visitors" -> "Visits Increased"
+Customers -> "Visits Did Not Increase"
+"No Loyalty App" -> Customers
+"Loyalty App" -> Customers
+}
+
+# --------------------------------------------------
+# 9) Social Media / Customers / Followers / Spend
+# Customers -> Social Media -> Followers -> Spend 2x
+# Customers -> Not Followers -> Average Spend
+# Smoking -> Customers <- Genetics; Genetics -> Smoking
+# --------------------------------------------------
+dag {
+Customers [pos="-1.600,0.000"]
+Smoking [pos="-2.400,-1.200"]
+Genetics [pos="-0.800,-1.200"]
+"Social Media" [pos="0.000,-0.800"]
+Followers [pos="1.200,-0.800"]
+"Spend 2x" [pos="2.500,-0.800"]
+"Not Followers" [pos="0.000,1.200"]
+"Average Spend" [pos="1.500,1.200"]
+Smoking -> Customers
+Genetics -> Customers
+Genetics -> Smoking
+Customers -> "Social Media"
+"Social Media" -> Followers
+Followers -> "Spend 2x"
+Customers -> "Not Followers"
+"Not Followers" -> "Average Spend"
+}
+
+# --------------------------------------------------
+# 10) Randomized / Age / Hormone Therapy / More Heart Disease
+# Randomized -> Age -> Hormone Therapy -> More Heart Disease
+# Age -> No Hormone Therapy
+# --------------------------------------------------
+dag {
+Randomized [pos="-2.000,0.000"]
+Age [pos="-0.400,0.000"]
+"Hormone Therapy" [pos="1.000,-1.000"]
+"More Heart Disease" [pos="2.400,-1.000"]
+"No Hormone Therapy" [pos="1.000,1.000"]
+"Less Heart Disease" [pos="2.400,1.000"]
+Randomized -> Age
+Age -> "Hormone Therapy"
+"Hormone Therapy" -> "More Heart Disease"
+Age -> "No Hormone Therapy"
+"No Hormone Therapy" -> "Less Heart Disease"
+}
+
+# --------------------------------------------------
+# 11) Team / Support / Engineering / Remote / Office
+# Team -> Support -> Remote
+# Team -> Support -> Office
+# Team -> Engineering -> Remote
+# Team -> Engineering -> Office
+# --------------------------------------------------
+dag {
+Team [pos="-1.800,0.000"]
+Support [pos="-0.200,-1.000"]
+Engineering [pos="-0.200,1.000"]
+Remote [pos="1.600,-1.000"]
+Office [pos="1.600,1.000"]
+Team -> Support
+Team -> Engineering
+Support -> Remote
+Support -> Office
+Engineering -> Remote
+Engineering -> Office
+}
+
+# --------------------------------------------------
+# 12) Interview Performance -> Applicants <- Reference Strength
+# Applicants -> Offer
+# --------------------------------------------------
+dag {
+"Interview Performance" [pos="-1.400,-1.200"]
+"Reference Strength" [pos="1.400,-1.200"]
+Applicants [pos="0.000,0.200"]
+Offer [pos="0.000,1.500"]
+"Interview Performance" -> Applicants
+"Reference Strength" -> Applicants
+Applicants -> Offer
+}
+
+# --------------------------------------------------
+# 13) 1 -> 3 <- 2; 3 -> 4; 3 -> 8; 4 -> 6 <- 5; 6 -> 7
+# Node 3 observed (adjusted)
+# --------------------------------------------------
+dag {
+1 [pos="-1.400,-1.200"]
+2 [pos="1.400,-1.200"]
+3 [adjusted,pos="0.000,-0.200"]
+4 [pos="-0.800,0.800"]
+8 [pos="0.800,0.800"]
+5 [pos="-2.000,1.600"]
+6 [pos="-0.800,1.800"]
+7 [pos="-0.800,2.800"]
+1 -> 3
+2 -> 3
+3 -> 4
+3 -> 8
+4 -> 6
+5 -> 6
+6 -> 7
+}
+
+# --------------------------------------------------
+# 14) Territory / sales quota / estimate
+# Territory -> Factory Closed -> Sales Rep -> Lost 2 Accts
+#   -> Estimate Drops -> Sales Drops -> Missed Sales Quota
+# --------------------------------------------------
+dag {
+Territory [pos="-2.600,0.000"]
+"Factory Closed" [pos="-1.400,0.000"]
+"Sales Rep" [pos="-0.200,0.000"]
+"Lost 2 Accts" [pos="1.000,0.000"]
+"Estimate Drops" [pos="2.200,0.000"]
+"Sales Drops" [pos="3.200,0.800"]
+"Missed Sales Quota" [pos="3.200,-0.800"]
+Territory -> "Factory Closed"
+"Factory Closed" -> "Sales Rep"
+"Sales Rep" -> "Lost 2 Accts"
+"Lost 2 Accts" -> "Estimate Drops"
+"Estimate Drops" -> "Sales Drops"
+"Sales Drops" -> "Missed Sales Quota"
+}
+
+# --------------------------------------------------
+# 15) Randomized bone density drug / age / fractures
+# Randomized -> Enrolled People -> Bone Density Drug Treatment
+#   -> Avg Age 61 -> More Fractures
+#   -> Avg Age 49 -> No Additional Fractures
+# --------------------------------------------------
+dag {
+Randomized [pos="-2.400,0.000"]
+"Enrolled People" [pos="-1.000,0.000"]
+"Bone Density Drug Treatment" [pos="0.400,0.000"]
+"Avg Age 61" [pos="1.800,-1.100"]
+"Avg Age 49" [pos="1.800,1.100"]
+"More Fractures" [pos="3.200,-1.100"]
+"No Additional Fractures" [pos="3.200,1.100"]
+Randomized -> "Enrolled People"
+"Enrolled People" -> "Bone Density Drug Treatment"
+"Bone Density Drug Treatment" -> "Avg Age 61"
+"Bone Density Drug Treatment" -> "Avg Age 49"
+"Avg Age 61" -> "More Fractures"
+"Avg Age 49" -> "No Additional Fractures"
+}
+
+# --------------------------------------------------
+# 16) Applications -> Team; Applications -> Group
+# --------------------------------------------------
+dag {
+Applications [pos="-1.200,0.000"]
+Team [pos="1.200,-1.000"]
+Group [pos="1.200,1.000"]
+Applications -> Team
+Applications -> Group
+}
+
+# --------------------------------------------------
+# 17) Customers / Followers / Social Media + Genetics, Smoking
+# Genetics -> Customers <- Smoking
+# Customers -> Followers -> Social Media
+# Customers -> Not Followers -> No Social Media
+# --------------------------------------------------
+dag {
+Genetics [pos="-2.200,-1.200"]
+Smoking [pos="-2.200,1.200"]
+Customers [pos="-0.600,0.000"]
+Followers [pos="1.000,-1.000"]
+"Not Followers" [pos="1.000,1.000"]
+"Social Media" [pos="2.600,-1.000"]
+"No Social Media" [pos="2.600,1.000"]
+Genetics -> Customers
+Smoking -> Customers
+Customers -> Followers
+Customers -> "Not Followers"
+Followers -> "Social Media"
+"Not Followers" -> "No Social Media"
+}
+
+# --------------------------------------------------
+# 18) Live Demo / Historical Data -> Chatbot churn prediction
+# Live Demo Run by Sales Team -> Chatbot Predict Customer Churn
+# Historical Data -> Chatbot Not predict Customer Churn
+# --------------------------------------------------
+dag {
+"Live Demo Run by Sales Team" [pos="-1.400,-1.000"]
+"Chatbot Predict Customer Churn" [pos="1.400,-1.000"]
+"Historical Data" [pos="-1.400,1.000"]
+"Chatbot Not predict Customer Churn" [pos="1.400,1.000"]
+"Live Demo Run by Sales Team" -> "Chatbot Predict Customer Churn"
+"Historical Data" -> "Chatbot Not predict Customer Churn"
+}
+
+# --------------------------------------------------
+# 19) 1 -> 3 <- 2; 3 -> 4; 3 -> 8; 4 -> 6 <- 5; 6 -> 7
+# Node 3 observed (adjusted)
+# --------------------------------------------------
+dag {
+1 [pos="-1.400,-1.200"]
+2 [pos="1.400,-1.200"]
+3 [adjusted,pos="0.000,-0.200"]
+4 [pos="-0.800,0.800"]
+8 [pos="0.800,0.800"]
+5 [pos="-2.000,1.600"]
+6 [pos="-0.800,1.800"]
+7 [pos="-0.800,2.800"]
+1 -> 3
+2 -> 3
+3 -> 4
+3 -> 8
+4 -> 6
+5 -> 6
+6 -> 7
+}
+
+# --------------------------------------------------
+# 20) Drivers / gas / card signups + Smoking, Genetics
+# Buy More Gas Per Month <- Drivers -> Card Signups -> Buy Fuel with Cards
+# Drivers -> No Card Signup -> Buy Regular Amt Of Gas
+# Smoking -> Drivers <- Genetics
+# --------------------------------------------------
+dag {
+Genetics [pos="-2.200,-1.200"]
+Smoking [pos="-2.200,1.200"]
+Drivers [pos="-0.600,0.000"]
+"Buy More Gas Per Month" [pos="1.200,-1.200"]
+"Card Signups" [pos="1.200,0.800"]
+"Buy Fuel with Cards" [pos="2.800,0.800"]
+"No Card Signup" [pos="1.200,2.200"]
+"Buy Regular Amt Of Gas" [pos="2.800,2.200"]
+Genetics -> Drivers
+Smoking -> Drivers
+Drivers -> "Buy More Gas Per Month"
+Drivers -> "Card Signups"
+"Card Signups" -> "Buy Fuel with Cards"
+"Buy Fuel with Cards" -> "Buy More Gas Per Month"
+Drivers -> "No Card Signup"
+"No Card Signup" -> "Buy Regular Amt Of Gas"
+}
+
+# --------------------------------------------------
+# 21) Reference Check -> Job Offer -> Interview Performance
+# --------------------------------------------------
+dag {
+"Reference Check" [pos="-2.000,0.000"]
+"Job Offer" [pos="0.000,0.000"]
+"Interview Performance" [pos="2.000,0.000"]
+"Reference Check" -> "Job Offer"
+"Job Offer" -> "Interview Performance"
+}
+
+# --------------------------------------------------
+# 22) Randomization -> Training Program -> Trainees -> Raises Sales
+# --------------------------------------------------
+dag {
+Randomization [pos="-2.400,0.000"]
+"Training Program" [pos="-1.000,0.000"]
+Trainees [pos="0.400,0.000"]
+"Raises Sales" [pos="1.800,0.000"]
+Randomization -> "Training Program"
+"Training Program" -> Trainees
+Trainees -> "Raises Sales"
+}
+
+# --------------------------------------------------
+# 23) Factory Closed -> Two Big Accts Lost -> Territory Lost
+#      -> Estimate Drops 20% <- Sales Rep Miss Quota
+# --------------------------------------------------
+dag {
+"Factory Closed" [pos="-2.400,0.000"]
+"Two Big Accts Lost" [pos="-0.800,0.000"]
+"Territory Lost" [pos="0.800,0.000"]
+"Estimate Drops 20%" [pos="2.400,0.000"]
+"Sales Rep Miss Quota" [pos="2.400,1.400"]
+"Factory Closed" -> "Two Big Accts Lost"
+"Two Big Accts Lost" -> "Territory Lost"
+"Territory Lost" -> "Estimate Drops 20%"
+"Sales Rep Miss Quota" -> "Estimate Drops 20%"
+}
+
+# --------------------------------------------------
+# 24) Association X--Y disappears when stratify by Z
+# Fork: X <- Z -> Y (Z adjusted)
+# --------------------------------------------------
+dag {
+X [exposure,pos="-1.400,1.000"]
+Y [outcome,pos="1.400,1.000"]
+Z [adjusted,pos="0.000,-0.800"]
+Z -> X
+Z -> Y
+}
+
+# --------------------------------------------------
+# 25) Association X--Y disappears when stratify by Z
+# Pipe: X -> Z -> Y (Z adjusted)
+# --------------------------------------------------
+dag {
+X [exposure,pos="-1.600,0.000"]
+Z [adjusted,pos="0.000,0.000"]
+Y [outcome,pos="1.600,0.000"]
+X -> Z
+Z -> Y
+}
+
+# --------------------------------------------------
+# 26) Reference Checks -> Job offer <- Interviews
+# Collider at Job offer
+# --------------------------------------------------
+dag {
+"Reference Checks" [pos="-1.400,-1.000"]
+Interviews [pos="1.400,-1.000"]
+"Job offer" [pos="0.000,0.800"]
+"Reference Checks" -> "Job offer"
+Interviews -> "Job offer"
+}
+
+# --------------------------------------------------
+# 27) Randomized trial -> Treatment -> Age 61 / Age 53
+# Age 61 -> More Disease; Age 53 -> Not More Disease
+# --------------------------------------------------
+dag {
+"Randomized trial" [pos="-2.200,0.000"]
+Treatment [pos="-0.600,0.000"]
+"Age 61" [pos="1.000,-1.000"]
+"Age 53" [pos="1.000,1.000"]
+"More Disease" [pos="2.600,-1.000"]
+"Not More Disease" [pos="2.600,1.000"]
+"Randomized trial" -> Treatment
+Treatment -> "Age 61"
+Treatment -> "Age 53"
+"Age 61" -> "More Disease"
+"Age 53" -> "Not More Disease"
+}
+
+# --------------------------------------------------
+# 28) Dispatchers -> Freight Type -> Fragile -> Carrier Atlas
+#      Dispatchers -> Management -> Carrier Atlas
+# --------------------------------------------------
+dag {
+Dispatchers [pos="-2.200,0.000"]
+"Freight Type" [pos="-0.600,-1.000"]
+Fragile [pos="1.000,-1.000"]
+Management [pos="-0.600,1.000"]
+"Carrier Atlas" [pos="2.600,0.000"]
+Dispatchers -> "Freight Type"
+"Freight Type" -> Fragile
+Fragile -> "Carrier Atlas"
+Dispatchers -> Management
+Management -> "Carrier Atlas"
+}
+
+# --------------------------------------------------
+# 29) Drivers / Fuel Rewards + Genetics, Smoking
+# Genetics -> Drivers <- Smoking
+# Drivers -> Fuel Rewards Card Signups -> Savings -> Increase Fuel Sales
+# Drivers -> No Fuel Card -> No Savings -> Increase Fuel Sales
+# --------------------------------------------------
+dag {
+Genetics [pos="-2.200,-1.200"]
+Smoking [pos="-2.200,1.200"]
+Drivers [pos="-0.600,0.000"]
+"Fuel Rewards Card Signups" [pos="1.000,-1.000"]
+Savings [pos="2.200,-1.000"]
+"No Fuel Card" [pos="1.000,1.000"]
+"No Savings" [pos="2.200,1.000"]
+"Increase Fuel Sales" [pos="3.400,-1.000"]
+"No Increase Fuel Sales" [pos="3.400,1.200"]
+Genetics -> Drivers
+Smoking -> Drivers
+Drivers -> "Fuel Rewards Card Signups"
+"Fuel Rewards Card Signups" -> Savings
+Savings -> "Increase Fuel Sales"
+Drivers -> "No Fuel Card"
+"No Fuel Card" -> "No Savings"
+"No Savings" -> "Increase Fuel Sales"
+"No Fuel Card" -> "No Increase Fuel Sales"
+}
+
+# --------------------------------------------------
+# 30) Premium listing badge -> More Bookings -> Earn Badges
+#      -> High Quality Costs
+# --------------------------------------------------
+dag {
+"Premium listing badge" [pos="-2.200,0.000"]
+"More Bookings" [pos="-0.600,0.000"]
+"Earn Badges" [pos="1.000,0.000"]
+"High Quality Costs" [pos="2.600,0.000"]
+"Premium listing badge" -> "More Bookings"
+"More Bookings" -> "Earn Badges"
+"Earn Badges" -> "High Quality Costs"
+}
+
+# --------------------------------------------------
+# 31) Training -> Certifications -> Certs Recorded -> Sales Raised
+# --------------------------------------------------
+dag {
+Training [pos="-1.800,0.000"]
+Certifications [pos="-0.200,0.000"]
+"Certs Recorded" [pos="1.400,0.000"]
+"Sales Raised" [pos="3.000,0.000"]
+Training -> Certifications
+Certifications -> "Certs Recorded"
+"Certs Recorded" -> "Sales Raised"
+}
+
+# --------------------------------------------------
+# 32) 1 -> 3 <- 2; 3 -> 4; 3 -> 8; 4 -> 6 <- 5; 6 -> 7
+# Node 3 observed (adjusted)
+# --------------------------------------------------
+dag {
+1 [pos="-1.400,-1.200"]
+2 [pos="1.400,-1.200"]
+3 [adjusted,pos="0.000,-0.200"]
+4 [pos="-0.800,0.800"]
+8 [pos="0.800,0.800"]
+5 [pos="-2.000,1.600"]
+6 [pos="-0.800,1.800"]
+7 [pos="-0.800,2.800"]
+1 -> 3
+2 -> 3
+3 -> 4
+3 -> 8
+4 -> 6
+5 -> 6
+6 -> 7
+}
+
+# --------------------------------------------------
+# 33) Company size -> Support Hours -> Plan Choice
+#      Plan Choice -> Premium; Plan Choice -> Standard plan
+# --------------------------------------------------
+dag {
+"Company size" [pos="-2.400,0.000"]
+"Support Hours" [pos="-0.800,0.000"]
+"Plan Choice" [pos="0.800,0.000"]
+Premium [pos="2.400,-1.000"]
+"Standard plan" [pos="2.400,1.000"]
+"Company size" -> "Support Hours"
+"Support Hours" -> "Plan Choice"
+"Plan Choice" -> Premium
+"Plan Choice" -> "Standard plan"
+}
+
+# --------------------------------------------------
+# 34) Wine Tasting Panel -> Hide Labels -> Rate Bottles
+#      -> Reserve Highest Bottle
+# --------------------------------------------------
+dag {
+"Wine Tasting Panel" [pos="-2.400,0.000"]
+"Hide Labels" [pos="-0.800,0.000"]
+"Rate Bottles" [pos="0.800,0.000"]
+"Reserve Highest Bottle" [pos="2.600,0.000"]
+"Wine Tasting Panel" -> "Hide Labels"
+"Hide Labels" -> "Rate Bottles"
+"Rate Bottles" -> "Reserve Highest Bottle"
+}
+
+# --------------------------------------------------
+# 35) Team -> Call; Team -> No Call
+# --------------------------------------------------
+dag {
+Team [pos="-1.200,0.000"]
+Call [pos="1.200,-1.000"]
+"No Call" [pos="1.200,1.000"]
+Team -> Call
+Team -> "No Call"
+}
+
+# --------------------------------------------------
+# 36) Treatment -> Fungus -> Plant Growth
+# --------------------------------------------------
+dag {
+Treatment [pos="-1.800,0.000"]
+Fungus [pos="0.000,0.000"]
+"Plant Growth" [pos="1.800,0.000"]
+Treatment -> Fungus
+Fungus -> "Plant Growth"
+}
+
+# --------------------------------------------------
+# 37) 1 -> 3 <- 2; 3 -> 4; 3 -> 8; 4 -> 6 <- 5; 6 -> 7
+# Node 3 observed (adjusted)
+# --------------------------------------------------
+dag {
+1 [pos="-1.400,-1.200"]
+2 [pos="1.400,-1.200"]
+3 [adjusted,pos="0.000,-0.200"]
+4 [pos="-0.800,0.800"]
+8 [pos="0.800,0.800"]
+5 [pos="-2.000,1.600"]
+6 [pos="-0.800,1.800"]
+7 [pos="-0.800,2.800"]
+1 -> 3
+2 -> 3
+3 -> 4
+3 -> 8
+4 -> 6
+5 -> 6
+6 -> 7
+}
+
+# --------------------------------------------------
+# 38) Reference Checks -> Applicants -> Interviews -> Job Offers
+#      Interviews -> No Offer
+# --------------------------------------------------
+dag {
+"Reference Checks" [pos="-2.200,0.000"]
+Applicants [pos="-0.600,0.000"]
+Interviews [pos="1.000,0.000"]
+"Job Offers" [pos="2.600,-1.000"]
+"No Offer" [pos="2.600,1.000"]
+"Reference Checks" -> Applicants
+Applicants -> Interviews
+Interviews -> "Job Offers"
+Interviews -> "No Offer"
+}
+
+# --------------------------------------------------
+# 39) Interview panel -> Resume -> Top Candidate -> Confident
+# --------------------------------------------------
+dag {
+"Interview panel" [pos="-2.200,0.000"]
+Resume [pos="-0.600,0.000"]
+"Top Candidate" [pos="1.000,0.000"]
+Confident [pos="2.600,0.000"]
+"Interview panel" -> Resume
+Resume -> "Top Candidate"
+"Top Candidate" -> Confident
+}
+
+# --------------------------------------------------
+# 40) Randomization -> HRT -> HeartDisease
+#      Age -> HeartDisease; Age -> Selected
+#      HRT exposure, HeartDisease outcome, Selected adjusted
+# --------------------------------------------------
+dag {
+Randomization [pos="-2.200,0.000"]
+HRT [exposure,pos="-0.600,0.000"]
+HeartDisease [outcome,pos="1.400,0.000"]
+Age [pos="0.400,-1.400"]
+Selected [adjusted,pos="2.000,-1.400"]
+Randomization -> HRT
+HRT -> HeartDisease
+Age -> HeartDisease
+Age -> Selected
+}
+
+# --------------------------------------------------
+# 41) Difficulty -> Grade <- Intelligence
+# Collider at Grade
+# --------------------------------------------------
+dag {
+Difficulty [pos="-1.400,-1.000"]
+Intelligence [pos="1.400,-1.000"]
+Grade [pos="0.000,0.800"]
+Difficulty -> Grade
+Intelligence -> Grade
+}
+
+# --------------------------------------------------
+# 42) Product Quality -> Revenue <- Marketing Spend
+# Collider at Revenue
+# --------------------------------------------------
+dag {
+"Product Quality" [pos="-1.400,-1.000"]
+"Marketing Spend" [pos="1.400,-1.000"]
+Revenue [pos="0.000,0.800"]
+"Product Quality" -> Revenue
+"Marketing Spend" -> Revenue
+}
+
+# --------------------------------------------------
+# 43) Citywide Festival / Foot Traffic / Store Quality -> Sales
+# --------------------------------------------------
+dag {
+"Citywide Festival" [pos="-2.200,0.000"]
+Sales [pos="0.200,0.000"]
+"Foot Traffic" [pos="2.400,0.000"]
+"Store Quality" [pos="0.200,-1.400"]
+"Citywide Festival" -> Sales
+"Foot Traffic" -> Sales
+"Store Quality" -> Sales
+}
+
+# --------------------------------------------------
+# 44) Difficulty -> Grade (unobserved) -> Letter
+#      (evidence from Letter flows backward to Grade)
+# --------------------------------------------------
+dag {
+Difficulty [pos="-2.200,0.000"]
+Grade [unobserved,pos="0.200,0.000"]
+Letter [pos="2.200,0.000"]
+Difficulty -> Grade
+Grade -> Letter
+}
+
+# --------------------------------------------------
+# 45) Employees -> Savings on Gym Membership -> Gym
+#      -> Improve Health -> Reduced Sick Days
+#      Health Conscious People -> Gym
+# --------------------------------------------------
+dag {
+Employees [pos="-3.200,0.000"]
+"Savings on Gym Membership" [pos="-1.600,0.000"]
+"Health Conscious People" [pos="-0.200,-1.600"]
+Gym [pos="-0.200,0.000"]
+"Improve Health" [pos="1.400,0.000"]
+"Reduced Sick Days" [pos="3.000,0.000"]
+Employees -> "Savings on Gym Membership"
+"Savings on Gym Membership" -> Gym
+"Health Conscious People" -> Gym
+Gym -> "Improve Health"
+"Improve Health" -> "Reduced Sick Days"
+}
+
+# --------------------------------------------------
+# 46) Product Quality -> IPO (Company Going Public)
+#      <- Press Coverage
+# --------------------------------------------------
+dag {
+"Product Quality" [pos="-1.600,-1.200"]
+"Press Coverage" [pos="-1.600,1.200"]
+"IPO (Company Going Public)" [pos="1.800,0.000"]
+"Product Quality" -> "IPO (Company Going Public)"
+"Press Coverage" -> "IPO (Company Going Public)"
+}
+
+# --------------------------------------------------
+# 47) 1 -> 3 <- 2; 3 -> 4; 3 -> 8; 4 -> 6 <- 5; 6 -> 7
+#      Node 3 observed
+# --------------------------------------------------
+dag {
+1 [pos="-2.400,-1.200"]
+2 [pos="-2.400,1.200"]
+3 [pos="-0.800,0.000"]
+4 [pos="0.600,0.000"]
+5 [pos="0.600,1.600"]
+6 [pos="2.000,0.000"]
+7 [pos="3.400,0.000"]
+8 [pos="-0.800,-1.600"]
+1 -> 3
+2 -> 3
+3 -> 4
+3 -> 8
+4 -> 6
+5 -> 6
+6 -> 7
+}
+
+# --------------------------------------------------
+# 48) Genetics / Smoking -> Customers
+#      -> Followers on Social Media -> Spend 2x
+# --------------------------------------------------
+dag {
+Genetics [pos="-2.800,-1.400"]
+Smoking [pos="-2.800,1.400"]
+Customers [pos="-1.200,0.000"]
+"Followers on Social Media" [pos="0.800,0.000"]
+"Spend 2x" [pos="2.800,0.000"]
+Genetics -> Customers
+Smoking -> Customers
+Customers -> "Followers on Social Media"
+"Followers on Social Media" -> "Spend 2x"
+}
+
+# --------------------------------------------------
+# 49) Factory Closed -> Sales Estimate Drop 20%
+#      -> Sale Rep Miss Quota
+# --------------------------------------------------
+dag {
+"Factory Closed" [pos="-2.400,0.000"]
+"Sales Estimate Drop 20%" [pos="0.200,0.000"]
+"Sale Rep Miss Quota" [pos="2.600,0.000"]
+"Factory Closed" -> "Sales Estimate Drop 20%"
+"Sales Estimate Drop 20%" -> "Sale Rep Miss Quota"
+}
+
+# --------------------------------------------------
+# 50) Difficulty -> Grade <- Intelligence; Grade -> Letter
+# --------------------------------------------------
+dag {
+Difficulty [pos="-2.200,-1.200"]
+Intelligence [pos="-2.200,1.200"]
+Grade [pos="0.200,0.000"]
+Letter [pos="2.400,0.000"]
+Difficulty -> Grade
+Intelligence -> Grade
+Grade -> Letter
+}
+
+# --------------------------------------------------
+# 51) High Quality Hosts -> Premium Listing Badges
+#      -> Increased Bookings
+# --------------------------------------------------
+dag {
+"High Quality Hosts" [pos="-2.400,0.000"]
+"Premium Listing Badges" [pos="0.200,0.000"]
+"Increased Bookings" [pos="2.600,0.000"]
+"High Quality Hosts" -> "Premium Listing Badges"
+"Premium Listing Badges" -> "Increased Bookings"
+}
+
+# --------------------------------------------------
+# 52) Randomization -> Trial
+#      -> Avg 67 -> More Fractures
+#      -> Avg Age 49 -> No Increase in Fractures
+# --------------------------------------------------
+dag {
+Randomization [pos="-2.800,0.000"]
+Trial [pos="-1.000,0.000"]
+"Avg 67" [pos="0.800,-1.200"]
+"Avg Age 49" [pos="0.800,1.200"]
+"More Fractures" [pos="2.800,-1.200"]
+"No Increase in Fractures" [pos="2.800,1.200"]
+Randomization -> Trial
+Trial -> "Avg 67"
+Trial -> "Avg Age 49"
+"Avg 67" -> "More Fractures"
+"Avg Age 49" -> "No Increase in Fractures"
+}
+
+# --------------------------------------------------
+# 53) 1 -> 3 <- 2; 3 -> 4; 3 -> 8; 4 -> 6 <- 5; 6 -> 7
+#      Node 3 observed
+# --------------------------------------------------
+dag {
+1 [pos="-2.400,-1.200"]
+2 [pos="-2.400,1.200"]
+3 [pos="-0.800,0.000"]
+4 [pos="0.600,0.000"]
+5 [pos="0.600,1.600"]
+6 [pos="2.000,0.000"]
+7 [pos="3.400,0.000"]
+8 [pos="-0.800,-1.600"]
+1 -> 3
+2 -> 3
+3 -> 4
+3 -> 8
+4 -> 6
+5 -> 6
+6 -> 7
 }
