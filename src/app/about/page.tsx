@@ -160,6 +160,76 @@ export default function AboutPage() {
             <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
             To commit to moral progress to make a difference in the world.
           </blockquote>
+          <blockquote className="mx-auto mt-5 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
+            <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
+            I am also proud to visit the University of Delaware Campus.
+          </blockquote>
+          <div className="mx-auto mt-5 grid max-w-3xl gap-4 sm:grid-cols-2">
+            <figure className="text-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ud-campus-bright.jpg"
+                alt="University of Delaware campus green"
+                width={640}
+                height={400}
+                className="aspect-[4/3] w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
+              />
+              <figcaption
+                className="place-label mx-auto mt-2 inline-block text-sm"
+                style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+              >
+                The Green
+              </figcaption>
+            </figure>
+            <figure className="text-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ud-morris-library.jpg"
+                alt="Morris Library on the University of Delaware campus"
+                width={640}
+                height={400}
+                className="aspect-[4/3] w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
+              />
+              <figcaption
+                className="place-label mx-auto mt-2 inline-block text-sm"
+                style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+              >
+                Library
+              </figcaption>
+            </figure>
+            <figure className="text-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ud-stadium.jpg"
+                alt="Aerial view over Delaware Stadium football field"
+                width={640}
+                height={400}
+                className="aspect-[4/3] w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
+              />
+              <figcaption
+                className="place-label mx-auto mt-2 inline-block text-sm"
+                style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+              >
+                Stadium
+              </figcaption>
+            </figure>
+            <figure className="text-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/ud-interior.jpg"
+                alt="Inside Trabant University Center at the University of Delaware"
+                width={640}
+                height={400}
+                className="aspect-[4/3] w-full rounded-2xl border-2 border-[#0b2545] object-cover object-center shadow-md"
+              />
+              <figcaption
+                className="place-label mx-auto mt-2 inline-block text-sm"
+                style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
+              >
+                Trabant
+              </figcaption>
+            </figure>
+          </div>
         </section>
       </div>
     </main>
