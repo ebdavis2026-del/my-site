@@ -92,7 +92,12 @@ export default function HomePage() {
               </div>
             </div>
             <p className="mt-4 text-lg">
-              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              <a
+                href={`mailto:${profile.email}`}
+                className="text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+              >
+                {profile.email}
+              </a>
             </p>
           </div>
         </div>
