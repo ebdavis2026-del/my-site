@@ -37,7 +37,7 @@ export const profile = {
 
   /** One decision you're proud of, in a sentence. */
   decisionImProudOf:
-    "To commit to moral progress to make a difference in the world.",
+    "To commit to moral progress to make a difference in the world, and choosing to see the University of Delaware campus in person.",
 
   /**
    * Your photo. Replace public/photo.svg with a real photo of you
