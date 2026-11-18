@@ -208,13 +208,13 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="decision-glow mt-12 rounded-xl border-8 border-double border-[#15803d] p-6">
+      <section className="decision-glow mt-12 rounded-xl border-8 border-double border-[#4169E1] p-6">
         <h2 className="text-center text-3xl font-extrabold tracking-wide text-black">
           A decision I&apos;m proud of:
         </h2>
         <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
           <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
-          To commit to moral progress to make a difference in the world, and choosing to have life experiences at the University of Delaware.
+          To commit to moral progress to make a difference in the world, and choosing to have experiences on the University of Delaware campus.
           <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
         </blockquote>
         <div className="mx-auto mt-5 grid max-w-3xl gap-4 sm:grid-cols-2">
