@@ -209,12 +209,7 @@ export default function HomePage() {
         </h2>
         <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
           <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
-          To commit to moral progress to make a difference in the world.
-          <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
-        </blockquote>
-        <blockquote className="mx-auto mt-5 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
-          <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
-          Choosing to be a part of the University of Delaware campus community.
+          To commit to moral progress to make a difference in the world, and choosing to be a part of the University of Delaware campus community.
           <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
         </blockquote>
         <div className="mx-auto mt-5 grid max-w-3xl gap-4 sm:grid-cols-2">
