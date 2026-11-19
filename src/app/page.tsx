@@ -88,9 +88,13 @@ export default function HomePage() {
             </h1>
             <div className="tagline-stack">
               <p className="tagline-outline mt-1 text-2xl uppercase leading-[1.05] tracking-[0.04em]">
-                {profile.tagline.split(",")[0]},
+                Making a
                 <br />
-                {profile.tagline.split(",")[1]?.trim()}
+                difference,
+                <br />
+                one decision
+                <br />
+                at a time
               </p>
               <div className="tagline-follow">
                 <p className="mt-3 text-xl">{profile.hometown}</p>
