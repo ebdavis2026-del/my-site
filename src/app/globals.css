@@ -222,8 +222,10 @@ header a.name-about {
 }
 
 .about-shade a[href^="mailto:"],
-.about-shade a.repo-link {
-  color: #1d4ed8;
+.about-shade a.repo-link,
+.hero-copy a.repo-link,
+a.repo-link {
+  color: #1d4ed8 !important;
   text-decoration: underline #1d4ed8;
   text-underline-offset: 2px;
   -webkit-text-stroke: 0;

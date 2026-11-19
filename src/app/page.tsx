@@ -107,40 +107,63 @@ export default function HomePage() {
                 {profile.email}
               </a>
             </p>
+            <div className="mt-4 border-t border-black pt-3 text-left">
+              <p className="text-base text-black">
+                Roster visibility: {profile.rosterVisibility}
+              </p>
+              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
+                Repo:{" "}
+                <a
+                  href={profile.repoUrl}
+                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+                >
+                  {profile.repoUrl}
+                </a>
+              </p>
+              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
+                Site:{" "}
+                <a
+                  href={profile.siteUrl}
+                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+                >
+                  {profile.siteUrl}
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="mt-6 grid w-full grid-cols-2 gap-4 text-center">
-          <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
+          <figure className="relative aspect-[5/6] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/empire-state.jpg?v=3"
               alt="Empire State Building"
               width={400}
-              height={300}
+              height={480}
               className="absolute inset-0 h-full w-full object-cover object-top"
             />
             <figcaption
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Empire
+              Empire State Building
             </figcaption>
           </figure>
-          <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
+          <figure className="relative aspect-[5/6] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/edge-observatory.jpg?v=3"
               alt="The Edge observatory glass deck at Hudson Yards"
               width={400}
-              height={300}
+              height={480}
               className="absolute inset-0 h-full w-full object-cover object-top"
             />
             <figcaption
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Observatory
+              The Edge Observatory
             </figcaption>
           </figure>
           <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
@@ -156,7 +179,7 @@ export default function HomePage() {
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-center text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Telephone pole
+              Telephone Pole Challenge
             </figcaption>
           </figure>
           <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
@@ -172,13 +195,15 @@ export default function HomePage() {
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-center text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Tree top
+              Tree-Top
+              <br />
+              Challenge
             </figcaption>
           </figure>
         </div>
 
       <section className="about-shade hue-line mt-8">
-        <h2 className="text-2xl">A few fun facts</h2>
+        <h2 className="text-center text-2xl">A few fun facts</h2>
         <ul className="mt-4 space-y-2">
           {profile.funFacts.map((fact) => (
             <li key={fact} className="flex gap-3">
@@ -197,7 +222,7 @@ export default function HomePage() {
         </h2>
         <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
           <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
-          To commit to moral progress to make a difference in the world, and choosing to have University of Delaware experiences and memories.
+          {profile.decisionImProudOf}
           <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
         </blockquote>
         <div className="mt-5 grid w-full gap-4 sm:grid-cols-2">
@@ -214,7 +239,7 @@ export default function HomePage() {
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              The Green
+              UD: Green
             </figcaption>
           </figure>
           <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
@@ -230,7 +255,7 @@ export default function HomePage() {
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Library
+              UD: Library
             </figcaption>
           </figure>
           <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
@@ -246,7 +271,7 @@ export default function HomePage() {
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Stadium
+              UD: Stadium
             </figcaption>
           </figure>
           <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
@@ -262,7 +287,7 @@ export default function HomePage() {
               className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
-              Trabant
+              UD: Trabant
             </figcaption>
           </figure>
         </div>
@@ -292,6 +317,30 @@ export default function HomePage() {
         </ul>
       </section>
 
+      <div className="about-shade hue-line mt-14">
+        <p className="text-base text-black">
+          Roster visibility: {profile.rosterVisibility}
+        </p>
+        <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
+          Repo:{" "}
+          <a
+            href={profile.repoUrl}
+            className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+          >
+            {profile.repoUrl}
+          </a>
+        </p>
+        <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
+          Site:{" "}
+          <a
+            href={profile.siteUrl}
+            className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+          >
+            {profile.siteUrl}
+          </a>
+        </p>
+      </div>
+
       {/* ── Guestbook: the live database round-trip ──────────────────── */}
       <section className="about-shade hue-line mt-14">
         <h2 className="text-2xl">Guestbook</h2>
@@ -300,30 +349,6 @@ export default function HomePage() {
         </p>
         <Guestbook />
       </section>
-
-      <div className="about-shade hue-line mt-10">
-        <p className="text-base">
-          Roster visibility: {profile.rosterVisibility}
-        </p>
-        <p className="mt-1 text-base">
-          Repo:{" "}
-          <a
-            href={profile.repoUrl}
-            className="repo-link text-lg underline decoration-2 underline-offset-2"
-          >
-            {profile.repoUrl}
-          </a>
-        </p>
-        <p className="mt-1 text-base">
-          Site:{" "}
-          <a
-            href={profile.siteUrl}
-            className="repo-link break-all text-lg underline decoration-2 underline-offset-2"
-          >
-            {profile.siteUrl}
-          </a>
-        </p>
-      </div>
       </div>
     </main>
   );
