@@ -12,11 +12,11 @@ export default function AboutPage() {
     <main className="mx-auto max-w-3xl px-6 py-14">
       <style>{`
         .about-squiggle {
-          background-color: rgba(228, 228, 228, 0.45);
+          background-color: rgba(243, 230, 200, 0.45);
         }
         .about-squiggle .about-shade,
         .about-squiggle .decision-glow {
-          background-color: rgba(228, 228, 228, 0.45);
+          background-color: rgba(243, 230, 200, 0.45);
         }
         .about-squiggle .decision-glow {
           box-shadow: none;
@@ -26,16 +26,19 @@ export default function AboutPage() {
         }
       `}</style>
       <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">
-        <div className="flex justify-center">
+        <figure className="mx-auto flex h-12 w-full items-stretch overflow-hidden rounded-md border-4 border-[#ff7a18] shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/tulips.jpg"
-            alt="A bed of colorful tulips"
-            width={112}
-            height={112}
-            className="h-28 w-28 rounded-2xl border-2 border-[#0b2545] object-cover shadow-md"
+            src="/cyber-color.jpg"
+            alt=""
+            width={80}
+            height={48}
+            className="h-full w-20 shrink-0 object-cover"
           />
-        </div>
+          <figcaption className="flex flex-1 items-center justify-center bg-black px-3 text-sm font-bold tracking-[0.28em] text-[#ff7a18] uppercase">
+            cybersecurity
+          </figcaption>
+        </figure>
         <div className="flex flex-col gap-10 rounded-3xl px-6 py-10 sm:flex-row sm:px-8">
           <div className="flex w-fit shrink-0 flex-col items-center gap-4">
             <div className="overflow-hidden rounded-3xl shadow-md">
@@ -50,10 +53,13 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="about-shade hue-line">
-            <h1 className="name-about name-navy text-4xl">{profile.displayName}</h1>
+          <div className="about-shade hue-line min-w-0">
+            <h1 className="name-about name-navy flex max-w-full flex-col text-3xl font-bold leading-tight">
+              <span>{profile.displayName.split(" ")[0]}</span>
+              <span>{profile.displayName.split(" ").slice(1).join(" ")}</span>
+            </h1>
             <div className="tagline-stack">
-              <p className="tagline-outline mt-3 text-2xl uppercase leading-[1.2] tracking-[0.04em]">
+              <p className="tagline-outline mt-1 text-2xl uppercase leading-[1.05] tracking-[0.04em]">
                 {profile.tagline.split(",")[0]},
                 <br />
                 {profile.tagline.split(",")[1]?.trim()}
@@ -69,15 +75,15 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-4 text-center">
-          <figure>
+        <div className="mt-6 -mx-6 grid w-[calc(100%+3rem)] grid-cols-2 gap-3 text-center sm:-mx-8 sm:w-[calc(100%+4rem)]">
+          <figure className="min-w-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/empire-state.jpg?v=3"
               alt="Empire State Building in the Manhattan skyline at sunset"
               width={400}
               height={260}
-              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
+              className="h-80 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
             <figcaption
               className="place-label mt-2 inline-block text-sm"
@@ -86,14 +92,14 @@ export default function AboutPage() {
               Empire State Building
             </figcaption>
           </figure>
-          <figure>
+          <figure className="min-w-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/edge-observatory.jpg?v=3"
               alt="The Edge at Hudson Yards with the skyline at sunset"
               width={400}
               height={260}
-              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
+              className="h-80 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
             <figcaption
               className="place-label mt-2 inline-block text-sm"
@@ -103,8 +109,8 @@ export default function AboutPage() {
             </figcaption>
           </figure>
         </div>
-        <div className="mt-8 grid grid-cols-2 gap-3 text-center">
-          <figure>
+        <div className="mt-4 grid w-full grid-cols-2 gap-3 text-center">
+          <figure className="min-w-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/telephone-pole-girl-standing.jpg"
@@ -120,7 +126,7 @@ export default function AboutPage() {
               Telephone pole challenge
             </figcaption>
           </figure>
-          <figure>
+          <figure className="min-w-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/treetop-fall-girl.jpg"

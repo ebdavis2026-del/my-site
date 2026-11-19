@@ -131,7 +131,7 @@ figcaption.place-label {
   font-weight: 800;
   letter-spacing: 0.02em;
   background-color: #f3e6c8;
-  padding: 0.12em 0.4em 0.16em;
+  padding: 0.02em 0.4em 0.28em;
   border: 1px solid #0b2545;
   border-radius: 0.4rem;
   -webkit-text-stroke: 0;
@@ -143,28 +143,18 @@ header span.on-photo {
 }
 
 .about-shade h1.name-about,
+.about-shade h1.name-about span,
 header a.name-about {
   font-weight: 800;
 }
 
+.about-shade a[href^="mailto:"],
 .about-shade a.repo-link {
-  color: #f3e6c8;
-  text-decoration: underline #f3e6c8;
+  color: #1d4ed8;
+  text-decoration: underline #1d4ed8;
   text-underline-offset: 2px;
   -webkit-text-stroke: 0;
-  text-shadow:
-    -1px -1px 0 #15803d,
-    0 -1px 0 #15803d,
-    1px -1px 0 #15803d,
-    -1px 0 0 #15803d,
-    1px 0 0 #15803d,
-    -1px 1px 0 #15803d,
-    0 1px 0 #15803d,
-    1px 1px 0 #15803d,
-    -2px 0 0 #15803d,
-    2px 0 0 #15803d,
-    0 -2px 0 #15803d,
-    0 2px 0 #15803d;
+  text-shadow: none;
 }
 
 .bar-shade {
