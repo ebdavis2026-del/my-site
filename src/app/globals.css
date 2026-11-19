@@ -130,7 +130,7 @@ figcaption.place-label {
   width: 100%;
   text-align: left;
   border-top: 3px double #000;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
   padding: 0.4rem 0.25rem 0.5rem;
 }
 
@@ -171,7 +171,7 @@ figcaption.place-label {
 .hero-copy .tagline-follow {
   margin-top: 0.85rem;
   padding-top: 0.7rem;
-  border-top: 1px solid #000;
+  border-top: 3px solid #000;
 }
 
 .hero-copy .tagline-follow .journey-dateline {
