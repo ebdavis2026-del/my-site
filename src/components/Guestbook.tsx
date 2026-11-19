@@ -102,7 +102,7 @@ export function Guestbook() {
       {entries && (() => {
         const visible = entries.filter(isPublicGuestbookEntry);
         if (visible.length === 0) {
-          return <p className="mt-4 text-sm">No entries yet. Be the first.</p>;
+          return <p className="mt-4 text-sm">No public entries yet. Sign above to leave one.</p>;
         }
         return (
           <ul className="mt-5 space-y-3">
