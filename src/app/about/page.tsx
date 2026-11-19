@@ -45,7 +45,7 @@ export default function AboutPage() {
             <div className="overflow-hidden rounded-lg border-4 border-black bg-[#0b2545] shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${profile.photoPath}?v=8`}
+                src={profile.photoPath}
                 alt={profile.displayName}
                 width={316}
                 height={316}
