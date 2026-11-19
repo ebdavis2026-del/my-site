@@ -15,6 +15,7 @@ function isPublicGuestbookEntry(entry: Entry) {
   if (name === "selfcheck" || name === "course probe") return false;
   if (message.startsWith("hello from selfcheck")) return false;
   if (message.startsWith("hello from the grader")) return false;
+  if (message === "first!") return false;
   return true;
 }
 
