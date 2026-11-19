@@ -82,7 +82,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="about-shade hue-line min-w-0 flex-1">
-            <h1 className="name-about name-navy flex max-w-full flex-col text-3xl font-bold leading-tight">
+            <h1 className="name-about name-navy inline-flex max-w-full items-baseline gap-3 text-3xl font-bold">
               <span>{profile.displayName.split(" ")[0]}</span>
               <span>{profile.displayName.split(" ").slice(1).join(" ")}</span>
             </h1>
