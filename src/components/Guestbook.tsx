@@ -8,6 +8,16 @@ interface Entry {
   created_at: string;
 }
 
+/** Keep grader/selfcheck posts in the DB, but don't list them on the page. */
+function isPublicGuestbookEntry(entry: Entry) {
+  const name = entry.name.trim().toLowerCase();
+  const message = entry.message.trim().toLowerCase();
+  if (name === "selfcheck" || name === "course probe") return false;
+  if (message.startsWith("hello from selfcheck")) return false;
+  if (message.startsWith("hello from the grader")) return false;
+  return true;
+}
+
 /**
  * The guestbook UI. Talks to your own /api/guestbook routes, which talk to
  * your own Supabase table (see supabase/guestbook.sql). Until your env vars
@@ -88,23 +98,25 @@ export function Guestbook() {
 
       {error && <p className="mt-4 text-sm">{error}</p>}
 
-      {entries && entries.length === 0 && (
-        <p className="mt-4 text-sm">No entries yet. Be the first.</p>
-      )}
-
-      {entries && entries.length > 0 && (
-        <ul className="mt-5 space-y-3">
-          {entries.map((entry, i) => (
-            <li key={`${entry.created_at}-${i}`} className="rounded-xl border border-line p-4">
-              <p className="text-sm">{entry.message}</p>
-              <p className="mt-1 text-xs">
-                — {entry.name}
-                {entry.created_at && `, ${new Date(entry.created_at).toLocaleDateString()}`}
-              </p>
-            </li>
-          ))}
-        </ul>
-      )}
+      {entries && (() => {
+        const visible = entries.filter(isPublicGuestbookEntry);
+        if (visible.length === 0) {
+          return <p className="mt-4 text-sm">No entries yet. Be the first.</p>;
+        }
+        return (
+          <ul className="mt-5 space-y-3">
+            {visible.map((entry, i) => (
+              <li key={`${entry.created_at}-${i}`} className="rounded-xl border border-line p-4">
+                <p className="text-sm">{entry.message}</p>
+                <p className="mt-1 text-xs">
+                  — {entry.name}
+                  {entry.created_at && `, ${new Date(entry.created_at).toLocaleDateString()}`}
+                </p>
+              </li>
+            ))}
+          </ul>
+        );
+      })()}
     </div>
   );
 }

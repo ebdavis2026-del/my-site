@@ -107,29 +107,6 @@ export default function HomePage() {
                 {profile.email}
               </a>
             </p>
-            <div className="mt-4 border-t border-black pt-3 text-left">
-              <p className="text-base text-black">
-                Roster visibility: {profile.rosterVisibility}
-              </p>
-              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
-                Repo:{" "}
-                <a
-                  href={profile.repoUrl}
-                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
-                >
-                  {profile.repoUrl}
-                </a>
-              </p>
-              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
-                Site:{" "}
-                <a
-                  href={profile.siteUrl}
-                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
-                >
-                  {profile.siteUrl}
-                </a>
-              </p>
-            </div>
           </div>
         </div>
 
@@ -316,30 +293,6 @@ export default function HomePage() {
           ))}
         </ul>
       </section>
-
-      <div className="about-shade hue-line mt-14">
-        <p className="text-base text-black">
-          Roster visibility: {profile.rosterVisibility}
-        </p>
-        <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
-          Repo:{" "}
-          <a
-            href={profile.repoUrl}
-            className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
-          >
-            {profile.repoUrl}
-          </a>
-        </p>
-        <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
-          Site:{" "}
-          <a
-            href={profile.siteUrl}
-            className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
-          >
-            {profile.siteUrl}
-          </a>
-        </p>
-      </div>
 
       {/* ── Guestbook: the live database round-trip ──────────────────── */}
       <section className="about-shade hue-line mt-14">
