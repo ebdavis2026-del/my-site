@@ -39,7 +39,7 @@ export default function AboutPage() {
             cybersecurity
           </figcaption>
         </figure>
-        <div className="flex flex-col gap-10 rounded-3xl px-6 py-10 sm:flex-row sm:px-8">
+        <div className="mt-6 flex flex-col gap-8 sm:flex-row sm:items-start">
           <div className="flex w-fit shrink-0 flex-col items-center gap-4">
             <div className="overflow-hidden rounded-3xl shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -53,7 +53,7 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="about-shade hue-line min-w-0">
+          <div className="about-shade hue-line min-w-0 flex-1">
             <h1 className="name-about name-navy flex max-w-full flex-col text-3xl font-bold leading-tight">
               <span>{profile.displayName.split(" ")[0]}</span>
               <span>{profile.displayName.split(" ").slice(1).join(" ")}</span>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        <div className="mt-6 -mx-6 grid w-[calc(100%+3rem)] grid-cols-2 gap-3 text-center sm:-mx-8 sm:w-[calc(100%+4rem)]">
+        <div className="mt-6 grid w-full grid-cols-2 gap-4 text-center">
           <figure className="min-w-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -83,10 +83,10 @@ export default function AboutPage() {
               alt="Empire State Building in the Manhattan skyline at sunset"
               width={400}
               height={260}
-              className="h-80 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
+              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
             <figcaption
-              className="place-label mt-2 inline-block text-sm"
+              className="place-label mx-auto mt-2 block w-fit text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
               Empire State Building
@@ -99,17 +99,17 @@ export default function AboutPage() {
               alt="The Edge at Hudson Yards with the skyline at sunset"
               width={400}
               height={260}
-              className="h-80 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
+              className="h-72 w-full rounded-2xl border-2 border-[#0b2545] object-cover object-top shadow-md"
             />
             <figcaption
-              className="place-label mt-2 inline-block text-sm"
+              className="place-label mx-auto mt-2 block w-fit text-sm"
               style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
             >
               The Edge observatory
             </figcaption>
           </figure>
         </div>
-        <div className="mt-4 grid w-full grid-cols-2 gap-3 text-center">
+        <div className="mt-4 grid w-full grid-cols-2 gap-4 text-center">
           <figure className="min-w-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -167,8 +167,8 @@ export default function AboutPage() {
             To commit to moral progress to make a difference in the world, and choosing to have experiences on the University of Delaware campus.
             <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
           </blockquote>
-          <div className="mx-auto mt-5 grid max-w-3xl gap-4 sm:grid-cols-2">
-            <figure className="text-center">
+          <div className="mt-5 grid w-full gap-4 sm:grid-cols-2">
+            <figure className="min-w-0 text-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/ud-campus-bright.jpg"
@@ -184,7 +184,7 @@ export default function AboutPage() {
                 The Green
               </figcaption>
             </figure>
-            <figure className="text-center">
+            <figure className="min-w-0 text-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/ud-morris-library.jpg"
@@ -200,7 +200,7 @@ export default function AboutPage() {
                 Library
               </figcaption>
             </figure>
-            <figure className="text-center">
+            <figure className="min-w-0 text-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/ud-stadium.jpg"
@@ -216,7 +216,7 @@ export default function AboutPage() {
                 Stadium
               </figcaption>
             </figure>
-            <figure className="text-center">
+            <figure className="min-w-0 text-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/ud-interior.jpg"
