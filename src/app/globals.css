@@ -258,6 +258,13 @@ figcaption.readable-panel {
   background-color: rgba(243, 230, 200, 0.45);
 }
 
+/* Fun facts: keep cream override from painting over the white panel */
+.about-squiggle .fun-facts-panel,
+.fun-facts-panel {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
 .about-squiggle .decision-glow {
   /* UD school colors: Delaware Blue + Delaware Yellow-Gold */
   border: 5px solid #00539f;

@@ -46,6 +46,9 @@ export default function HomePage() {
         .about-squiggle .decision-glow {
           background-color: rgba(243, 230, 200, 0.45);
         }
+        .about-squiggle .fun-facts-panel {
+          background-color: rgba(255, 255, 255, 0.88) !important;
+        }
         .about-squiggle .decision-glow {
           border: 5px solid #00539f;
           box-shadow: 0 0 0 5px #ffd200;
@@ -203,13 +206,7 @@ export default function HomePage() {
           </figure>
         </div>
 
-      <section
-        className="about-shade hue-line mt-8"
-        style={{
-          boxShadow: "inset 0 0 0 3px #ffffff",
-          backgroundColor: "rgba(255, 255, 255, 0.68)",
-        }}
-      >
+      <section className="fun-facts-panel hue-line mt-8 rounded-[1rem] px-6 py-5">
         <h2 className="text-center text-2xl">A few fun facts</h2>
         <ul className="mt-4 space-y-2">
           {profile.funFacts.map((fact) => (
