@@ -174,8 +174,21 @@ export default function AboutPage() {
           </figure>
         </div>
 
-        <section className="about-shade hue-line mt-8">
-          <h2 className="text-center text-2xl">A few fun facts</h2>
+        <section
+          className="about-shade hue-line mt-8"
+          style={{ boxShadow: "0 0 0 3px #ffffff", backgroundColor: "rgba(255, 255, 255, 0.72)" }}
+        >
+          <h2
+            className="text-center text-2xl"
+            style={{
+              WebkitTextStroke: "1.5px #ffffff",
+              paintOrder: "stroke fill",
+              textShadow:
+                "-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff",
+            }}
+          >
+            A few fun facts
+          </h2>
           <ul className="mt-4 space-y-2">
             {profile.funFacts.map((fact) => (
               <li key={fact} className="flex gap-3">
@@ -201,11 +214,16 @@ export default function AboutPage() {
             >
               A decision I&apos;m proud of:
             </h2>
-            <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
-              <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
-              {profile.decisionImProudOf}
-              <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
-            </blockquote>
+            <div className="decision-banner" aria-label={profile.decisionImProudOf}>
+              <div className="decision-banner__track">
+                <p className="decision-banner__item">
+                  &ldquo;{profile.decisionImProudOf}&rdquo;
+                </p>
+                <p className="decision-banner__item" aria-hidden="true">
+                  &ldquo;{profile.decisionImProudOf}&rdquo;
+                </p>
+              </div>
+            </div>
           </div>
           <div className="mt-5 grid w-full gap-4 sm:grid-cols-2">
             <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
