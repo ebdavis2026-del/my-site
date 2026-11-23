@@ -189,14 +189,24 @@ export default function AboutPage() {
         </section>
 
         <section className="decision-glow mt-12 rounded-xl p-6">
-          <h2 className="text-center text-3xl font-extrabold tracking-wide text-black">
-            A decision I&apos;m proud of:
-          </h2>
-          <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
-            <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
-            {profile.decisionImProudOf}
-            <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
-          </blockquote>
+          <div className="rounded-lg border-[3px] border-[#00539f] px-4 py-3">
+            <h2
+              className="text-center text-3xl font-extrabold tracking-wide text-black"
+              style={{
+                WebkitTextStroke: "1.5px #ffffff",
+                paintOrder: "stroke fill",
+                textShadow:
+                  "-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff",
+              }}
+            >
+              A decision I&apos;m proud of:
+            </h2>
+            <blockquote className="mx-auto mt-3 max-w-full px-6 text-center text-xl font-bold leading-relaxed text-black">
+              <span aria-hidden className="mr-1 text-xl font-bold text-black">&ldquo;</span>
+              {profile.decisionImProudOf}
+              <span aria-hidden className="ml-1 text-xl font-bold text-black">&rdquo;</span>
+            </blockquote>
+          </div>
           <div className="mt-5 grid w-full gap-4 sm:grid-cols-2">
             <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
