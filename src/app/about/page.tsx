@@ -176,19 +176,12 @@ export default function AboutPage() {
 
         <section
           className="about-shade hue-line mt-8"
-          style={{ boxShadow: "0 0 0 3px #ffffff", backgroundColor: "rgba(255, 255, 255, 0.72)" }}
+          style={{
+            boxShadow: "inset 0 0 0 3px #ffffff",
+            backgroundColor: "rgba(255, 255, 255, 0.68)",
+          }}
         >
-          <h2
-            className="text-center text-2xl"
-            style={{
-              WebkitTextStroke: "1.5px #ffffff",
-              paintOrder: "stroke fill",
-              textShadow:
-                "-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff",
-            }}
-          >
-            A few fun facts
-          </h2>
+          <h2 className="text-center text-2xl">A few fun facts</h2>
           <ul className="mt-4 space-y-2">
             {profile.funFacts.map((fact) => (
               <li key={fact} className="flex gap-3">
