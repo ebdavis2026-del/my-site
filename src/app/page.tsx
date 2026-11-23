@@ -47,7 +47,8 @@ export default function HomePage() {
           background-color: rgba(243, 230, 200, 0.45);
         }
         .about-squiggle .decision-glow {
-          box-shadow: none;
+          border: 5px solid #00539f;
+          box-shadow: 0 0 0 5px #ffd200;
         }
         .hero-copy .tagline-follow .journey-dateline,
         .hero-copy .tagline-follow .journey-copy {
@@ -107,6 +108,29 @@ export default function HomePage() {
                 {profile.email}
               </a>
             </p>
+            <div className="mt-4 border-t border-black pt-3 text-left">
+              <p className="text-base font-bold text-black">
+                Roster visibility: {profile.rosterVisibility}
+              </p>
+              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
+                <span className="font-bold">Repo:</span>{" "}
+                <a
+                  href={profile.repoUrl}
+                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+                >
+                  {profile.repoUrl}
+                </a>
+              </p>
+              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
+                <span className="font-bold">Site:</span>{" "}
+                <a
+                  href={profile.siteUrl}
+                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
+                >
+                  {profile.siteUrl}
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -193,7 +217,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="decision-glow mt-12 rounded-xl border-8 border-double border-[#4169E1] p-6">
+      <section className="decision-glow mt-12 rounded-xl p-6">
         <h2 className="text-center text-3xl font-extrabold tracking-wide text-black">
           A decision I&apos;m proud of:
         </h2>
