@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { profile } from "@/profile";
 import { Guestbook } from "@/components/Guestbook";
+import { PhotoCarousel } from "@/components/PhotoCarousel";
+import { ServicesCarousel } from "@/components/ServicesCarousel";
 
 /**
  * Your home page. It's already personalized: everything here reads from
@@ -10,28 +11,44 @@ import { Guestbook } from "@/components/Guestbook";
 
 const SERVICES = [
   {
+    lane: 1,
+    title: "Tech Foundations",
+    href: "/",
+    blurb: "Put your work in code. A live site that keeps deciding while you sleep.",
+    image: "/images/lane1.svg",
+    imageAlt: "Code to deploy to live site",
+  },
+  {
     lane: 2,
     title: "Reasoning & Uncertainty",
     href: "/reasoning",
     blurb: "Audits syllogisms, updates on base rates, reads Bernoulli businesses.",
+    image: "/images/reasoning.svg",
+    imageAlt: "Prior to evidence to posterior belief update",
   },
   {
     lane: 3,
     title: "Decision Simulator",
     href: "/simulator",
     blurb: "Simulates investment games and recommends the growth-optimal stake.",
+    image: "/images/dag.png",
+    imageAlt: "Decision simulator DAG diagram",
   },
   {
     lane: 4,
     title: "Causality Audit",
     href: "/causality",
     blurb: "Tells forks from pipes from colliders, and when to stratify.",
+    image: "/images/causality/fork.png",
+    imageAlt: "Causality fork diagram",
   },
   {
     lane: 5,
     title: "Capstone: Live Decision Service",
     href: "/capstone",
     blurb: "A full advocacy report on a real decision domain, backed by data.",
+    image: "/images/capstone.svg",
+    imageAlt: "Analysis to visualization to action",
   },
 ];
 
@@ -47,7 +64,9 @@ export default function HomePage() {
           background-color: rgba(243, 230, 200, 0.45);
         }
         .about-squiggle .fun-facts-panel {
-          background-color: rgba(255, 255, 255, 0.88) !important;
+          background-color: rgba(229, 231, 235, 0.7) !important;
+          border: 3px solid #00a0df !important;
+          box-shadow: inset 0 0 0 3px #ffd200, 0 0 0 3px #00a0df;
         }
         .about-squiggle .decision-glow {
           border: 5px solid #00539f;
@@ -104,6 +123,7 @@ export default function HomePage() {
               </div>
             </div>
             <p className="mt-4 text-lg">
+              <span className="font-bold text-black">Email:</span>{" "}
               <a
                 href={`mailto:${profile.email}`}
                 className="text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
@@ -137,90 +157,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-6 grid w-full grid-cols-2 gap-4 text-center">
-          <figure className="relative aspect-[5/6] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/empire-state.jpg?v=3"
-              alt="Empire State Building"
-              width={400}
-              height={480}
-              className="absolute inset-0 h-full w-full object-cover object-top"
-            />
-            <figcaption
-              className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
-              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
-            >
-              Empire State Building
-            </figcaption>
-          </figure>
-          <figure className="relative aspect-[5/6] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/edge-observatory.jpg?v=3"
-              alt="The Edge observatory glass deck at Hudson Yards"
-              width={400}
-              height={480}
-              className="absolute inset-0 h-full w-full object-cover object-top"
-            />
-            <figcaption
-              className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-sm"
-              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
-            >
-              The Edge Observatory
-            </figcaption>
-          </figure>
-          <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/telephone-pole-girl-standing.jpg"
-              alt="A girl standing on top of a camp telephone pole"
-              width={640}
-              height={480}
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            />
-            <figcaption
-              className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-center text-sm"
-              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
-            >
-              Telephone Pole Challenge
-            </figcaption>
-          </figure>
-          <figure className="relative aspect-[4/3] min-w-0 overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/treetop-fall-girl.jpg"
-              alt="A girl in a harness walking a log between trees in fall colors"
-              width={640}
-              height={480}
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            />
-            <figcaption
-              className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-center text-sm"
-              style={{ backgroundColor: "rgba(11, 37, 69, 0.88)", padding: "0.1rem 0.45rem", borderRadius: "0.35rem" }}
-            >
-              Tree-Top
-              <br />
-              Challenge
-            </figcaption>
-          </figure>
-        </div>
-
-      <section className="fun-facts-panel hue-line mt-8 rounded-[1rem] px-6 py-5">
-        <h2 className="text-center text-2xl">A few fun facts</h2>
-        <ul className="mt-4 space-y-2">
-          {profile.funFacts.map((fact) => (
-            <li key={fact} className="flex gap-3">
-              <span aria-hidden className="mt-1">
-                ✦
-              </span>
-              <span>{fact}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="decision-glow mt-12 rounded-xl p-6">
+      <section className="decision-glow mt-8 rounded-xl p-6">
         <div className="rounded-lg border-[3px] border-[#00539f] px-4 py-3">
           <h2
             className="text-center text-3xl font-extrabold tracking-wide text-black"
@@ -233,13 +170,16 @@ export default function HomePage() {
           >
             A decision I&apos;m proud of:
           </h2>
-          <div className="decision-banner" aria-label={profile.decisionImProudOf}>
+          <div
+            className="decision-banner"
+            aria-label="Choosing the University of Delaware. Committing to moral progress, one decision at a time. Making a meaningful difference. Building lasting memories on the UD campus."
+          >
             <div className="decision-banner__track">
               <p className="decision-banner__item">
-                &ldquo;{profile.decisionImProudOf}&rdquo;
+                Choosing the University of Delaware. Committing to moral progress, one decision at a time. Making a meaningful difference. Building lasting memories on the UD campus.
               </p>
               <p className="decision-banner__item" aria-hidden="true">
-                &ldquo;{profile.decisionImProudOf}&rdquo;
+                Choosing the University of Delaware. Committing to moral progress, one decision at a time. Making a meaningful difference. Building lasting memories on the UD campus.
               </p>
             </div>
           </div>
@@ -313,27 +253,22 @@ export default function HomePage() {
       </section>
 
       {/* ── Portfolio of decision services ───────────────────────────── */}
-      <section className="about-shade hue-line mt-14">
-        <h2 className="text-2xl">A portfolio of decision services</h2>
-        <p className="mt-2 max-w-prose">
+      <section className="about-shade hue-line mt-12">
+        <h2 className="text-center text-2xl underline decoration-2 underline-offset-4">
+          A Portfolio Of Decision Services
+        </h2>
+        <p className="mx-auto mt-2 max-w-prose text-center">
           Over the semester this site grows one live decision service per lane. Here&apos;s
           what&apos;s coming:
         </p>
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-          {SERVICES.map((s) => (
-            <li key={s.lane} className="rounded-xl border border-line bg-transparent p-5 transition duration-200 hover:-translate-y-1">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted">
-                Lane {s.lane}
-              </p>
-              <h3 className="mt-1 font-bold">
-                <Link href={s.href} className="transition hover:text-accent">
-                  {s.title}
-                </Link>
-              </h3>
-              <p className="mt-1.5 text-sm text-muted">{s.blurb}</p>
-            </li>
-          ))}
-        </ul>
+        <ServicesCarousel services={SERVICES} />
+      </section>
+
+      <section className="fun-facts-panel hue-line mt-14 rounded-[1rem] px-6 py-5">
+        <h2 className="text-center text-4xl font-extrabold tracking-wide text-black">
+          A few fun facts
+        </h2>
+        <PhotoCarousel facts={profile.funFacts} />
       </section>
 
       {/* ── Guestbook: the live database round-trip ──────────────────── */}
