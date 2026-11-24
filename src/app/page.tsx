@@ -3,6 +3,7 @@ import { Guestbook } from "@/components/Guestbook";
 import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { ServicesCarousel } from "@/components/ServicesCarousel";
 import ScrollLinkRow from "@/components/ScrollLinkRow";
+import Cyber3DTitle from "@/components/Cyber3DTitle";
 
 /**
  * Your home page. It's already personalized: everything here reads from
@@ -79,7 +80,7 @@ export default function HomePage() {
         }
       `}</style>
       <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">
-        <figure className="mx-auto flex h-12 w-full items-stretch overflow-hidden rounded-md border-4 border-[#ff7a18] shadow-sm">
+        <figure className="cyber-3d mx-auto flex h-12 w-full items-stretch overflow-visible rounded-md border-4 border-[#ff7a18] shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/cyber-color.jpg"
@@ -88,16 +89,8 @@ export default function HomePage() {
             height={48}
             className="h-full w-20 shrink-0 object-cover"
           />
-          <figcaption
-            className="flex flex-1 items-center justify-center bg-[#00539f] px-3 text-lg font-bold tracking-[0.28em] text-[#ff7a18] uppercase sm:text-xl"
-            style={{
-              WebkitTextStroke: "1.75px #000",
-              paintOrder: "stroke fill",
-              textShadow:
-                "-1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000",
-            }}
-          >
-            cybersecurity
+          <figcaption className="flex flex-1 items-center justify-center bg-[#00539f] px-3 text-lg font-bold tracking-[0.28em] uppercase sm:text-xl">
+            <Cyber3DTitle />
           </figcaption>
         </figure>
         <div className="mt-6 flex flex-col gap-1.5 sm:flex-row sm:items-start">
