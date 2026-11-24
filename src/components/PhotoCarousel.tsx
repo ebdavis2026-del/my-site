@@ -20,11 +20,39 @@ const PHOTOS: Photo[] = [
     factIndex: 0,
   },
   {
+    src: "/empire-state-street.jpg?v=1",
+    alt: "Empire State Building viewed from the street",
+    caption: "Empire State from the Street",
+    object: "object-center",
+    factIndex: 0,
+  },
+  {
     src: "/edge-observatory.jpg?v=3",
     alt: "The Edge observatory glass deck at Hudson Yards",
     caption: "The Edge Observatory",
     object: "object-top",
     factIndex: 0,
+  },
+  {
+    src: "/edge-from-top.jpg?v=1",
+    alt: "View from the top of The Edge over New York City",
+    caption: "Edge: View from the Top",
+    object: "object-center",
+    factIndex: 0,
+  },
+  {
+    src: "/images/maya-angelou-quote.jpg?v=2",
+    alt: "Maya Angelou's Quote",
+    caption: "Maya Angelou's Quote",
+    object: "object-center",
+    factIndex: 1,
+  },
+  {
+    src: "/stockholm-square.jpg",
+    alt: "Stockholm square during the day",
+    caption: "Stockholm Square",
+    object: "object-center",
+    factIndex: 2,
   },
   {
     src: "/sweden-bridge.jpg",
@@ -69,24 +97,29 @@ export function PhotoCarousel({ facts }: { facts: string[] }) {
       setIndex((i) => (i + 1) % PHOTOS.length);
     }, INTERVAL_MS);
     return () => window.clearInterval(id);
-  }, [paused]);
+  }, [paused, index]);
 
   function goTo(next: number) {
-    setPaused(true);
     setIndex((next + PHOTOS.length) % PHOTOS.length);
   }
 
+  const n = PHOTOS.length || 1;
+
   return (
     <div className="mt-6 w-full max-w-xl mx-auto">
-      <div className="relative overflow-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
+      <div className="relative overflow-x-hidden rounded-2xl border-2 border-[#0b2545] shadow-md">
         <div
           className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${index * 100}%)` }}
+          style={{
+            width: `${n * 100}%`,
+            transform: `translateX(-${(index * 100) / n}%)`,
+          }}
         >
           {PHOTOS.map((photo) => (
             <figure
               key={photo.src}
-              className="relative aspect-[4/3] min-w-full shrink-0 basis-full"
+              className="relative aspect-[4/3] shrink-0"
+              style={{ width: `${100 / n}%` }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -155,6 +188,10 @@ export function PhotoCarousel({ facts }: { facts: string[] }) {
         >
           {paused ? "Play" : "Pause"}
         </button>
+
+        <p className="pointer-events-none absolute left-2 top-2 z-20 rounded-md bg-[#0b2545]/85 px-2 py-1 text-xs font-semibold text-white">
+          {index + 1} / {n}
+        </p>
       </div>
 
       <ul className="mt-4 space-y-2" aria-live="polite">

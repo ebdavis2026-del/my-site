@@ -54,7 +54,9 @@ export const profile = {
   rosterVisibility: "class" as "class" | "professor-only",
 
   /** A one-line tagline for your home page. Make it yours. */
-  tagline: "Making a difference, one decision at a time.",
+  tagline:
+    "Do the best you can until you know better. Then when you know better, do better.",
+  taglineAttribution: "Maya Angelou's Quote",
 
   /**
    * A short bio for your home page: two or three sentences, written like

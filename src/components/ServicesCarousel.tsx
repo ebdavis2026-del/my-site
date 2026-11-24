@@ -27,10 +27,9 @@ export function ServicesCarousel({ services }: { services: Service[] }) {
       setIndex((i) => (i + 1) % services.length);
     }, INTERVAL_MS);
     return () => window.clearInterval(id);
-  }, [paused, services.length]);
+  }, [paused, index, services.length]);
 
   function goTo(next: number) {
-    setPaused(true);
     setIndex((next + services.length) % services.length);
   }
 

@@ -160,14 +160,25 @@ figcaption.place-label {
   background: none;
   min-width: 0;
   font-family: var(--font-lora), Georgia, "Times New Roman", serif;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
   text-align: left;
-  text-transform: uppercase;
+  text-transform: none;
   color: #000;
   -webkit-text-stroke: 0;
+}
+
+.hero-copy p.headline-deck .headline-deck__attr {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero-copy .tagline-follow {
