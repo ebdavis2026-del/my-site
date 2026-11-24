@@ -34,6 +34,13 @@ const PHOTOS: Photo[] = [
     factIndex: 0,
   },
   {
+    src: "/empire-state-night-color-full.jpg",
+    alt: "Empire State Building lit in colored lights at night",
+    caption: "Empire State in Color at Night",
+    object: "object-center",
+    factIndex: 0,
+  },
+  {
     src: "/empire-state-night-color.jpg?v=2",
     alt: "Tip of the Empire State Building lit in colored lights at night",
     caption: "Empire State Top in Color",
