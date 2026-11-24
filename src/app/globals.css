@@ -360,35 +360,31 @@ figcaption.readable-panel {
     1px 1px 0 #15803d;
 }
 
-/* Cybersecurity title — motion is driven in Cyber3DTitle.tsx */
+/* Cybersecurity 3D bounce title */
 .cyber-3d {
+  perspective: 600px;
   overflow: visible;
 }
 
 .cyber-3d__text {
   display: inline-block;
-  transform: scale(0.5);
-  transform-origin: 50% 50%;
+  transform: perspective(600px) translateZ(-20px) rotateX(20deg) scale(0.85);
+  transform-origin: 50% 60%;
   color: #ff7a18;
-  letter-spacing: 0.1em;
-  -webkit-text-stroke: 1.5px #000;
+  -webkit-text-stroke: 2.5px #000;
   paint-order: stroke fill;
   text-shadow:
-    0 1px 0 #1a1a1a,
-    0 2px 0 #151515,
-    0 3px 0 #101010,
-    0 4px 0 #0a0a0a,
-    0 5px 0 #050505,
-    0 6px 0 #000,
-    0 10px 14px rgba(0, 0, 0, 0.55),
-    0 0 16px rgba(255, 122, 24, 0.4);
+    0 1px 0 #000,
+    0 2px 0 #000,
+    0 3px 0 #111,
+    0 4px 0 #111,
+    0 5px 0 #000,
+    0 8px 12px rgba(0, 0, 0, 0.55);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cyber-3d__text {
     transform: none;
-    letter-spacing: 0.28em;
-    opacity: 1;
   }
 }
 

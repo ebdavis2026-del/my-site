@@ -4,72 +4,71 @@ import { useEffect, useRef } from "react";
 
 export default function Cyber3DTitle({ children = "cybersecurity" }: { children?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      el.style.transform = "scale(1.08)";
+      el.style.transform = "perspective(600px) translateZ(20px) rotateX(12deg) scale(1.05)";
       return;
     }
 
-    const play = () => {
-      if (started.current) return;
-      started.current = true;
+    let playing = false;
+    let wasVisible = false;
 
-      el.animate(
+    const play = () => {
+      if (playing) return;
+      playing = true;
+
+      const anim = el.animate(
         [
           {
-            transform: "scale(0.5)",
-            letterSpacing: "0.1em",
-            opacity: 0.35,
+            transform: "perspective(600px) translateZ(-48px) rotateX(28deg) scale(0.72)",
+            opacity: 0.5,
             offset: 0,
           },
           {
-            transform: "scale(1.4)",
-            letterSpacing: "0.36em",
+            transform: "perspective(600px) translateZ(56px) rotateX(6deg) scale(1.32)",
             opacity: 1,
-            offset: 0.45,
+            offset: 0.38,
           },
           {
-            transform: "scale(1.08)",
-            letterSpacing: "0.28em",
+            transform: "perspective(600px) translateZ(-12px) rotateX(18deg) scale(0.9)",
+            opacity: 1,
+            offset: 0.68,
+          },
+          {
+            transform: "perspective(600px) translateZ(22px) rotateX(12deg) scale(1.08)",
             opacity: 1,
             offset: 1,
           },
         ],
         {
-          duration: 2600,
-          easing: "cubic-bezier(0.12, 0.7, 0.2, 1)",
+          duration: 3000,
+          easing: "cubic-bezier(0.22, 0.9, 0.28, 1)",
           fill: "forwards",
         }
       );
+
+      anim.finished.finally(() => {
+        playing = false;
+      });
     };
 
-    const inView = () => {
-      const r = el.getBoundingClientRect();
-      return r.bottom > 20 && r.top < window.innerHeight - 20 && r.width > 0;
-    };
-
-    let delayTimer: number | undefined;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry?.isIntersecting) play();
+        const visible = Boolean(entry?.isIntersecting);
+        if (visible && !wasVisible) {
+          play(); // only when it newly comes into view
+        }
+        wasVisible = visible;
       },
-      { threshold: 0.1 }
+      { threshold: 0.35, rootMargin: "0px" }
     );
     io.observe(el);
 
-    if (inView()) {
-      delayTimer = window.setTimeout(play, 80);
-    }
-
-    return () => {
-      io.disconnect();
-      if (delayTimer) window.clearTimeout(delayTimer);
-    };
+    return () => io.disconnect();
   }, []);
 
   return (

@@ -89,7 +89,7 @@ export default function HomePage() {
             height={48}
             className="h-full w-20 shrink-0 object-cover"
           />
-          <figcaption className="flex flex-1 items-center justify-center bg-[#00539f] px-3 text-lg font-bold tracking-[0.28em] uppercase sm:text-xl">
+          <figcaption className="flex flex-1 items-center justify-center bg-[#00539f] px-3 text-xl font-extrabold tracking-[0.28em] uppercase sm:text-2xl">
             <Cyber3DTitle />
           </figcaption>
         </figure>
