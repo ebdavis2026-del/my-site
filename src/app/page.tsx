@@ -112,10 +112,9 @@ export default function HomePage() {
                   <span>{profile.displayName.split(" ").slice(1).join(" ")}</span>
                 </h1>
                 <p className="headline-deck">
-                  <span className="headline-deck__attr">
-                    {profile.taglineAttribution}
-                  </span>
-                  {profile.tagline}
+                  Making a difference,
+                  <br />
+                  one decision at a time
                 </p>
               </div>
               <div className="tagline-follow">
