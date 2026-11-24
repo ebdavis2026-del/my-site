@@ -7,8 +7,10 @@ type Photo = {
   alt: string;
   caption: string;
   object: "object-top" | "object-center";
-  /** Index into the funFacts array this photo lines up with */
+  /** Index into the funFacts array this photo lines up with; -1 = none */
   factIndex: number;
+  /** White inset frame around the photo */
+  whiteFrame?: boolean;
 };
 
 const PHOTOS: Photo[] = [
@@ -67,6 +69,14 @@ const PHOTOS: Photo[] = [
     caption: "Maya Angelou's Quote",
     object: "object-center",
     factIndex: 1,
+    whiteFrame: true,
+  },
+  {
+    src: "/downtown-delaware-sky.jpg",
+    alt: "Aerial sky shot of downtown Wilmington Delaware",
+    caption: "Downtown Delaware Sky Shot",
+    object: "object-center",
+    factIndex: -1,
   },
   {
     src: "/stockholm-square.jpg",
@@ -95,6 +105,7 @@ const PHOTOS: Photo[] = [
     caption: "Stockholm at Night",
     object: "object-center",
     factIndex: 2,
+    whiteFrame: true,
   },
   {
     src: "/telephone-pole-girl-standing.jpg",
@@ -155,7 +166,11 @@ export function PhotoCarousel({ facts }: { facts: string[] }) {
                 alt={photo.alt}
                 width={640}
                 height={480}
-                className={`absolute inset-0 h-full w-full object-cover ${photo.object}`}
+                className={`absolute inset-0 h-full w-full object-cover ${photo.object} ${
+                  photo.whiteFrame
+                    ? "box-border border-[10px] border-white"
+                    : ""
+                }`}
               />
               <figcaption
                 className="place-label absolute bottom-2 left-1/2 z-10 m-0 w-fit -translate-x-1/2 text-center text-sm"
