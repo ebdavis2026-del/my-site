@@ -24,6 +24,7 @@ body {
   color: var(--ink);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-weight: 500;
+  font-size: 1.125rem;
   /* A real typographic rhythm: comfortable measure and line height. */
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -235,6 +236,55 @@ a.repo-link {
   text-underline-offset: 2px;
   -webkit-text-stroke: 0;
   text-shadow: none;
+}
+
+/* Repo/Site one-line links + always-visible custom scrollbar */
+.roster-link-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.roster-link-row {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: #000;
+  scrollbar-width: none;
+}
+
+.roster-link-row::-webkit-scrollbar {
+  display: none;
+}
+
+.roster-link-track {
+  margin-top: 0.2rem;
+  height: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.roster-link-thumb {
+  height: 6px;
+  margin-top: 0;
+  border-radius: 4px;
+  will-change: transform;
+}
+
+.roster-link-wrap--blue .roster-link-track,
+.roster-link-wrap--green .roster-link-track {
+  background: #ffffff;
+  border: 1.5px solid #000;
+}
+
+.roster-link-wrap--blue .roster-link-thumb,
+.roster-link-wrap--green .roster-link-thumb {
+  background: #000000;
+  border: 1.5px solid #000;
+  box-sizing: border-box;
 }
 
 .bar-shade {

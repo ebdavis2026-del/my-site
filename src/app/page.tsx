@@ -2,6 +2,7 @@ import { profile } from "@/profile";
 import { Guestbook } from "@/components/Guestbook";
 import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { ServicesCarousel } from "@/components/ServicesCarousel";
+import ScrollLinkRow from "@/components/ScrollLinkRow";
 
 /**
  * Your home page. It's already personalized: everything here reads from
@@ -87,7 +88,15 @@ export default function HomePage() {
             height={48}
             className="h-full w-20 shrink-0 object-cover"
           />
-          <figcaption className="flex flex-1 items-center justify-center bg-black px-3 text-sm font-bold tracking-[0.28em] text-[#ff7a18] uppercase">
+          <figcaption
+            className="flex flex-1 items-center justify-center bg-[#00539f] px-3 text-lg font-bold tracking-[0.28em] text-[#ff7a18] uppercase sm:text-xl"
+            style={{
+              WebkitTextStroke: "1.75px #000",
+              paintOrder: "stroke fill",
+              textShadow:
+                "-1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000",
+            }}
+          >
             cybersecurity
           </figcaption>
         </figure>
@@ -131,28 +140,12 @@ export default function HomePage() {
                 {profile.email}
               </a>
             </p>
-            <div className="mt-4 border-t border-black pt-3 text-left">
+            <div className="mt-4 min-w-0 border-t border-black pt-3 text-left">
               <p className="text-base font-bold text-black">
                 Roster visibility: {profile.rosterVisibility}
               </p>
-              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
-                <span className="font-bold">Repo:</span>{" "}
-                <a
-                  href={profile.repoUrl}
-                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
-                >
-                  {profile.repoUrl}
-                </a>
-              </p>
-              <p className="mt-1 overflow-x-auto whitespace-nowrap text-sm text-black">
-                <span className="font-bold">Site:</span>{" "}
-                <a
-                  href={profile.siteUrl}
-                  className="repo-link font-semibold text-blue-600 underline decoration-2 underline-offset-2 hover:text-blue-800"
-                >
-                  {profile.siteUrl}
-                </a>
-              </p>
+              <ScrollLinkRow label="Repo" href={profile.repoUrl} tone="blue" />
+              <ScrollLinkRow label="Site" href={profile.siteUrl} tone="green" />
             </div>
           </div>
         </div>
@@ -172,14 +165,14 @@ export default function HomePage() {
           </h2>
           <div
             className="decision-banner"
-            aria-label="Choosing the University of Delaware. Committing to moral progress, one decision at a time. Making a meaningful difference. Building lasting memories on the UD campus."
+            aria-label="Choosing the University of Delaware. Committing to Moral Progress, One Decision at a Time. Making a meaningful difference. Building lasting memories on the UD campus."
           >
             <div className="decision-banner__track">
               <p className="decision-banner__item">
-                Choosing the University of Delaware. Committing to moral progress, one decision at a time. Making a meaningful difference. Building lasting memories on the UD campus.
+                Choosing the University of Delaware. Committing to Moral Progress, One Decision at a Time. Making a meaningful difference. Building lasting memories on the UD campus.
               </p>
               <p className="decision-banner__item" aria-hidden="true">
-                Choosing the University of Delaware. Committing to moral progress, one decision at a time. Making a meaningful difference. Building lasting memories on the UD campus.
+                Choosing the University of Delaware. Committing to Moral Progress, One Decision at a Time. Making a meaningful difference. Building lasting memories on the UD campus.
               </p>
             </div>
           </div>
