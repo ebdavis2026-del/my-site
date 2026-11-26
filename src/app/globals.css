@@ -366,6 +366,12 @@ figcaption.readable-panel {
   overflow: visible;
 }
 
+.cyber-3d__wrap {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
 .cyber-3d__text {
   display: inline-block;
   transform: perspective(600px) translateZ(-20px) rotateX(20deg) scale(0.85);
@@ -382,9 +388,34 @@ figcaption.readable-panel {
     0 8px 12px rgba(0, 0, 0, 0.55);
 }
 
+.cyber-3d__sparkle {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  color: #fff700;
+  line-height: 1;
+  font-weight: 900;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 8px #ffe600,
+    0 0 16px #ffd000,
+    0 0 28px #ffcc00,
+    0 0 40px rgba(255, 220, 0, 1);
+  filter: drop-shadow(0 0 6px #fff200) drop-shadow(0 0 14px #ffdd00) drop-shadow(0 0 22px #ffc400);
+  mix-blend-mode: plus-lighter;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cyber-3d__text {
     transform: none;
+  }
+
+  .cyber-3d__sparkle {
+    display: none;
   }
 }
 

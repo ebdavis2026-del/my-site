@@ -45,7 +45,7 @@ export default function AboutPage() {
             height={48}
             className="h-full w-20 shrink-0 object-cover"
           />
-          <figcaption className="flex flex-1 items-center justify-center bg-[#00539f] px-3 text-xl font-extrabold tracking-[0.28em] uppercase sm:text-2xl">
+          <figcaption className="relative flex flex-1 items-center justify-center overflow-visible bg-[#00539f] px-3 text-xl font-extrabold tracking-[0.28em] uppercase sm:text-2xl">
             <Cyber3DTitle />
           </figcaption>
         </figure>
