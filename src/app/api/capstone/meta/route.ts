@@ -8,3 +8,4 @@ export async function GET() {
     domain: "staffing", // your choice: staffing, inventory, pricing, or channels
   });
 }
+
