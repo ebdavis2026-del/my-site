@@ -110,7 +110,11 @@ export default async function CapstonePage() {
       <section className="mt-10">
         <h2 className="text-2xl font-bold">The recipe behind the numbers</h2>
         <p className="mt-2 max-w-prose text-muted">
-          Each box is one step in the story we replay thousands of times.
+          Drawn as a graph, not an indented list: one box per step and one
+          arrow per link. A list would put each line under one parent, but
+          some steps have two. Patrick&apos;s quarter total adds up two shops
+          — for example Shop 1&apos;s days with him and Shop 2&apos;s days
+          without him — so the drawing shows both arrows.
         </p>
         <RecipeDag probe={probe} />
       </section>
