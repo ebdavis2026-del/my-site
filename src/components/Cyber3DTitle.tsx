@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { BANNER_MOTION_MS, startBannerMotion } from "@/lib/banner-motion";
 
 const SPARKLE_SPOTS = [
   { top: "-14px", left: "2%", delay: 80, size: 26 },
@@ -21,10 +22,34 @@ const SPARKLE_SPOTS = [
   { top: "70%", left: "94%", delay: 380, size: 32 },
 ];
 
+/** Second wave — offset positions so it reads as a fresh burst */
+const SPARKLE_SPOTS_2 = [
+  { top: "-6px", left: "12%", delay: 60, size: 22 },
+  { top: "-20px", left: "34%", delay: 160, size: 28 },
+  { top: "4%", left: "56%", delay: 100, size: 20 },
+  { top: "-14px", left: "82%", delay: 220, size: 26 },
+  { top: "28%", left: "4%", delay: 300, size: 24 },
+  { top: "16%", left: "46%", delay: 140, size: 18 },
+  { top: "34%", left: "70%", delay: 260, size: 22 },
+  { top: "58%", left: "88%", delay: 200, size: 28 },
+  { top: "64%", left: "18%", delay: 340, size: 24 },
+  { top: "84%", left: "40%", delay: 180, size: 20 },
+  { top: "76%", left: "62%", delay: 280, size: 26 },
+  { top: "88%", left: "90%", delay: 120, size: 22 },
+];
+
+const SPARKLE_KEYS = [
+  { opacity: 0, transform: "scale(0.15) rotate(-25deg)" },
+  { opacity: 1, transform: "scale(1.8) rotate(10deg)", offset: 0.14 },
+  { opacity: 1, transform: "scale(1.4) rotate(14deg)", offset: 0.48 },
+  { opacity: 0, transform: "scale(0.4) rotate(32deg)" },
+] as Keyframe[];
+
 export default function Cyber3DTitle({ children = "cybersecurity" }: { children?: string }) {
   const textRef = useRef<HTMLSpanElement>(null);
   const wrapRef = useRef<HTMLSpanElement>(null);
   const sparkleRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const sparkle2Refs = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const el = textRef.current;
@@ -39,30 +64,37 @@ export default function Cyber3DTitle({ children = "cybersecurity" }: { children?
     let playing = false;
     let wasVisible = false;
 
-    const playSparkles = () => {
-      sparkleRefs.current.forEach((node, i) => {
+    const playWave = (
+      nodes: (HTMLSpanElement | null)[],
+      spots: typeof SPARKLE_SPOTS,
+      waveStart: number,
+      waveEnd: number
+    ) => {
+      nodes.forEach((node, i) => {
         if (!node) return;
-        const delay = SPARKLE_SPOTS[i]?.delay ?? 0;
-        node.animate(
-          [
-            { opacity: 0, transform: "scale(0.15) rotate(-25deg)" },
-            { opacity: 1, transform: "scale(1.8) rotate(10deg)", offset: 0.18 },
-            { opacity: 1, transform: "scale(1.55) rotate(18deg)", offset: 0.5 },
-            { opacity: 0, transform: "scale(0.4) rotate(35deg)" },
-          ],
-          {
-            duration: 2600,
-            delay,
-            easing: "ease-out",
-            fill: "forwards",
-          }
-        );
+        const spotDelay = spots[i]?.delay ?? 0;
+        const delay = waveStart + spotDelay;
+        const duration = Math.max(900, waveEnd - delay);
+        node.animate(SPARKLE_KEYS, {
+          duration,
+          delay,
+          easing: "ease-out",
+          fill: "forwards",
+        });
       });
+    };
+
+    const playSparkles = () => {
+      // Yellow first burst, then cool second burst — both clear by BANNER_MOTION_MS
+      const mid = Math.round(BANNER_MOTION_MS * 0.42);
+      playWave(sparkleRefs.current, SPARKLE_SPOTS, 0, mid + 400);
+      playWave(sparkle2Refs.current, SPARKLE_SPOTS_2, mid, BANNER_MOTION_MS);
     };
 
     const play = () => {
       if (playing) return;
       playing = true;
+      startBannerMotion();
       playSparkles();
 
       const anim = el.animate(
@@ -89,7 +121,7 @@ export default function Cyber3DTitle({ children = "cybersecurity" }: { children?
           },
         ],
         {
-          duration: 5200,
+          duration: BANNER_MOTION_MS,
           easing: "cubic-bezier(0.22, 0.85, 0.28, 1)",
           fill: "forwards",
         }
@@ -131,11 +163,30 @@ export default function Cyber3DTitle({ children = "cybersecurity" }: { children?
       </span>
       {SPARKLE_SPOTS.map((s, i) => (
         <span
-          key={i}
+          key={`a-${i}`}
           ref={(node) => {
             sparkleRefs.current[i] = node;
           }}
           className="cyber-3d__sparkle"
+          aria-hidden
+          style={{
+            top: s.top,
+            left: s.left,
+            width: s.size,
+            height: s.size,
+            fontSize: s.size,
+          }}
+        >
+          ✦
+        </span>
+      ))}
+      {SPARKLE_SPOTS_2.map((s, i) => (
+        <span
+          key={`b-${i}`}
+          ref={(node) => {
+            sparkle2Refs.current[i] = node;
+          }}
+          className="cyber-3d__sparkle cyber-3d__sparkle--cool"
           aria-hidden
           style={{
             top: s.top,

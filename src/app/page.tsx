@@ -3,6 +3,8 @@ import { Guestbook } from "@/components/Guestbook";
 import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { ServicesCarousel } from "@/components/ServicesCarousel";
 import ScrollLinkRow from "@/components/ScrollLinkRow";
+import AboutBitOrbit from "@/components/AboutBitOrbit";
+import BitLine from "@/components/BitLine";
 import Cyber3DTitle from "@/components/Cyber3DTitle";
 
 /**
@@ -78,9 +80,47 @@ export default function HomePage() {
         .hero-copy .tagline-follow .journey-copy {
           color: #000;
         }
+        .about-bit-orbit {
+          pointer-events: none;
+          position: absolute;
+          inset: 0;
+          z-index: 30;
+          overflow: visible;
+          opacity: 1;
+        }
+        /* Ride the outer edge of the double black frame (::before at inset 3px) */
+        .about-bit-orbit__rail {
+          position: absolute;
+          inset: 0;
+          border: 1px solid #39ff14;
+          border-radius: 1.5rem;
+          box-shadow: 0 0 4px rgba(57, 255, 20, 0.85), 0 0 10px rgba(57, 255, 20, 0.5);
+        }
+        .about-bit-orbit__byte {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          gap: 2px;
+          offset-anchor: center center;
+          offset-rotate: auto;
+          filter: drop-shadow(0 0 3px #39ff14) drop-shadow(0 0 8px rgba(57, 255, 20, 0.95));
+        }
+        .about-bit-orbit__byte span {
+          display: block;
+          width: 2px;
+          height: 7px;
+          border-radius: 0.5px;
+          background: #39ff14;
+          box-shadow: 0 0 4px #39ff14;
+          transform-origin: center bottom;
+        }
+        .about-bit-orbit__byte span[data-bit="1"] { transform: scaleY(1); opacity: 1; }
+        .about-bit-orbit__byte span[data-bit="0"] { transform: scaleY(0.28); opacity: 0.45; }
       `}</style>
-      <div className="about-squiggle rounded-3xl px-6 py-10 sm:px-8">
-        <figure className="cyber-3d mx-auto flex h-12 w-full items-stretch overflow-visible rounded-md border-4 border-[#ff7a18] shadow-sm">
+      <div className="about-squiggle relative rounded-3xl px-6 py-10 sm:px-8">
+        <AboutBitOrbit />
+        <figure className="cyber-3d relative mx-auto flex h-12 w-full items-stretch overflow-visible rounded-md border-4 border-[#ff7a18]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/cyber-color.jpg"
@@ -92,6 +132,7 @@ export default function HomePage() {
           <figcaption className="relative flex flex-1 items-center justify-center overflow-visible bg-[#00539f] px-3 text-xl font-extrabold tracking-[0.28em] uppercase sm:text-2xl">
             <Cyber3DTitle />
           </figcaption>
+          <BitLine />
         </figure>
         <div className="mt-6 flex flex-col gap-1.5 sm:flex-row sm:items-start">
           <div className="flex w-fit shrink-0 flex-col">
