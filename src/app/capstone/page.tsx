@@ -110,11 +110,14 @@ export default async function CapstonePage() {
       <section className="mt-10">
         <h2 className="text-2xl font-bold">The recipe behind the numbers</h2>
         <p className="mt-2 max-w-prose text-muted">
-          Drawn as a graph, not an indented list: one box per step and one
-          arrow per link. A list would put each line under one parent, but
-          some steps have two. Patrick&apos;s quarter total adds up two shops
-          — for example Shop 1&apos;s days with him and Shop 2&apos;s days
-          without him — so the drawing shows both arrows.
+          One box per node and one arrow per edge — not an indented list. A
+          list puts each line under one parent, but some nodes have two.
+          Patrick&apos;s quarter total adds up two shops: Shop 1&apos;s days
+          with him and Shop 2&apos;s days without him. In a list, that total
+          sits under Shop 1 only, and Shop 2 looks like it does not matter.
+          The drawing shows both arrows. Once nodes sit in the top row,
+          daily or weekly in the middle, and result nodes at the bottom, so
+          arrows point down in the same order a run follows.
         </p>
         <RecipeDag probe={probe} />
       </section>
